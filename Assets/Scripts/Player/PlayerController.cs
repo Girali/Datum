@@ -35,5 +35,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         PollKeys();
+
+        playerMotor.Motor(currentRig);
     }
 }

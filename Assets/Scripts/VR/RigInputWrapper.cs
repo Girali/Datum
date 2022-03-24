@@ -2,62 +2,119 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using Unity.XR.CoreUtils;
 
 public class RigInputWrapper : MonoBehaviour
 {
     [SerializeField]
     private Camera cam;
+    private Vector3 lastCamPos;
     [SerializeField]
     private Transform cameraOffset;
 
+    [SerializeField]
+    private GameObject leftPortal;
+    [SerializeField]
+    private Animator leftHand;
+    [SerializeField]
+    private GameObject rightPortal;
+    [SerializeField]
+    private Animator rightHand;
+
+    XROrigin xrOrigin;
+
     private ControllerInputs leftControllerInputs;
     private ControllerInputs rightControllerInputs;
-    private FixedSizedQueue headPosTracking;
+    private FixedSizedV3Queue headPosTracking;
 
     public ControllerInputs LeftControllerInputs { get => leftControllerInputs; }
     public ControllerInputs RightControllerInputs { get => rightControllerInputs; }
-    public FixedSizedQueue HeadPosTracking { get => headPosTracking; }
+    public FixedSizedV3Queue HeadPosTracking { get => headPosTracking; }
+    public Camera Cam { get => cam; }
 
     public void Init()
     {
         gameObject.SetActive(true);
         cam.transform.parent = cameraOffset;
-        leftControllerInputs = new ControllerInputs();
-        rightControllerInputs = new ControllerInputs();
-        headPosTracking = new FixedSizedQueue(10);
+        leftControllerInputs = new ControllerInputs(9, 2);
+        rightControllerInputs = new ControllerInputs(9, 2);
+        headPosTracking = new FixedSizedV3Queue(60,0,true);
+        xrOrigin = GetComponent<XROrigin>();
+    }
+
+    public void HandSelect(bool isRight ,bool b)
+    {
+        if (isRight)
+        {
+            rightHand.SetBool("Selected", b);
+        }
+        else
+        {
+            leftHand.SetBool("Selected", b);
+        }
+    }
+
+    public void HandPortal(bool isRight, bool b)
+    {
+        if (isRight)
+        {
+            rightHand.SetBool("Casting", b);
+            rightPortal.SetActive(b);
+        }
+        else
+        {
+            leftHand.SetBool("Casting", b);
+            leftPortal.SetActive(b);
+        }
+    }
+
+    public void RecenterCam()
+    {
+        Vector3 v = transform.position - cam.transform.position;
+        v.y = 0;
+
+        xrOrigin.CameraFloorOffsetObject.transform.localPosition = v;
     }
 
     public void UpdateTracking()
     {
-        headPosTracking.Enqueue(cam.transform.position);
+        Vector3 dir = cam.transform.position - lastCamPos;
+        lastCamPos = cam.transform.position;
+        headPosTracking.Enqueue(dir);
         leftControllerInputs.UpdateTrack();
         rightControllerInputs.UpdateTrack();
     }
 
     public void UpdateLeftHand(Vector3 pos, Quaternion rot)
     {
-        leftControllerInputs.pos = pos;
+        leftControllerInputs.posDir = pos - leftControllerInputs.localPos;
+        leftControllerInputs.localPos = pos;
+        leftControllerInputs.globalPos = pos + transform.position;
         leftControllerInputs.rot = rot;
     }
 
-    public void UpdateLeftHand(ref InteractionState select, ref InteractionState active, ref InteractionState ui)
+    public void UpdateLeftHand(ref InteractionState select, ref InteractionState active, ref InteractionState ui, Vector2 jst)
     {
         leftControllerInputs.active = active;
         leftControllerInputs.select = select;
         leftControllerInputs.ui = ui;
+        leftControllerInputs.joystick = jst;
     }
 
     public void UpdateRightHand(Vector3 pos, Quaternion rot)
     {
-        rightControllerInputs.pos = pos;
+        rightControllerInputs.posDir = pos - rightControllerInputs.localPos;
+        rightControllerInputs.localPos = pos;
+        rightControllerInputs.globalPos = pos + transform.position;
         rightControllerInputs.rot = rot;
     }
 
-    public void UpdateRightHand(ref InteractionState select, ref InteractionState active, ref InteractionState ui)
+    public void UpdateRightHand(ref InteractionState select, ref InteractionState active, ref InteractionState ui, Vector2 jst)
     {
         rightControllerInputs.active = active;
         rightControllerInputs.select = select;
         rightControllerInputs.ui = ui;
+        rightControllerInputs.joystick = jst;
     }
 }
 
@@ -66,33 +123,50 @@ public class ControllerInputs
     public InteractionState select;
     public InteractionState active;
     public InteractionState ui;
-    public Vector3 pos;
+    public Vector3 localPos;
+    public Vector3 globalPos;
+    public Vector3 posDir;
     public Quaternion rot;
-    public FixedSizedQueue deltaPosTracking;
+    public FixedSizedV3Queue deltaPosTracking;
+    public Vector2 joystick;
 
-    public ControllerInputs(int frameTrackCount = 20)
+    public ControllerInputs(int frameTrackCount = 20, int frameLimitCount = 0)
     {
-        deltaPosTracking = new FixedSizedQueue(frameTrackCount);
+        deltaPosTracking = new FixedSizedV3Queue(frameTrackCount, frameLimitCount);
     }
 
     public void UpdateTrack()
     {
-        deltaPosTracking.Enqueue(pos);
+        deltaPosTracking.Enqueue(posDir);
     }
 }
 
-public class FixedSizedQueue
+public class FixedSizedV3Queue
 {
     readonly LinkedList<Vector3> queue = new LinkedList<Vector3>();
+    readonly LinkedList<Vector3> queueLimited = new LinkedList<Vector3>();
     Vector3 avrg = Vector3.zero;
+    Vector3 lastEnque = Vector3.zero;
+
+    Vector3 avrgIndexLimit = Vector3.zero;
+    bool useLimit = false;
+
+    bool trackDistance = false;
+    float totalDistance = 0;
 
     public int Size { get; private set; }
+    public int Limit { get; private set; }
     public Vector3 Sum { get => avrg; }
+    public float TotalDistance { get => totalDistance; }
 
-    public FixedSizedQueue(int size)
+    public FixedSizedV3Queue(int size, int limit = 0, bool track = false)
     {
         Size = size;
+        Limit = limit;
+        useLimit = limit != 0;
         avrg = Vector3.zero;
+        avrgIndexLimit = Vector3.zero;
+        trackDistance = track;
     }
 
     public void Enqueue(Vector3 obj)
@@ -100,16 +174,45 @@ public class FixedSizedQueue
         queue.AddFirst(obj);
         avrg += obj;
 
+        if (trackDistance)
+        {
+            totalDistance += (obj - lastEnque).magnitude;
+            lastEnque = obj;
+        }
+
         while (queue.Count > Size)
         {
             Vector3 outObj = queue.Last.Value;
             avrg -= outObj;
             queue.RemoveLast();
+
+            if (trackDistance)
+            {
+                totalDistance -= (queue.Last.Value - outObj).magnitude;
+            }
+        }
+
+        if (useLimit) 
+        {
+            queueLimited.AddFirst(obj);
+            avrgIndexLimit += obj;
+
+            while (queueLimited.Count > Limit)
+            {
+                Vector3 outObj = queueLimited.Last.Value;
+                avrgIndexLimit -= outObj;
+                queueLimited.RemoveLast();
+            }
         }
     }
 
     public Vector3 GetAVRG()
     {
         return (avrg / queue.Count);
+    }
+
+    public Vector3 GetAVRGLimited()
+    {
+        return ((avrg - avrgIndexLimit) / (queue.Count - queueLimited.Count));
     }
 }

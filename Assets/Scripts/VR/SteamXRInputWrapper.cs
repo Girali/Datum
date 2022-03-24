@@ -16,9 +16,13 @@ public class SteamXRInputWrapper : XRBaseController
     public SteamVR_Action_Boolean activateAction;
     public SteamVR_Action_Boolean interfaceAction;
 
+    public SteamVR_Action_Vector2 joystick;
+
     void Start()
     {
         SteamVR.Initialize();
+        //Valve.VR.OpenVR.System.ResetSeatedZeroPose();
+        //Valve.VR.OpenVR.Compositor.SetTrackingSpace(Valve.VR.ETrackingUniverseOrigin.TrackingUniverseSeated);
     }
 
     protected override void UpdateTrackingInput(XRControllerState controllerState)
