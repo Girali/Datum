@@ -13,6 +13,7 @@ public class Portal : MonoBehaviour
     private Collider cldr;
     private float radius = 0.133f;
     private List<PortalDetector> inside = new List<PortalDetector>();
+    private List<PortalDetector> holding = new List<PortalDetector>();
     private List<Collider> insideObject = new List<Collider>();
     private List<PortalDetector> insideToIgnore = new List<PortalDetector>();
     [SerializeField]
@@ -69,11 +70,27 @@ public class Portal : MonoBehaviour
         }
     }
 
+    public void CreateSpecialClone(PortalDetector pd)
+    {
+        GameObject go = Instantiate(pd.Render.gameObject,pd.transform.position,pd.transform.rotation);
+        PortalObjectClone poc = go.AddComponent<PortalObjectClone>();
+        poc.Init(pd, this);
+    }
+
     public void RemoveFromList(PortalDetector pd)
     {
         inside.Remove(pd);
         if (insideToIgnore.Contains(pd))
             insideToIgnore.Remove(pd);
+    }
+
+    private void OnEnable()
+    {
+        foreach (PortalDetector p in holding)
+        {
+            p.SetHold(false, this);
+        }
+        holding = new List<PortalDetector>();
     }
 
     private void Update()
@@ -117,17 +134,36 @@ public class Portal : MonoBehaviour
 
     public void RecieveObject(PortalDetector p, bool isFront)
     {
+        if (!gameObject.activeSelf)
+        {
+            holding.Add(p);
+            p.SetHold(true, this);
+        }
+
         if(!insideToIgnore.Contains(p))
             insideToIgnore.Add(p);
         p.TelerportFrame(this, portal, isFront);
+
+        if (!gameObject.activeSelf)
+            p.FakeCloneAnimate();
+
+        p.Trail(true);
+
         Debug.LogError("Add ignore " + p.name);
     }
 
     public void DetectObject(PortalDetector p, bool isFront)
     {
+        if (!portal.gameObject.activeSelf)
+            CreateSpecialClone(p);
+
+        p.Trail(false);
+
         //Debug.DrawRay(transform.position, p.Rb.velocity,Color.red);
         Vector3 pos = transform.InverseTransformPoint(p.transform.position);
-        p.transform.position = portal.transform.TransformPoint(pos);
+        Vector3 fwd = transform.InverseTransformDirection(p.transform.forward);
+        p.transform.position = portal.PortalInverse.TransformPoint(pos);
+        p.transform.rotation = Quaternion.LookRotation(portal.PortalInverse.TransformDirection(fwd));
 
         Vector3 v = isFront ? portal.transform.up * p.Rb.velocity.magnitude : -portal.transform.up * p.Rb.velocity.magnitude;
         p.Rb.velocity = v;

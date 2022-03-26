@@ -22,19 +22,67 @@ public class PortalDetector : MonoBehaviour
 
     [SerializeField]
     private Renderer render;
+    [SerializeField]
+    private GameObject trail;
+    private GameObject currentTrail;
     private bool sliced = false;
-
+    private bool sliceDirSameAsPortal = false;
+    private bool lockSliceDir = false;
     private Renderer clone;
-    private TrailRenderer trail;
+    private bool cloneShowedInAnimation = false;
 
     public Rigidbody Rb { get => rb; }
+    public Renderer Render { get => render; }
+
+    private Vector3 holdPosition;
+    private Vector3 holdDirection;
+    private Vector3 holdVelocity;
+
+    public void FakeCloneAnimate()
+    {
+        cloneShowedInAnimation = true;
+        Debug.LogError("FakeCloneAnimate");
+    }
+
+    public void Trail(bool b)
+    {
+        if (b)
+        {
+            currentTrail = Instantiate(trail, transform.position, transform.rotation, transform);
+        }
+        else
+        {
+            currentTrail.transform.parent = null;
+            Destroy(currentTrail, 2f);
+        }
+    }
+
+    public void SetHold(bool b, Portal p)
+    {
+        gameObject.SetActive(!b);
+        if (b)
+        {
+            holdPosition = p.transform.InverseTransformPoint(transform.position);
+            holdDirection = p.transform.InverseTransformDirection(transform.forward);
+            holdVelocity = rb.velocity;
+        }
+        else
+        {
+            transform.position = p.transform.TransformPoint(holdPosition);
+            transform.rotation = Quaternion.LookRotation(p.transform.TransformDirection(holdDirection));
+            rb.velocity = holdVelocity;
+        }
+    }
 
     public void SetSlice(bool b)
     {
         sliced = b;
-        clone.gameObject.SetActive(b);
+        if(b && !cloneShowedInAnimation)
+            clone.gameObject.SetActive(true);
+        else
+            clone.gameObject.SetActive(false);
         render.materials[0].SetFloat("_Slice", b ? 1f : 0f);
-        //Debug.LogError(b);
+        Debug.LogError("Sliced " + b + "  Clone  " + cloneShowedInAnimation);
     }
 
     public void SetPos(Vector3 pos, Vector3 dir)
@@ -46,25 +94,47 @@ public class PortalDetector : MonoBehaviour
 
     public void SetClone(Portal p, Portal n)
     {
-        Vector3 v = p.transform.InverseTransformPoint(transform.position);
-        clone.transform.position = n.PortalInverse.TransformPoint(v);
-        clone.transform.rotation = transform.rotation;
-        clone.materials[0].SetVector("_Pos", n.transform.position);
-        clone.materials[0].SetVector("_Dir", Vector3.Dot(clone.transform.position - n.transform.position, n.transform.up) > 0 ? -n.transform.up : n.transform.up);
+        if (!n.gameObject.activeSelf)
+        {
+            if (clone.gameObject.activeSelf)
+            {
+                clone.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            if (!clone.gameObject.activeSelf && !cloneShowedInAnimation)
+            {
+                clone.gameObject.SetActive(true);
+            }
+
+            Vector3 v = p.transform.InverseTransformPoint(transform.position);
+            Vector3 f = p.transform.InverseTransformDirection(transform.forward);
+            clone.transform.position = n.PortalInverse.TransformPoint(v);
+            clone.transform.rotation = Quaternion.LookRotation(n.PortalInverse.TransformDirection(f));
+            clone.materials[0].SetVector("_Pos", n.transform.position);
+            clone.materials[0].SetVector("_Dir", sliceDirSameAsPortal ? n.transform.up : -n.transform.up);
+        }
     }
 
     int inRangeOf = 0;
 
     public void AddNotifyOnDeath(Portal p)
     {
-        insideOf.Add(p);
-        inRangeOf++;
+        if (!insideOf.Contains(p))
+        {
+            insideOf.Add(p);
+            inRangeOf++;
+        }
     }
 
     public void SubNotifyOnDeath(Portal p)
     {
-        insideOf.Remove(p);
-        inRangeOf--;
+        if (insideOf.Contains(p))
+        {
+            insideOf.Remove(p);
+            inRangeOf--;
+        }
 
         if (sliced)
         {
@@ -85,7 +155,7 @@ public class PortalDetector : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         clone = Instantiate(render.gameObject).GetComponent<Renderer>();
         clone.gameObject.SetActive(false);
-        trail = GetComponent<TrailRenderer>();
+        Trail(true);
     }
 
     bool correctingPosition = false;
@@ -137,17 +207,23 @@ public class PortalDetector : MonoBehaviour
         {
             Vector3 v;
             bool intersected = LinePlaneIntersection(out v, transform.position, lastVelocity.normalized, p.transform.up, p.transform.position);
-            float dist = Vector3.Distance(transform.position, v) + 0.05f;
+            float dist = Vector3.Distance(transform.position, v);
 
             if (cldr.bounds.Intersects(p.Collider.bounds))
             {
+                if (!lockSliceDir)
+                {
+                    sliceDirSameAsPortal = Vector3.Dot(transform.position - p.transform.position, p.transform.up) > 0;
+                    lockSliceDir = true;
+                }
                 showThisFrame = true;
-                SetPos(p.transform.position, Vector3.Dot(transform.position - p.transform.position, p.transform.up) > 0 ? p.transform.up : -p.transform.up);
+                SetPos(p.transform.position, sliceDirSameAsPortal ? p.transform.up : -p.transform.up);
                 SetClone(p, n);
             }
             else
             {
                 hideThisFrame = true;
+                lockSliceDir = false;
             }
             //Debug.LogError((dist < lastVelocity.magnitude) + " " + v +" " + p.name);
 
@@ -181,7 +257,10 @@ public class PortalDetector : MonoBehaviour
             else if (hideThisFrame)
             {
                 if (sliced)
+                {
                     SetSlice(false);
+                    cloneShowedInAnimation = false;
+                }
             }
             currentUpdateIndex = 0;
         }
@@ -208,13 +287,19 @@ public class PortalDetector : MonoBehaviour
             //Debug.LogError((dist < lastVelocity.magnitude) + " " + v + " " + p.name);
             if(cldr.bounds.Intersects(p.Collider.bounds))
             {
+                if (!lockSliceDir)
+                {
+                    sliceDirSameAsPortal = Vector3.Dot(transform.position - p.transform.position, p.transform.up) > 0;
+                    lockSliceDir = true;
+                }
                 showThisFrame = true;
-                SetPos(p.transform.position, Vector3.Dot(transform.position - p.transform.position, p.transform.up) > 0 ? p.transform.up : -p.transform.up);
+                SetPos(p.transform.position, sliceDirSameAsPortal ? p.transform.up : -p.transform.up);
                 SetClone(p, n);
             }
             else
             {
                 hideThisFrame = true;
+                lockSliceDir = false;
             }
 
             bool isFront = Vector3.Dot(rb.velocity.normalized, p.transform.up) < 0; ;
@@ -258,7 +343,10 @@ public class PortalDetector : MonoBehaviour
             else if (hideThisFrame)
             {
                 if (sliced)
+                {
                     SetSlice(false);
+                    cloneShowedInAnimation = false;
+                }
             }
             currentUpdateIndex = 0;
         }
