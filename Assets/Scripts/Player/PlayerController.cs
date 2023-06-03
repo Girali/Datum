@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        transform.parent = null;
         playerMotor = GetComponent<PlayerMotor>();
 
         isSteamVR = AppController.IsSteamVRActive;
@@ -37,5 +38,7 @@ public class PlayerController : MonoBehaviour
         PollKeys();
 
         playerMotor.Motor(currentRig);
+        currentRig.LeftHand.Motor(currentRig.LeftControllerInputs);
+        currentRig.RightHand.Motor(currentRig.RightControllerInputs);
     }
 }

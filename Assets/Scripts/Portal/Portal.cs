@@ -43,7 +43,7 @@ public class Portal : MonoBehaviour
                 }
 
                 pd.AddNotifyOnDeath(this);
-                Debug.LogError("OnTriggerEnter");
+                //Debug.LogError("OnTriggerEnter");
             }
         }
     }
@@ -65,7 +65,7 @@ public class Portal : MonoBehaviour
                 pd.SubNotifyOnDeath(this);
                 if (insideToIgnore.Contains(pd))
                     insideToIgnore.Remove(pd);
-                Debug.LogError("OnTriggerExit");
+                //Debug.LogError("OnTriggerExit");
             }
         }
     }
@@ -129,7 +129,7 @@ public class Portal : MonoBehaviour
     {
         if(insideToIgnore.Contains(p))
             insideToIgnore.Remove(p);
-        Debug.LogError("Remove ignore " + p.name);
+        //Debug.LogError("Remove ignore " + p.name);
     }
 
     public void RecieveObject(PortalDetector p, bool isFront)
@@ -149,7 +149,7 @@ public class Portal : MonoBehaviour
 
         p.Trail(true);
 
-        Debug.LogError("Add ignore " + p.name);
+        //Debug.LogError("Add ignore " + p.name);
     }
 
     public void DetectObject(PortalDetector p, bool isFront)

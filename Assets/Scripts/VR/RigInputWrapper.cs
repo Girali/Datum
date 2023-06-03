@@ -13,13 +13,9 @@ public class RigInputWrapper : MonoBehaviour
     private Transform cameraOffset;
 
     [SerializeField]
-    private GameObject leftPortal;
+    private PlayerHandController rightHand;
     [SerializeField]
-    private Animator leftHand;
-    [SerializeField]
-    private GameObject rightPortal;
-    [SerializeField]
-    private Animator rightHand;
+    private PlayerHandController leftHand;
 
     XROrigin xrOrigin;
 
@@ -31,41 +27,19 @@ public class RigInputWrapper : MonoBehaviour
     public ControllerInputs RightControllerInputs { get => rightControllerInputs; }
     public FixedSizedV3Queue HeadPosTracking { get => headPosTracking; }
     public Camera Cam { get => cam; }
+    public PlayerHandController LeftHand { get => leftHand; }
+    public PlayerHandController RightHand { get => rightHand; }
 
     public void Init()
     {
+        lastCamPos = cam.transform.position;
+         
         gameObject.SetActive(true);
         cam.transform.parent = cameraOffset;
         leftControllerInputs = new ControllerInputs(9, 2);
         rightControllerInputs = new ControllerInputs(9, 2);
         headPosTracking = new FixedSizedV3Queue(60,0,true);
         xrOrigin = GetComponent<XROrigin>();
-    }
-
-    public void HandSelect(bool isRight ,bool b)
-    {
-        if (isRight)
-        {
-            rightHand.SetBool("Selected", b);
-        }
-        else
-        {
-            leftHand.SetBool("Selected", b);
-        }
-    }
-
-    public void HandPortal(bool isRight, bool b)
-    {
-        if (isRight)
-        {
-            rightHand.SetBool("Casting", b);
-            rightPortal.SetActive(b);
-        }
-        else
-        {
-            leftHand.SetBool("Casting", b);
-            leftPortal.SetActive(b);
-        }
     }
 
     public void RecenterCam()
@@ -80,6 +54,7 @@ public class RigInputWrapper : MonoBehaviour
     {
         Vector3 dir = cam.transform.position - lastCamPos;
         lastCamPos = cam.transform.position;
+
         headPosTracking.Enqueue(dir);
         leftControllerInputs.UpdateTrack();
         rightControllerInputs.UpdateTrack();
@@ -90,7 +65,7 @@ public class RigInputWrapper : MonoBehaviour
         leftControllerInputs.posDir = pos - leftControllerInputs.localPos;
         leftControllerInputs.localPos = pos;
         leftControllerInputs.globalPos = pos + transform.position;
-        leftControllerInputs.rot = rot;
+        leftControllerInputs.rot = rot * transform.rotation;
     }
 
     public void UpdateLeftHand(ref InteractionState select, ref InteractionState active, ref InteractionState ui, Vector2 jst)
@@ -106,7 +81,7 @@ public class RigInputWrapper : MonoBehaviour
         rightControllerInputs.posDir = pos - rightControllerInputs.localPos;
         rightControllerInputs.localPos = pos;
         rightControllerInputs.globalPos = pos + transform.position;
-        rightControllerInputs.rot = rot;
+        rightControllerInputs.rot = rot * transform.rotation;
     }
 
     public void UpdateRightHand(ref InteractionState select, ref InteractionState active, ref InteractionState ui, Vector2 jst)

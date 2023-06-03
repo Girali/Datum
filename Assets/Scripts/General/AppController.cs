@@ -10,8 +10,13 @@ public class AppController : MonoBehaviour
     private void Awake()
     {
         IsSteamVRActive = "Open VR Loader" == XRGeneralSettings.Instance.AssignedSettings.activeLoader.name;
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
         Debug.Log("Initiate as " + (IsSteamVRActive ? "SteamVR Rig" : "OpenXR Rig"));
+    }
+
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+        Time.fixedDeltaTime = 1 / 60f;
+        QualitySettings.vSyncCount = 0;
     }
 }

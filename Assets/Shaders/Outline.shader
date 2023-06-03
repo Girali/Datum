@@ -42,10 +42,17 @@ Shader "Unlit/Outline"
 
             VertexOutput vert(VertexInput i)
             {
+                half3x3 m = (half3x3)UNITY_MATRIX_M;
+                half3 objectScale = half3(
+                    length(half3(m[0][0], m[1][0], m[2][0])),
+                    length(half3(m[0][1], m[1][1], m[2][1])),
+                    length(half3(m[0][2], m[1][2], m[2][2]))
+                );
+
                  VertexOutput o;
 
-                 float camDist = distance(mul(UNITY_MATRIX_M , i.position), _WorldSpaceCameraPos);
-                 i.position.xyz += normalize(i.normal) * camDist * _Power;
+                 float camDist = 1;//distance(mul(UNITY_MATRIX_M , i.position), _WorldSpaceCameraPos);
+                 i.position.xyz += (normalize(i.normal) * camDist * _Power) / objectScale;
                  o.position = TransformObjectToHClip(i.position);
 
                  return o;

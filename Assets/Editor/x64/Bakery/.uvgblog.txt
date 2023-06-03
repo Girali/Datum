@@ -1,0 +1,1124 @@
+2022-4-6
+Rendering UV GBuffer for Level_1.0_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA1.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA2.lz4" 2 0 2 0
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0" 4 0 0 comp_0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1" 4 0 1 comp_1.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2" 4 0 2 comp_2.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_diffuse" 4 16 0 "gi_Level_1.0_LM00.bin" "Level_1.0_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_diffuse" 4 16 1 "gi_Level_1.0_LMA10.bin" "Level_1.0_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_diffuse" 4 16 2 "gi_Level_1.0_LMA20.bin" "Level_1.0_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_diffuse" 4 16 0 "gi_Level_1.0_LM01.bin" "Level_1.0_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_diffuse" 4 16 1 "gi_Level_1.0_LMA11.bin" "Level_1.0_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_diffuse" 4 16 2 "gi_Level_1.0_LMA21.bin" "Level_1.0_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_diffuse" 4 16 0 "gi_Level_1.0_LM02.bin" "Level_1.0_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_diffuse" 4 16 1 "gi_Level_1.0_LMA12.bin" "Level_1.0_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_diffuse" 4 16 2 "gi_Level_1.0_LMA22.bin" "Level_1.0_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_diffuse" 4 16 0 "gi_Level_1.0_LM03.bin" "Level_1.0_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_diffuse" 4 16 1 "gi_Level_1.0_LMA13.bin" "Level_1.0_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_diffuse" 4 16 2 "gi_Level_1.0_LMA23.bin" "Level_1.0_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final" 4 16 0 "gi_Level_1.0_LM04.bin" "Level_1.0_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final" 4 16 1 "gi_Level_1.0_LMA14.bin" "Level_1.0_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final" 4 16 2 "gi_Level_1.0_LMA24.bin" "Level_1.0_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "0" "Level_1.0_LM0_final_HDR.lz4"
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "1" "Level_1.0_LMA1_final_HDR.lz4"
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "2" "Level_1.0_LMA2_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA2_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Level_1.0_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA1.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA2.lz4" 2 0 2 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_ao" 8 16 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_ao" 8 16 1
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_ao" 8 16 2
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-784536293_0" 4 0 0 sky0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0" 4 0 0 comp_0.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-784536293_1" 4 0 1 sky0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1" 4 0 1 comp_1.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-784536293_2" 4 0 2 sky0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2" 4 0 2 comp_2.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final" 4 16 0 "gi_Level_1.0_LM00.bin" "Level_1.0_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final" 4 16 1 "gi_Level_1.0_LMA10.bin" "Level_1.0_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final" 4 16 2 "gi_Level_1.0_LMA20.bin" "Level_1.0_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final_HDR.lz4" 4 0 0 addao_0.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "0" "Level_1.0_LM0_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final_HDR.lz4" 4 0 1 addao_1.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "1" "Level_1.0_LMA1_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final_HDR.lz4" 4 0 2 addao_2.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "2" "Level_1.0_LMA2_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA2_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Level_1.0_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA1.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA2.lz4" 2 0 2 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_ao" 8 16 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_ao" 8 16 1
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_ao" 8 16 2
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_0_0_6" 4 0 0 batchpointlight_0_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1283580763_0" 4 0 0 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_0" 4 0 0 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0" 4 0 0 comp_0.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_1_0_6" 4 0 1 batchpointlight_1_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1283580763_1" 4 0 1 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_1" 4 0 1 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1" 4 0 1 comp_1.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_2_0_6" 4 0 2 batchpointlight_2_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1283580763_2" 4 0 2 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_2" 4 0 2 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2" 4 0 2 comp_2.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final" 4 16 0 "gi_Level_1.0_LM00.bin" "Level_1.0_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final" 4 16 1 "gi_Level_1.0_LMA10.bin" "Level_1.0_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final" 4 16 2 "gi_Level_1.0_LMA20.bin" "Level_1.0_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final_HDR.lz4" 4 0 0 addao_0.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "0" "Level_1.0_LM0_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final_HDR.lz4" 4 0 1 addao_1.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "1" "Level_1.0_LMA1_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final_HDR.lz4" 4 0 2 addao_2.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "2" "Level_1.0_LMA2_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA2_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Level_1.0_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA1.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA2.lz4" 2 0 2 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_ao" 8 16 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_ao" 8 16 1
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_ao" 8 16 2
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_0_0_6" 4 0 0 batchpointlight_0_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1283580763_0" 4 0 0 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_0" 4 0 0 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0" 4 0 0 comp_0.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_1_0_6" 4 0 1 batchpointlight_1_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1283580763_1" 4 0 1 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_1" 4 0 1 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1" 4 0 1 comp_1.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_2_0_6" 4 0 2 batchpointlight_2_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1283580763_2" 4 0 2 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_2" 4 0 2 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2" 4 0 2 comp_2.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final" 4 16 0 "gi_Level_1.0_LM00.bin" "Level_1.0_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final" 4 16 1 "gi_Level_1.0_LMA10.bin" "Level_1.0_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final" 4 16 2 "gi_Level_1.0_LMA20.bin" "Level_1.0_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final_HDR.lz4" 4 0 0 addao_0.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "0" "Level_1.0_LM0_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final_HDR.lz4" 4 0 1 addao_1.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "1" "Level_1.0_LMA1_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final_HDR.lz4" 4 0 2 addao_2.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "2" "Level_1.0_LMA2_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA2_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Level_1.0_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA1.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA2.lz4" 2 0 2 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_ao" 8 16 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_ao" 8 16 1
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Level_1.0_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA1.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA2.lz4" 2 0 2 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_ao" 8 16 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_ao" 8 16 1
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_ao" 8 16 2
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_0_0_6" 4 0 0 batchpointlight_0_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1283580763_0" 4 0 0 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_0" 4 0 0 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0" 4 0 0 comp_0.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_1_0_6" 4 0 1 batchpointlight_1_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1283580763_1" 4 0 1 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_1" 4 0 1 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1" 4 0 1 comp_1.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_2_0_6" 4 0 2 batchpointlight_2_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1283580763_2" 4 0 2 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_2" 4 0 2 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2" 4 0 2 comp_2.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final" 4 16 0 "gi_Level_1.0_LM00.bin" "Level_1.0_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final" 4 16 1 "gi_Level_1.0_LMA10.bin" "Level_1.0_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final" 4 16 2 "gi_Level_1.0_LMA20.bin" "Level_1.0_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final_HDR.lz4" 4 0 0 addao_0.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "0" "Level_1.0_LM0_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final_HDR.lz4" 4 0 1 addao_1.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "1" "Level_1.0_LMA1_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final_HDR.lz4" 4 0 2 addao_2.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "2" "Level_1.0_LMA2_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA2_final.hdr" 1024
+[OVRPlugin][INFO] Initializing system...[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name: ServiceTrexManagerImplementation
+      Interface Id: 0xae0b8a9331378a85
+    Class Id: 0xaf0a819a96974952, class[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.70.0(build = 0) feature version = 0. Client runs version (prod = 1).1.70.0(build = 0) feature version = 0[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.4mm[OVRPlugin][INFO] VkInstanceExtensions:[OVRPlugin][INFO]   VK_KHR_surface[OVRPlugin][INFO]   VK_KHR_external_memory_capabilities[OVRPlugin][INFO]   VK_KHR_win32_surface[OVRPlugin][INFO]   VK_KHR_external_fence_capabilities[OVRPlugin][INFO]   VK_KHR_external_semaphore_capabilities[OVRPlugin][INFO]   VK_KHR_get_physical_device_properties2[OVRPlugin][INFO] VkDeviceExtensions:[OVRPlugin][INFO]   VK_KHR_swapchain[OVRPlugin][INFO]   VK_KHR_external_memory[OVRPlugin][INFO]   VK_KHR_external_memory_win32[OVRPlugin][INFO]   VK_KHR_external_fence[OVRPlugin][INFO]   VK_KHR_external_fence_win32[OVRPlugin][INFO]   VK_KHR_external_semaphore[OVRPlugin][INFO]   VK_KHR_external_semaphore_win32[OVRPlugin][INFO]   VK_KHR_get_memory_requirements2[OVRPlugin][INFO]   VK_KHR_dedicated_allocation[OVRPlugin][INFO] ProfilerSystem: verbose mode 0[OVRPlugin][INFO] OVRPlugin 1.66.0 ... preinitialized[OVRPlugin][INFO] Initializing system...[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name: ServiceTrexManagerImplementation
+      Interface Id: 0xae0b8a9331378a85
+    Class Id: 0xaf0a819a96974952, class[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.70.0(build = 0) feature version = 0. Client runs version (prod = 1).1.70.0(build = 0) feature version = 0[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.4mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] Initializing system...[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name: ServiceTrexManagerImplementation
+      Interface Id: 0xae0b8a9331378a85
+    Class Id: 0xaf0a819a96974952, class[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.70.0(build = 0) feature version = 0. Client runs version (prod = 1).1.70.0(build = 0) feature version = 0[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.4mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] Initializing system...[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name: ServiceTrexManagerImplementation
+      Interface Id: 0xae0b8a9331378a85
+    Class Id: 0xaf0a819a96974952, class[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.70.0(build = 0) feature version = 0. Client runs version (prod = 1).1.70.0(build = 0) feature version = 0[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] Initializing system...[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name: ServiceTrexManagerImplementation
+      Interface Id: 0xae0b8a9331378a85
+    Class Id: 0xaf0a819a96974952, class[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.70.0(build = 0) feature version = 0. Client runs version (prod = 1).1.70.0(build = 0) feature version = 0[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012402[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] Initializing system...[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name: ServiceTrexManagerImplementation
+      Interface Id: 0xae0b8a9331378a85
+    Class Id: 0xaf0a819a96974952, class[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.70.0(build = 0) feature version = 0. Client runs version (prod = 1).1.70.0(build = 0) feature version = 0[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012402[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] Initializing system...[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name: ServiceTrexManagerImplementation
+      Interface Id: 0xae0b8a9331378a85
+    Class Id: 0xaf0a819a96974952, class[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.70.0(build = 0) feature version = 0. Client runs version (prod = 1).1.70.0(build = 0) feature version = 0[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012402[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] Initializing system...[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name: ServiceTrexManagerImplementation
+      Interface Id: 0xae0b8a9331378a85
+    Class Id: 0xaf0a819a96974952, class[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.70.0(build = 0) feature version = 0. Client runs version (prod = 1).1.70.0(build = 0) feature version = 0[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012402[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient releasedLoaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Level_1.0_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA3 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA3.lz4" 2 0 3 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA1.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA2.lz4" 2 0 2 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA3_ao" 8 16 3
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_ao" 8 16 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_ao" 8 16 1
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_ao" 8 16 2
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_3_0_6" 4 0 3 batchpointlight_3_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_3" 4 0 3 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_3" 4 0 3 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA3" 4 0 3 comp_3.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_0_0_6" 4 0 0 batchpointlight_0_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_0" 4 0 0 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_0" 4 0 0 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0" 4 0 0 comp_0.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_1_0_6" 4 0 1 batchpointlight_1_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_1" 4 0 1 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_1" 4 0 1 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1" 4 0 1 comp_1.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_2_0_6" 4 0 2 batchpointlight_2_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_2" 4 0 2 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_2" 4 0 2 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2" 4 0 2 comp_2.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA3_final" 4 16 3 "gi_Level_1.0_LMA30.bin" "Level_1.0_LMA3_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final" 4 16 0 "gi_Level_1.0_LM00.bin" "Level_1.0_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final" 4 16 1 "gi_Level_1.0_LMA10.bin" "Level_1.0_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final" 4 16 2 "gi_Level_1.0_LMA20.bin" "Level_1.0_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA3_final_HDR.lz4" 4 0 3 addao_3.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA3_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA3_final_HDR.lz4" 1024 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "3" "Level_1.0_LMA3_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final_HDR.lz4" 4 0 0 addao_0.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "0" "Level_1.0_LM0_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final_HDR.lz4" 4 0 1 addao_1.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "1" "Level_1.0_LMA1_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final_HDR.lz4" 4 0 2 addao_2.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "2" "Level_1.0_LMA2_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA3_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA3_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA2_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Level_1.0_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA3 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA3.lz4" 2 0 3 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA1.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA2.lz4" 2 0 2 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA3_ao" 8 16 3
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_ao" 8 16 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_ao" 8 16 1
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_ao" 8 16 2
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_3_0_6" 4 0 3 batchpointlight_3_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_3" 4 0 3 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_3" 4 0 3 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA3" 4 0 3 comp_3.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_0_0_6" 4 0 0 batchpointlight_0_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_0" 4 0 0 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_0" 4 0 0 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0" 4 0 0 comp_0.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_1_0_6" 4 0 1 batchpointlight_1_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_1" 4 0 1 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_1" 4 0 1 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1" 4 0 1 comp_1.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_2_0_6" 4 0 2 batchpointlight_2_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_2" 4 0 2 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_2" 4 0 2 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2" 4 0 2 comp_2.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA3_final" 4 16 3 "gi_Level_1.0_LMA30.bin" "Level_1.0_LMA3_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final" 4 16 0 "gi_Level_1.0_LM00.bin" "Level_1.0_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final" 4 16 1 "gi_Level_1.0_LMA10.bin" "Level_1.0_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final" 4 16 2 "gi_Level_1.0_LMA20.bin" "Level_1.0_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA3_final_HDR.lz4" 4 0 3 addao_3.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA3_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA3_final_HDR.lz4" 1024 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "3" "Level_1.0_LMA3_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final_HDR.lz4" 4 0 0 addao_0.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "0" "Level_1.0_LM0_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final_HDR.lz4" 4 0 1 addao_1.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "1" "Level_1.0_LMA1_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA2_final_HDR.lz4" 4 0 2 addao_2.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "2" "Level_1.0_LMA2_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA3_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA3_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA2_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA2_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for LMGroup_Cube 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for LMGroup_Cube.005 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_LMGroup_Cube.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_LMGroup_Cube.005.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LM0.lz4" 2 0 2 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA1.lz4" 2 0 3 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube_ao" 8 16 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube.005_ao" 8 16 1
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_ao" 8 16 2
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_ao" 8 16 3
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_0_0_6" 4 0 0 batchpointlight_0_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_0" 4 0 0 sky0.bin
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for LMGroup_Cube.005 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for LMGroup_Cube 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_LMGroup_Cube.005.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_LMGroup_Cube.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LM0.lz4" 2 0 2 0
+Running ftrace fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA1.lz4" 2 0 3 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube.005_ao" 8 16 0
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube_ao" 8 16 1
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_ao" 8 16 2
+Running ftrace ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_ao" 8 16 3
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_0_0_6" 4 0 0 batchpointlight_0_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_0" 4 0 0 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_0" 4 0 0 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube.005" 4 0 0 comp_0.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_1_0_6" 4 0 1 batchpointlight_1_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_1" 4 0 1 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_1" 4 0 1 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube" 4 0 1 comp_1.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_2_0_6" 4 0 2 batchpointlight_2_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_2" 4 0 2 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_2" 4 0 2 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0" 4 0 2 comp_2.bin
+Running ftrace batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_3_0_6" 4 0 3 batchpointlight_3_0_6.bin
+Running ftrace sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_3" 4 0 3 sky0.bin
+Running ftrace sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_3" 4 0 3 direct0.bin
+Running ftrace addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1" 4 0 3 comp_3.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube.005_final" 4 16 0 "gi_LMGroup_Cube.0050.bin" "LMGroup_Cube.005_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube_final" 4 16 1 "gi_LMGroup_Cube0.bin" "LMGroup_Cube_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final" 4 16 2 "gi_Level_1.0_LM00.bin" "Level_1.0_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final" 4 16 3 "gi_Level_1.0_LMA10.bin" "Level_1.0_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube.005_final_HDR.lz4" 4 0 0 addao_0.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/LMGroup_Cube.005_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/LMGroup_Cube.005_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "0" "LMGroup_Cube.005_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube_final_HDR.lz4" 4 0 1 addao_1.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/LMGroup_Cube_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/LMGroup_Cube_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "1" "LMGroup_Cube_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final_HDR.lz4" 4 0 2 addao_2.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "2" "Level_1.0_LM0_final_HDR.lz4"
+Running ftrace addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final_HDR.lz4" 4 0 3 addao_3.bin
+Running denoiserLegacy c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "3" "Level_1.0_LMA1_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/LMGroup_Cube.005_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/LMGroup_Cube.005_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/LMGroup_Cube_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/LMGroup_Cube_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA1_final.hdr" 1024
+2023-2-26
+Rendering UV GBuffer for LMGroup_Cube.005 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for LMGroup_Cube 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level_1.0_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_LMGroup_Cube.005.lz4" 2 0 0 0
+Running ftraceRTX fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_LMGroup_Cube.lz4" 2 0 1 0
+Running ftraceRTX fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LM0.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\thegi\AppData\Local\Temp\frender" "uvpos_Level_1.0_LMA1.lz4" 2 0 3 0
+Running ftraceRTX ao "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube.005_ao" 8 16 0
+Running ftraceRTX ao "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube_ao" 8 16 1
+Running ftraceRTX ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_ao" 8 16 2
+Running ftraceRTX ao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_ao" 8 16 3
+Running ftraceRTX batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_0_0_6" 4 0 0 batchpointlight_0_0_6.bin
+Running ftraceRTX sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_0" 4 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube.005" 4 0 0 comp_0.bin
+Running ftraceRTX batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_1_0_6" 4 0 1 batchpointlight_1_0_6.bin
+Running ftraceRTX sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_1" 4 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube" 4 0 1 comp_1.bin
+Running ftraceRTX batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_2_0_6" 4 0 2 batchpointlight_2_0_6.bin
+Running ftraceRTX sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_2" 4 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0" 4 0 2 comp_2.bin
+Running ftraceRTX batchpointlight "C:\Users\thegi\AppData\Local\Temp\frender" "PointBatch_3_0_6" 4 0 3 batchpointlight_3_0_6.bin
+Running ftraceRTX sky "C:\Users\thegi\AppData\Local\Temp\frender" "light_-79629947_3" 4 0 3 sky0.bin
+Running ftraceRTX sun "C:\Users\thegi\AppData\Local\Temp\frender" "light_-1618118706_3" 4 0 3 direct0.bin
+Running ftraceRTX addmul "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1" 4 0 3 comp_3.bin
+Running ftraceRTX texgi "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube.005_final" 4 16 0 "gi_LMGroup_Cube.0050.bin" "LMGroup_Cube.005_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube_final" 4 16 1 "gi_LMGroup_Cube0.bin" "LMGroup_Cube_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final" 4 16 2 "gi_Level_1.0_LM00.bin" "Level_1.0_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final" 4 16 3 "gi_Level_1.0_LMA10.bin" "Level_1.0_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX addao "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube.005_final_HDR.lz4" 4 0 0 addao_0.bin
+Running denoiserOIDN c "C:\Users\thegi\AppData\Local\Temp\frender/LMGroup_Cube.005_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/LMGroup_Cube.005_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "0" "LMGroup_Cube.005_final_HDR.lz4"
+Running ftraceRTX addao "C:\Users\thegi\AppData\Local\Temp\frender" "LMGroup_Cube_final_HDR.lz4" 4 0 1 addao_1.bin
+Running denoiserOIDN c "C:\Users\thegi\AppData\Local\Temp\frender/LMGroup_Cube_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/LMGroup_Cube_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "1" "LMGroup_Cube_final_HDR.lz4"
+Running ftraceRTX addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LM0_final_HDR.lz4" 4 0 2 addao_2.bin
+Running denoiserOIDN c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "2" "Level_1.0_LM0_final_HDR.lz4"
+Running ftraceRTX addao "C:\Users\thegi\AppData\Local\Temp\frender" "Level_1.0_LMA1_final_HDR.lz4" 4 0 3 addao_3.bin
+Running denoiserOIDN c "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\thegi\AppData\Local\Temp\frender" "3" "Level_1.0_LMA1_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/LMGroup_Cube.005_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/LMGroup_Cube.005_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/LMGroup_Cube_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/LMGroup_Cube_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LM0_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\thegi\AppData\Local\Temp\frender/Level_1.0_LMA1_final_HDR.lz4" "C:/Users/thegi/Documents/GitHub/Datum/Assets/BakeryLightmaps/Level_1.0_LMA1_final.hdr" 1024
+2023-5-18
+Rendering UV GBuffer for SampleScene_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for SampleScene_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for SampleScene_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LMA1.lz4" 2 0 1 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LMA2.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LM0.lz4" 2 0 0 0
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_2" 12 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2" 4 0 2 comp_2.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA10.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA20.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM00.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA11.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA21.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM01.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA12.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA22.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM02.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA13.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA23.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM03.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_final" 20 16 1 "gi_SampleScene_LMA14.bin" "SampleScene_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_final" 20 16 2 "gi_SampleScene_LMA24.bin" "SampleScene_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_final" 20 16 0 "gi_SampleScene_LM04.bin" "SampleScene_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_final_HDR.lz4" 4 0 2 comp_indirect2.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" 256 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "SampleScene_LMA1_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "2" "SampleScene_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "SampleScene_LM0_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA2_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_2.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LM0_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for SampleScene_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for SampleScene_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for SampleScene_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LMA1.lz4" 2 0 1 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LMA2.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LM0.lz4" 2 0 0 0
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_2" 12 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2" 4 0 2 comp_2.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA10.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA20.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM00.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA11.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA21.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM01.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA12.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA22.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM02.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA13.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA23.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM03.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_final" 20 16 1 "gi_SampleScene_LMA14.bin" "SampleScene_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_final" 20 16 2 "gi_SampleScene_LMA24.bin" "SampleScene_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_final" 20 16 0 "gi_SampleScene_LM04.bin" "SampleScene_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_final_HDR.lz4" 4 0 2 comp_indirect2.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" 256 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "SampleScene_LMA1_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "2" "SampleScene_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "SampleScene_LM0_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA2_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_2.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LM0_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for SampleScene_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for SampleScene_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for SampleScene_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LMA1.lz4" 2 0 1 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LMA2.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LM0.lz4" 2 0 0 0
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_2" 12 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2" 4 0 2 comp_2.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA10.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA20.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM00.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA11.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA21.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM01.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA12.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA22.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM02.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA13.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA23.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM03.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_final" 20 16 1 "gi_SampleScene_LMA14.bin" "SampleScene_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_final" 20 16 2 "gi_SampleScene_LMA24.bin" "SampleScene_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_final" 20 16 0 "gi_SampleScene_LM04.bin" "SampleScene_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_final_HDR.lz4" 4 0 2 comp_indirect2.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" 256 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "SampleScene_LMA1_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "2" "SampleScene_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "SampleScene_LM0_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA2_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_2.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LM0_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for SampleScene_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for SampleScene_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for SampleScene_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LMA1.lz4" 2 0 1 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LMA2.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LM0.lz4" 2 0 0 0
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_2" 12 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2" 4 0 2 comp_2.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA10.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA20.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM00.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA11.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA21.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM01.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA12.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA22.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM02.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA13.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA23.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM03.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_final" 20 16 1 "gi_SampleScene_LMA14.bin" "SampleScene_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_final" 20 16 2 "gi_SampleScene_LMA24.bin" "SampleScene_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_final" 20 16 0 "gi_SampleScene_LM04.bin" "SampleScene_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_final_HDR.lz4" 4 0 2 comp_indirect2.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" 256 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "SampleScene_LMA1_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "2" "SampleScene_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "SampleScene_LM0_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA2_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_2.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LM0_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for SampleScene_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for SampleScene_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for SampleScene_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LMA1.lz4" 2 0 1 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LMA2.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_SampleScene_LM0.lz4" 2 0 0 0
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_2" 12 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2" 4 0 2 comp_2.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA10.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA20.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM00.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA11.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA21.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM01.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA12.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA22.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM02.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_diffuse" 4 16 1 "gi_SampleScene_LMA13.bin" "SampleScene_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_diffuse" 4 16 2 "gi_SampleScene_LMA23.bin" "SampleScene_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_diffuse" 4 16 0 "gi_SampleScene_LM03.bin" "SampleScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_final" 20 16 1 "gi_SampleScene_LMA14.bin" "SampleScene_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_final" 20 16 2 "gi_SampleScene_LMA24.bin" "SampleScene_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_final" 20 16 0 "gi_SampleScene_LM04.bin" "SampleScene_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LMA2_final_HDR.lz4" 4 0 2 comp_indirect2.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "SampleScene_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" 256 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "SampleScene_LMA1_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "2" "SampleScene_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "SampleScene_LM0_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA2_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_2.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LM0_final.hdr" 1024

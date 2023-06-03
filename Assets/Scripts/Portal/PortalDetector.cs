@@ -25,6 +25,8 @@ public class PortalDetector : MonoBehaviour
     [SerializeField]
     private GameObject trail;
     private GameObject currentTrail;
+    private bool trailNextFrame = false;
+    private bool trailNextNextFrame = false;
     private bool sliced = false;
     private bool sliceDirSameAsPortal = false;
     private bool lockSliceDir = false;
@@ -37,11 +39,17 @@ public class PortalDetector : MonoBehaviour
     private Vector3 holdPosition;
     private Vector3 holdDirection;
     private Vector3 holdVelocity;
+    private int inRangeOf = 0;
+    private bool correctingPosition = false;
+    private Vector3 positionAfterTeleport = Vector3.zero;
+    private bool teleportedLastFrame = false;
+    private bool showThisFrame = false;
+    private bool hideThisFrame = false;
+    private int currentUpdateIndex = 0;
 
     public void FakeCloneAnimate()
     {
         cloneShowedInAnimation = true;
-        Debug.LogError("FakeCloneAnimate");
     }
 
     public void Trail(bool b)
@@ -49,6 +57,7 @@ public class PortalDetector : MonoBehaviour
         if (b)
         {
             currentTrail = Instantiate(trail, transform.position, transform.rotation, transform);
+            currentTrail.SetActive(true);
         }
         else
         {
@@ -82,14 +91,12 @@ public class PortalDetector : MonoBehaviour
         else
             clone.gameObject.SetActive(false);
         render.materials[0].SetFloat("_Slice", b ? 1f : 0f);
-        Debug.LogError("Sliced " + b + "  Clone  " + cloneShowedInAnimation);
     }
 
     public void SetPos(Vector3 pos, Vector3 dir)
     {
         render.materials[0].SetVector("_Pos", pos);
         render.materials[0].SetVector("_Dir", dir);
-        //Debug.LogError(pos + "  " + dir);
     }
 
     public void SetClone(Portal p, Portal n)
@@ -117,7 +124,6 @@ public class PortalDetector : MonoBehaviour
         }
     }
 
-    int inRangeOf = 0;
 
     public void AddNotifyOnDeath(Portal p)
     {
@@ -158,18 +164,13 @@ public class PortalDetector : MonoBehaviour
         Trail(true);
     }
 
-    bool correctingPosition = false;
-    Vector3 positionAfterTeleport = Vector3.zero;
-
     public void NextFramePositionCorrection() 
     {
         lastVelocity = rb.velocity * Time.deltaTime;
         positionAfterTeleport = transform.position + lastVelocity;
         correctingPosition = true;
-        Debug.LogError("Need correction");
     }
 
-    bool teleportedLastFrame = false;
 
     public void TelerportFrame(Portal p, Portal n, bool isFront)
     {
@@ -178,12 +179,7 @@ public class PortalDetector : MonoBehaviour
         portalToIgnoreRenter = p;
         teleportedLastFrame = true;
         SetClone(p, n);
-        Debug.LogError("Got teleported");
     }
-
-    bool showThisFrame = false;
-    bool hideThisFrame = false;
-    int currentUpdateIndex = 0;
 
     public void CheckForExit(Portal p, Portal n)
     {
@@ -200,8 +196,6 @@ public class PortalDetector : MonoBehaviour
         }
         
         lastVelocity = rb.velocity * Time.deltaTime;
-        //Debug.DrawRay(transform.position, lastVelocity, Color.blue);
-        //Debug.DrawRay(transform.position, rb.velocity, Color.blue);
 
         if (portalToExitNextStep == null)
         {
@@ -225,14 +219,12 @@ public class PortalDetector : MonoBehaviour
                 hideThisFrame = true;
                 lockSliceDir = false;
             }
-            //Debug.LogError((dist < lastVelocity.magnitude) + " " + v +" " + p.name);
 
             if (lastVelocity.magnitude > dist)
             {
                 portalToExitNextStep = p;
                 if (teleportedLastFrame)
                     NextFramePositionCorrection();
-                Debug.LogError("Next frame Exit " + teleportedLastFrame + "   " + lastVelocity.magnitude + "   " + dist);
             }
 
             if (teleportedLastFrame)
@@ -242,7 +234,6 @@ public class PortalDetector : MonoBehaviour
         {
             portalToExitNextStep.ExitedObject(this);
             portalToExitNextStep = null;
-            Debug.LogError("Exit");
         }
 
         currentUpdateIndex++;
@@ -275,16 +266,12 @@ public class PortalDetector : MonoBehaviour
         }
 
         lastVelocity = rb.velocity * Time.deltaTime;
-        //Debug.DrawRay(transform.position, lastVelocity, Color.red);
-        //Debug.DrawRay(transform.position, rb.velocity, Color.blue);
 
         if (portalToTpNextStep == null)
         {
             Vector3 v;
             bool intersected = LinePlaneIntersection(out v, transform.position, lastVelocity.normalized, p.transform.up, p.transform.position);
             float dist = Vector3.Distance(transform.position, v);
-
-            //Debug.LogError((dist < lastVelocity.magnitude) + " " + v + " " + p.name);
             if(cldr.bounds.Intersects(p.Collider.bounds))
             {
                 if (!lockSliceDir)
@@ -312,13 +299,8 @@ public class PortalDetector : MonoBehaviour
                     {
                         if (Vector3.Distance(v, p.transform.position) <= p.Radius)
                         {
-                            //Debug.LogError(isFront + "   " + Vector3.Dot(rb.velocity.normalized, p.transform.up));
-                            //Debug.DrawRay(transform.position, p.transform.up, Color.cyan);
-                            //Debug.DrawLine(transform.position, rb.velocity.normalized, Color.yellow);
-                            Debug.LogError(isFront);
                             portalToTpNextStep = p;
                             isFrontPortalToTpNextStep = isFront;
-                            Debug.LogError("Next frame TP");
                         }   
                     }
                 }
@@ -326,7 +308,6 @@ public class PortalDetector : MonoBehaviour
         }
         else if(portalToTpNextStep == p)
         {
-            Debug.LogError("TP");
             portalToTpNextStep.DetectObject(this, isFrontPortalToTpNextStep);
             portalToTpNextStep = null;
         }
@@ -360,7 +341,6 @@ public class PortalDetector : MonoBehaviour
         Vector3 vector;
         intersection = Vector3.zero;
 
-        //calculate the distance between the linePoint and the line-plane intersection point
         dotNumerator = Vector3.Dot((planePoint - linePoint), planeNormal);
         dotDenominator = Vector3.Dot(lineVec, planeNormal);
 
