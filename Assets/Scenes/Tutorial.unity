@@ -33345,8 +33345,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 20569197}
-        m_TargetAssemblyTypeName: DelayTrigger, Assembly-CSharp
-        m_MethodName: StartDelay
+        m_TargetAssemblyTypeName: SequenceTrigger, Assembly-CSharp
+        m_MethodName: StartSequence
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
