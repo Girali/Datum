@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.datatransfer.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\thegi\\Documents\\GitHub\\Datum\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\Girali\\Documents\\GitHub\\Datum\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "DataTransfer [Testing]"

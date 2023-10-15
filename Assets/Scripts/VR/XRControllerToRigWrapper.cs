@@ -9,6 +9,15 @@ public class XRControllerToRigWrapper : XRController
     [SerializeField]
     private RigInputWrapper rigInputWrapper;
     private InputAxes m_InputBinding = InputAxes.Primary2DAxis;
+
+    [SerializeField]
+    private InputHelpers.Button m_ButtonOne = InputHelpers.Button.PrimaryButton;
+    [SerializeField]
+    private InputHelpers.Button m_ButtonTwo = InputHelpers.Button.SecondaryButton;
+
+    private InteractionState buttonOneState;
+    private InteractionState buttonTwoState;
+
     private float m_DeadzoneMin = 0.125f;
     private float m_DeadzoneMax = 0.925f;
     private enum InputAxes
@@ -50,6 +59,15 @@ public class XRControllerToRigWrapper : XRController
     protected override void UpdateInput(XRControllerState controllerState)
     {
         base.UpdateInput(controllerState);
+
+        if (controllerState != null)
+        {
+            buttonOneState.ResetFrameDependent();
+            buttonTwoState.ResetFrameDependent();
+            buttonOneState.SetFrameState(IsPressed(m_ButtonOne), ReadValue(m_ButtonOne));
+            buttonTwoState.SetFrameState(IsPressed(m_ButtonTwo), ReadValue(m_ButtonTwo));
+        }
+
         InputFeatureUsage<Vector2> feature = k_Vec2UsageList[(int)m_InputBinding];
         Vector2 input = Vector2.zero;
         switch (controllerNode)
@@ -61,7 +79,7 @@ public class XRControllerToRigWrapper : XRController
                         input += GetDeadzoneAdjustedValue(controllerInput);
                     }
 
-                    rigInputWrapper.UpdateRightHand(ref controllerState.selectInteractionState, ref controllerState.activateInteractionState, ref controllerState.uiPressInteractionState, input);
+                    rigInputWrapper.UpdateRightHand(ref controllerState.selectInteractionState, ref controllerState.activateInteractionState, ref buttonOneState, ref buttonTwoState, input);
                 }
                 break;
             case XRNode.LeftHand:
@@ -70,7 +88,7 @@ public class XRControllerToRigWrapper : XRController
                     {
                         input += GetDeadzoneAdjustedValue(controllerInput);
                     }
-                    rigInputWrapper.UpdateLeftHand(ref controllerState.selectInteractionState, ref controllerState.activateInteractionState, ref controllerState.uiPressInteractionState, input);
+                    rigInputWrapper.UpdateLeftHand(ref controllerState.selectInteractionState, ref controllerState.activateInteractionState, ref buttonOneState, ref buttonTwoState, input);
                 }
                 break;
             default:

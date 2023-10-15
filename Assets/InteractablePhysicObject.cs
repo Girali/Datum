@@ -37,6 +37,14 @@ public class InteractablePhysicObject : InteractableOutlined
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.contacts.Length > 0)
+        {
+            SoundController.Instance.PlaySFX(SFXController.Sounds.Object_hit, collision.contacts[0].point);
+        }
+    }
+
     public override void StartInteract(GameObject player, ControllerInputs hand, PlayerHandController phc)
     {
         base.StartInteract(player, hand, phc);
@@ -61,6 +69,8 @@ public class InteractablePhysicObject : InteractableOutlined
                 locked = true;
                 lerp = false;
                 rb.isKinematic = true;
+
+                SoundController.Instance.PlaySFX(SFXController.Sounds.Object_grab, transform.position);
             }
         }
 
@@ -75,6 +85,7 @@ public class InteractablePhysicObject : InteractableOutlined
     {
         base.EndInteract(player, controllerInputs);
 
+
         if (lerp)
         {
             rb.velocity += controllerInputs.deltaPosTracking.GetAVRGLimited() * 60f * 2f;
@@ -83,6 +94,8 @@ public class InteractablePhysicObject : InteractableOutlined
 
         if(locked)
         {
+            SoundController.Instance.PlaySFX(SFXController.Sounds.Object_release, transform.position);
+
             rb.isKinematic = false;
             rb.velocity = controllerInputs.deltaPosTracking.GetAVRGLimited() * 60f * 2f;
             locked = false;

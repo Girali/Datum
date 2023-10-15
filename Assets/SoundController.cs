@@ -23,31 +23,42 @@ public class SoundController : MonoBehaviour
         }
     }
 
-#region Utility
+    public void Init()
+    {
+        dialogueController.Init();
+        sfxController.Init();
+        musicController.Init();
+    }
+
+    #region Utility
     public static IEnumerator CRT_FadeIn(AudioSource audioSource, float time)
     {
+        float targetVolume = audioSource.volume;
+
         float t = 0;
         float inter = (1f / 60f) * time;
 
         while (t < time)
         {
             t += inter;
-            audioSource.volume = t / time;
+            audioSource.volume = (t / time) * targetVolume;
             yield return new WaitForEndOfFrame();
         }
 
-        audioSource.volume = 1f;
+        audioSource.volume = targetVolume;
     }
 
     public static IEnumerator CRT_FadeOut(AudioSource audioSource, float time)
     {
+        float targetVolume = audioSource.volume;
+
         float t = time;
         float inter = (1f / 60f) * time;
 
         while (t > 0)
         {
             t -= inter;
-            audioSource.volume = t / time;
+            audioSource.volume = (t / time) * targetVolume;
             yield return new WaitForEndOfFrame();
         }
 

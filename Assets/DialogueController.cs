@@ -9,15 +9,15 @@ public class DialogueController : MonoBehaviour
     private GameObject source;
     private List<AudioSource> audioSources = new List<AudioSource>();
 
-    private void Awake()
+    public void Init()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = Camera.main.gameObject;
         source = new GameObject("Dialogue Source");
     }
 
     private void Update()
     {
-        source.transform.position = Vector3.Lerp(source.transform.position, player.transform.position + (Vector3.up * 5f), Time.deltaTime * 5f);
+        source.transform.position = Vector3.Lerp(source.transform.position, player.transform.position + (Vector3.up * 4f) + (player.transform.forward * 3f), Time.deltaTime);
     }
 
     private AudioSource FindFreeSource()

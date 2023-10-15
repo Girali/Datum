@@ -32,6 +32,11 @@ public class PuzzleStep : MonoBehaviour
     {
         if (isCompleted != state)
         {
+            if(state)
+                SoundController.Instance.PlaySFX(SFXController.Sounds.Activate, transform.position);
+            else
+                SoundController.Instance.PlaySFX(SFXController.Sounds.Deactivate, transform.position);
+
             isCompleted = state;
             if (controller)
             {

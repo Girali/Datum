@@ -68,11 +68,12 @@ public class RigInputWrapper : MonoBehaviour
         leftControllerInputs.rot = rot * transform.rotation;
     }
 
-    public void UpdateLeftHand(ref InteractionState select, ref InteractionState active, ref InteractionState ui, Vector2 jst)
+    public void UpdateLeftHand(ref InteractionState select, ref InteractionState active, ref InteractionState one, ref InteractionState two, Vector2 jst)
     {
         leftControllerInputs.active = active;
         leftControllerInputs.select = select;
-        leftControllerInputs.ui = ui;
+        rightControllerInputs.button_one = one;
+        rightControllerInputs.button_two = two;
         leftControllerInputs.joystick = jst;
     }
 
@@ -84,11 +85,12 @@ public class RigInputWrapper : MonoBehaviour
         rightControllerInputs.rot = rot * transform.rotation;
     }
 
-    public void UpdateRightHand(ref InteractionState select, ref InteractionState active, ref InteractionState ui, Vector2 jst)
+    public void UpdateRightHand(ref InteractionState select, ref InteractionState active, ref InteractionState one, ref InteractionState two, Vector2 jst)
     {
         rightControllerInputs.active = active;
         rightControllerInputs.select = select;
-        rightControllerInputs.ui = ui;
+        rightControllerInputs.button_one = one;
+        rightControllerInputs.button_two = two;
         rightControllerInputs.joystick = jst;
     }
 }
@@ -97,7 +99,8 @@ public class ControllerInputs
 {
     public InteractionState select;
     public InteractionState active;
-    public InteractionState ui;
+    public InteractionState button_one;
+    public InteractionState button_two;
     public Vector3 localPos;
     public Vector3 globalPos;
     public Vector3 posDir;

@@ -12,6 +12,15 @@ public class BatteryItem : InteractablePhysicObject
     [SerializeField]
     protected Material materialOff;
 
+
+    public BatterySocket BatterySocket
+    {
+        get
+        {
+            return batterySocket;
+        }
+    }
+
     protected override void UpdateMaterials()
     {
         if (batterySocket != null)

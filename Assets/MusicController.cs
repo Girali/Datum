@@ -8,7 +8,7 @@ public class MusicController : MonoBehaviour
     private GameObject source;
     private List<AudioSource> audioSources = new List<AudioSource>();
 
-    private void Awake()
+    public void Init()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         source = new GameObject("Music Source");
@@ -27,7 +27,7 @@ public class MusicController : MonoBehaviour
         AudioSource audioSource = source.AddComponent<AudioSource>();
         audioSource.outputAudioMixerGroup = SoundController.Instance.sfxAudioMixerGroup;
         audioSources.Add(audioSource);
-        audioSource.volume = 1f;
+        audioSource.volume = 0.1f;
 
         return audioSource;
     }

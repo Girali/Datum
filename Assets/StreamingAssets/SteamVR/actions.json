@@ -54,6 +54,14 @@
       "type": "vector2"
     },
     {
+      "name": "/actions/default/in/ButtonOne",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/ButtonTwo",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },

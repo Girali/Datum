@@ -24,6 +24,8 @@ public class PlayerHandController : MonoBehaviour
 
     private ControllerInputs controllerInputs;
 
+    private bool canUsePortals = false;
+
     private RaycastHit hit;
     public RaycastHit RaycastHit { get { return hit; } }
 
@@ -97,7 +99,7 @@ public class PlayerHandController : MonoBehaviour
                     }
                 }
 
-                if (controllerInputs.select.activatedThisFrame)
+                if (controllerInputs.select.activatedThisFrame && canUsePortals)
                 {
                     portal = true;
                     animator.SetBool("Casting", true);

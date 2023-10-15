@@ -406,7 +406,8 @@ MonoBehaviour:
   - Assets/Models/lever.fbx
   - Assets/Models/button.fbx
   - Assets/Models/puzzle_lamp.fbx
-  uvOverlapAssetList: 00000000ffffffff000000000000000000000000000000000000000000000000
+  - Assets/Models/level0.fbx
+  uvOverlapAssetList: 00000000ffffffff00000000000000000000000000000000000000000000000001010000
   xatlasWarningShown: 0
   foundCompatibleSetup: 1
   gpuName: NVIDIA GeForce RTX 3050

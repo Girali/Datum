@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     RigInputWrapper currentRig;
     bool isSteamVR;
 
-    private void Awake()
+    public void Init()
     {
         transform.parent = null;
         playerMotor = GetComponent<PlayerMotor>();

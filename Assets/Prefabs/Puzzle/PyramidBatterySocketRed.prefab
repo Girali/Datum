@@ -71,6 +71,7 @@ MonoBehaviour:
   socket: {fileID: 4837089048487470910}
   batteryParticles: {fileID: 4837089050020463263}
   cableView: {fileID: 0}
+  cableActiveMat: {fileID: 2100000, guid: d67b60fe0e469a94486e798fd346dbd2, type: 2}
 --- !u!1 &4837089048487470911
 GameObject:
   m_ObjectHideFlags: 0

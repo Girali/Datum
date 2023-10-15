@@ -51,6 +51,8 @@ public class AnchoredPhysicLeverObject : InteractableOutlined
         contactPoint.position = phc.RaycastHit.point;
         startPosition = phc.transform.position;
         startContactPosition = contactPoint.position;
+
+        SoundController.Instance.PlaySFX(SFXController.Sounds.Lever_grab, hand.globalPos);
     }
 
     public override void Interacting(GameObject player, ControllerInputs hand)
@@ -82,5 +84,7 @@ public class AnchoredPhysicLeverObject : InteractableOutlined
     public override void EndInteract(GameObject player, ControllerInputs hand)
     {
         base.EndInteract(player, hand);
+
+        SoundController.Instance.PlaySFX(SFXController.Sounds.Lever_release, hand.globalPos);
     }
 }

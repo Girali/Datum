@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PuzzleDynamicRotate : MonoBehaviour
 {
@@ -14,9 +15,17 @@ public class PuzzleDynamicRotate : MonoBehaviour
 
     private Quaternion rotation;
 
+    [SerializeField]
+    private float speed = 5;
+
+    private void Awake()
+    {
+        rotation = start.rotation;
+    }
+
     private void Update()
     {
-        target.rotation = Quaternion.Lerp(target.rotation, rotation, Time.deltaTime * 5);
+        target.rotation = Quaternion.Lerp(target.rotation, rotation, Time.deltaTime * speed);
     }
 
     public void OnValueChange(float t)

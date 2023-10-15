@@ -12,7 +12,7 @@ public class SFXController : MonoBehaviour
     [SerializeField]
     private SoundPair[] sounds = new SoundPair[0];
 
-    private void Awake()
+    public void Init()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         sources = new GameObject("SFX Sources");
@@ -60,8 +60,18 @@ public class SFXController : MonoBehaviour
 
     public enum Sounds
     {
-        Click,
-        Sucess
+        Lever_grab,
+        Lever_release,
+        Object_hit,
+        Object_grab,
+        Object_release,
+        Object_spawn,
+        Door_open,
+        Door_close,
+        Activate,
+        Deactivate,
+        Button_push,
+
     }
 
     [System.Serializable]

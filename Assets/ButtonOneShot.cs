@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ButtonOneShot : PuzzleStep
 {
@@ -31,6 +32,12 @@ public class ButtonOneShot : PuzzleStep
 
     private Coroutine coroutine;
 
+    [SerializeField]
+    private UnityEvent onStepStart;
+
+    [SerializeField]
+    private UnityEvent onStepEnd;
+
     public void Click()
     {
         if (coroutine != null)
@@ -41,15 +48,21 @@ public class ButtonOneShot : PuzzleStep
 
     IEnumerator CRT_Clicked()
     {
+        SoundController.Instance.PlaySFX(SFXController.Sounds.Button_push, transform.position + Vector3.up);
+
         meshRenderer.material = materialOn;
         cable.SetActive(true, cableMaterialOn);
         tween.Play();
         UpdateState(true);
+
+        onStepStart.Invoke();
 
         yield return new WaitForSeconds(time);
 
         cable.SetActive(false, cableMaterialOn);
         meshRenderer.material = materialOff;
         UpdateState(false);
+
+        onStepEnd.Invoke();
     }
 }

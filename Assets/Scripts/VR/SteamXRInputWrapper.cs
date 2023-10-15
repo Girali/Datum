@@ -46,7 +46,7 @@ public class SteamXRInputWrapper : XRBaseController
         }
     }
 
-    private void SetInputState(ref InteractionState interactionState, SteamVR_Action_Boolean action) 
+    protected void SetInputState(ref InteractionState interactionState, SteamVR_Action_Boolean action) 
     {
         interactionState.activatedThisFrame = action.stateDown;
         interactionState.deactivatedThisFrame = action.stateUp;

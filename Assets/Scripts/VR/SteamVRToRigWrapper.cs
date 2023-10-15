@@ -1,7 +1,10 @@
+
+#if !UNITY_ANDROID
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using Valve.VR;
 
 public class SteamVRToRigWrapper : SteamXRInputWrapper
 {
@@ -9,6 +12,15 @@ public class SteamVRToRigWrapper : SteamXRInputWrapper
     private RigInputWrapper rigInputWrapper;
     private float m_DeadzoneMin = 0.125f;
     private float m_DeadzoneMax = 0.925f;
+
+    [SerializeField]
+    private SteamVR_Action_Boolean buttonOne;
+    [SerializeField]                       
+    private SteamVR_Action_Boolean buttonTwo;
+
+    private InteractionState buttonOneState;
+    private InteractionState buttonTwoState;
+
 
     private Vector2 GetDeadzoneAdjustedValue(Vector2 value)
     {
@@ -39,14 +51,21 @@ public class SteamVRToRigWrapper : SteamXRInputWrapper
     protected override void UpdateInput(XRControllerState controllerState)
     {
         base.UpdateInput(controllerState);
+        if(controllerState != null)
+        {
+            buttonOneState.ResetFrameDependent();
+            buttonTwoState.ResetFrameDependent();
+            SetInputState(ref buttonOneState, buttonOne);
+            SetInputState(ref buttonTwoState, buttonTwo);
+        }
 
         switch (source)
         {
             case Valve.VR.SteamVR_Input_Sources.LeftHand:
-                rigInputWrapper.UpdateRightHand(ref controllerState.selectInteractionState, ref controllerState.activateInteractionState, ref controllerState.uiPressInteractionState, GetDeadzoneAdjustedValue(joystick.axis));
+                rigInputWrapper.UpdateRightHand(ref controllerState.selectInteractionState, ref controllerState.activateInteractionState, ref buttonOneState, ref buttonTwoState, GetDeadzoneAdjustedValue(joystick.axis));
                 break;
             case Valve.VR.SteamVR_Input_Sources.RightHand:
-                rigInputWrapper.UpdateLeftHand(ref controllerState.selectInteractionState, ref controllerState.activateInteractionState, ref controllerState.uiPressInteractionState, GetDeadzoneAdjustedValue(joystick.axis));
+                rigInputWrapper.UpdateLeftHand(ref controllerState.selectInteractionState, ref controllerState.activateInteractionState, ref buttonOneState, ref buttonTwoState, GetDeadzoneAdjustedValue(joystick.axis));
                 break;
             default:
                 break;
@@ -70,3 +89,4 @@ public class SteamVRToRigWrapper : SteamXRInputWrapper
         }
     }
 }
+#endif

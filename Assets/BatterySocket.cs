@@ -54,6 +54,8 @@ public class BatterySocket : PuzzleStep
 
             batteryParticles.Stop(true);
             cableView.SetActive(false, cableActiveMat);
+
+            SoundController.Instance.PlaySFX(SFXController.Sounds.Object_release, transform.position);
         }
         else
         {
@@ -62,6 +64,8 @@ public class BatterySocket : PuzzleStep
 
             batteryParticles.Play(true);
             cableView.SetActive(true, cableActiveMat);
+
+            SoundController.Instance.PlaySFX(SFXController.Sounds.Object_grab, transform.position);
         }
 
         if (!activeAnim.isPlaying)

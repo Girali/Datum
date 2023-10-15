@@ -26,6 +26,39 @@ public class PuzzleToggle : PuzzleController
     [SerializeField]
     private MeshRenderer meshRenderer;
 
+    [SerializeField]
+    private bool defaultValue = false;
+
+    private void Start()
+    {
+        if (defaultValue)
+        {
+            switch (operation)
+            {
+                case Operation.And:
+                    break;
+                case Operation.Or:
+                    break;
+                case Operation.BitMemory:
+                    UpdateState(defaultValue);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if (isCompleted)
+        {
+            meshRenderer.material = materialOn;
+            cableViewOut.SetActive(true, cableViewIn.On);
+        }
+        else
+        {
+            meshRenderer.material = materialOff;
+            cableViewOut.SetActive(false, cableViewIn.On);
+        }
+    }
+
     public enum Operation
     {
         And,

@@ -1122,3 +1122,1590 @@ Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightm
 Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA1_final.hdr" 1024
 Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LMA2_final.hdr" 1024
 Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/SampleScene_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/SampleScene_LM0_final.hdr" 1024
+2023-6-4
+Rendering UV GBuffer for Tutorial_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LM0.lz4" 2 0 0 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA1.lz4" 2 0 1 0
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM00.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA10.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM01.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA11.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM02.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA12.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM03.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA13.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final" 20 16 0 "gi_Tutorial_LM04.bin" "Tutorial_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final" 20 16 1 "gi_Tutorial_LMA14.bin" "Tutorial_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "Tutorial_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" 1024 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "Tutorial_LMA1_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr" 1024
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012398[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initializedSymbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012398[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initializedSymbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012398[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012398[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+2023-6-4
+Rendering UV GBuffer for Tutorial_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA1.lz4" 2 0 1 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LM0.lz4" 2 0 0 0
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA10.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM00.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA11.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM01.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA12.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM02.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA13.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM03.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final" 20 16 1 "gi_Tutorial_LMA14.bin" "Tutorial_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final" 20 16 0 "gi_Tutorial_LM04.bin" "Tutorial_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" 1024 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "Tutorial_LMA1_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "Tutorial_LM0_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_final.hdr" 1024
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012398[OVRPlugin][INFO] IAD changed to 68.3mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Tutorial_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LM0.lz4" 2 0 0 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA1.lz4" 2 0 1 0
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM00.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA10.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM01.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA11.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM02.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA12.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM03.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA13.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final" 20 16 0 "gi_Tutorial_LM04.bin" "Tutorial_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final" 20 16 1 "gi_Tutorial_LMA14.bin" "Tutorial_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "Tutorial_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" 1024 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "Tutorial_LMA1_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr" 1024
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012398[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.2023-6-6
+Rendering UV GBuffer for Tutorial_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA1.lz4" 2 0 1 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA2.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LM0.lz4" 2 0 0 0
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_2" 12 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2" 4 0 2 comp_2.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA10.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA20.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM00.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA11.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA21.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM01.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA12.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA22.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM02.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA13.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA23.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM03.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final" 20 16 1 "gi_Tutorial_LMA14.bin" "Tutorial_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final" 20 16 2 "gi_Tutorial_LMA24.bin" "Tutorial_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final" 20 16 0 "gi_Tutorial_LM04.bin" "Tutorial_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final_HDR.lz4" 4 0 2 comp_indirect2.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "Tutorial_LMA1_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" 1024 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "2" "Tutorial_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "Tutorial_LM0_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_2.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Tutorial_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA3 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA1.lz4" 2 0 1 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA3.lz4" 2 0 3 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA2.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LM0.lz4" 2 0 0 0
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_3" 4 0 3 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_3" 12 0 3 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3" 4 0 3 comp_3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_2" 12 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2" 4 0 2 comp_2.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA10.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA30.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA20.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM00.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA11.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA31.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA21.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM01.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA12.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA32.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA22.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM02.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA13.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA33.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA23.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM03.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final" 20 16 1 "gi_Tutorial_LMA14.bin" "Tutorial_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_final" 20 16 3 "gi_Tutorial_LMA34.bin" "Tutorial_LMA3_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final" 20 16 2 "gi_Tutorial_LMA24.bin" "Tutorial_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final" 20 16 0 "gi_Tutorial_LM04.bin" "Tutorial_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_final_HDR.lz4" 4 0 3 comp_indirect3.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final_HDR.lz4" 4 0 2 comp_indirect2.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "Tutorial_LMA1_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" 1024 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "3" "Tutorial_LMA3_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "2" "Tutorial_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "Tutorial_LM0_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA3_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_3.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_2.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA3_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Tutorial_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA3 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA4 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA5 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA3.lz4" 2 0 3 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA2.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA4.lz4" 2 0 4 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LM0.lz4" 2 0 0 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA5.lz4" 2 0 5 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA1.lz4" 2 0 1 0
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_3" 4 0 3 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_3" 12 0 3 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3" 4 0 3 comp_3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_2" 12 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2" 4 0 2 comp_2.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_4" 4 0 4 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_4" 12 0 4 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4" 4 0 4 comp_4.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_5" 4 0 5 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_5" 12 0 5 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5" 4 0 5 comp_5.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA30.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA20.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA40.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM00.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA50.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA10.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA31.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA21.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA41.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM01.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA51.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA11.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA32.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA22.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA42.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM02.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA52.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA12.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA33.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA23.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA43.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM03.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA53.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA13.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_final" 20 16 3 "gi_Tutorial_LMA34.bin" "Tutorial_LMA3_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final" 20 16 2 "gi_Tutorial_LMA24.bin" "Tutorial_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_final" 20 16 4 "gi_Tutorial_LMA44.bin" "Tutorial_LMA4_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final" 20 16 0 "gi_Tutorial_LM04.bin" "Tutorial_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_final" 20 16 5 "gi_Tutorial_LMA54.bin" "Tutorial_LMA5_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final" 20 16 1 "gi_Tutorial_LMA14.bin" "Tutorial_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_final_HDR.lz4" 4 0 3 comp_indirect3.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final_HDR.lz4" 4 0 2 comp_indirect2.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_final_HDR.lz4" 4 0 4 comp_indirect4.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_final_HDR.lz4" 4 0 5 comp_indirect5.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "3" "Tutorial_LMA3_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "2" "Tutorial_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA4_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA4_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "4" "Tutorial_LMA4_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "Tutorial_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA5_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA5_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "5" "Tutorial_LMA5_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "Tutorial_LMA1_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA3_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_3.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_2.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA4_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_4.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA5_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_5.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA3_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA4_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA4_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA5_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA5_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr" 1024
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012398[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] VkInstanceExtensions:[OVRPlugin][INFO]   VK_KHR_surface[OVRPlugin][INFO]   VK_KHR_external_memory_capabilities[OVRPlugin][INFO]   VK_KHR_win32_surface[OVRPlugin][INFO]   VK_KHR_external_fence_capabilities[OVRPlugin][INFO]   VK_KHR_external_semaphore_capabilities[OVRPlugin][INFO]   VK_KHR_get_physical_device_properties2[OVRPlugin][INFO] VkDeviceExtensions:[OVRPlugin][INFO]   VK_KHR_swapchain[OVRPlugin][INFO]   VK_KHR_external_memory[OVRPlugin][INFO]   VK_KHR_external_memory_win32[OVRPlugin][INFO]   VK_KHR_external_fence[OVRPlugin][INFO]   VK_KHR_external_fence_win32[OVRPlugin][INFO]   VK_KHR_external_semaphore[OVRPlugin][INFO]   VK_KHR_external_semaphore_win32[OVRPlugin][INFO]   VK_KHR_get_memory_requirements2[OVRPlugin][INFO]   VK_KHR_dedicated_allocation[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.[OVRPlugin][INFO] ProfilerSystem: verbose mode 0[OVRPlugin][INFO] OVRPlugin 1.66.0 ... preinitialized[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012398[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Tutorial_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA3 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA4 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA5 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA3.lz4" 2 0 3 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA2.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA4.lz4" 2 0 4 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LM0.lz4" 2 0 0 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA5.lz4" 2 0 5 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA1.lz4" 2 0 1 0
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_3" 4 0 3 lights0.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_3" 4 0 3 lights1.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_3_3" 4 0 3 lights2.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_4_3" 4 0 3 lights3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_5_3" 4 0 3 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_6_3" 12 0 3 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3" 4 0 3 comp_3.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_2" 4 0 2 lights0.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_2" 4 0 2 lights1.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_3_2" 4 0 2 lights2.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_4_2" 4 0 2 lights3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_5_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_6_2" 12 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2" 4 0 2 comp_2.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_4" 4 0 4 lights0.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_4" 4 0 4 lights1.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_3_4" 4 0 4 lights2.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_4_4" 4 0 4 lights3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_5_4" 4 0 4 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_6_4" 12 0 4 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4" 4 0 4 comp_4.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 lights0.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 4 0 0 lights1.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_3_0" 4 0 0 lights2.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_4_0" 4 0 0 lights3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_5_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_6_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_5" 4 0 5 lights0.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_5" 4 0 5 lights1.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_3_5" 4 0 5 lights2.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_4_5" 4 0 5 lights3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_5_5" 4 0 5 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_6_5" 12 0 5 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5" 4 0 5 comp_5.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_5_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_6_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA30.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA20.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA40.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM00.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA50.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA10.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA31.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA21.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA41.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM01.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA51.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA11.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA32.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA22.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA42.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM02.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA52.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA12.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA33.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA23.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA43.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM03.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA53.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA13.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_final" 20 16 3 "gi_Tutorial_LMA34.bin" "Tutorial_LMA3_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final" 20 16 2 "gi_Tutorial_LMA24.bin" "Tutorial_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_final" 20 16 4 "gi_Tutorial_LMA44.bin" "Tutorial_LMA4_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final" 20 16 0 "gi_Tutorial_LM04.bin" "Tutorial_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_final" 20 16 5 "gi_Tutorial_LMA54.bin" "Tutorial_LMA5_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final" 20 16 1 "gi_Tutorial_LMA14.bin" "Tutorial_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_final_HDR.lz4" 4 0 3 comp_indirect3.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final_HDR.lz4" 4 0 2 comp_indirect2.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_final_HDR.lz4" 4 0 4 comp_indirect4.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_final_HDR.lz4" 4 0 5 comp_indirect5.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "3" "Tutorial_LMA3_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "2" "Tutorial_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA4_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA4_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "4" "Tutorial_LMA4_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "Tutorial_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA5_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA5_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "5" "Tutorial_LMA5_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "Tutorial_LMA1_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA3_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_3.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_2.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA4_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_4.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA5_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_5.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA3_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA4_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA4_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA5_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA5_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr" 1024
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012400[OVRPlugin][INFO] IAD changed to 68.2mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Tutorial_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA3 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA4 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA5 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA3.lz4" 2 0 3 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA2.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA4.lz4" 2 0 4 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LM0.lz4" 2 0 0 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA5.lz4" 2 0 5 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA1.lz4" 2 0 1 0
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_3" 12 0 3 lights0.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_3" 12 0 3 lights1.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_3_3" 12 0 3 lights2.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_4_3" 12 0 3 lights3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_5_3" 4 0 3 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_6_3" 12 0 3 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3" 4 0 3 comp_3.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_2" 12 0 2 lights0.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_2" 12 0 2 lights1.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_3_2" 12 0 2 lights2.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_4_2" 12 0 2 lights3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_5_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_6_2" 12 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2" 4 0 2 comp_2.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_4" 12 0 4 lights0.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_4" 12 0 4 lights1.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_3_4" 12 0 4 lights2.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_4_4" 12 0 4 lights3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_5_4" 4 0 4 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_6_4" 12 0 4 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4" 4 0 4 comp_4.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 12 0 0 lights0.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 lights1.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_3_0" 12 0 0 lights2.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_4_0" 12 0 0 lights3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_5_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_6_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_5" 12 0 5 lights0.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_5" 12 0 5 lights1.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_3_5" 12 0 5 lights2.bin
+Running ftraceRTX arealight "C:\Users\Girali\AppData\Local\Temp\frender" "light_4_5" 12 0 5 lights3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_5_5" 4 0 5 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_6_5" 12 0 5 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5" 4 0 5 comp_5.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_5_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_6_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA30.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA20.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA40.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM00.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA50.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA10.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA31.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA21.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA41.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM01.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA51.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA11.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA32.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA22.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA42.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM02.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA52.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA12.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA33.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA23.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA43.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM03.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA53.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA13.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_final" 20 16 3 "gi_Tutorial_LMA34.bin" "Tutorial_LMA3_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final" 20 16 2 "gi_Tutorial_LMA24.bin" "Tutorial_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_final" 20 16 4 "gi_Tutorial_LMA44.bin" "Tutorial_LMA4_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final" 20 16 0 "gi_Tutorial_LM04.bin" "Tutorial_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_final" 20 16 5 "gi_Tutorial_LMA54.bin" "Tutorial_LMA5_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final" 20 16 1 "gi_Tutorial_LMA14.bin" "Tutorial_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA3_final_HDR.lz4" 4 0 3 comp_indirect3.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final_HDR.lz4" 4 0 2 comp_indirect2.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA4_final_HDR.lz4" 4 0 4 comp_indirect4.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA5_final_HDR.lz4" 4 0 5 comp_indirect5.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "3" "Tutorial_LMA3_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "2" "Tutorial_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA4_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA4_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "4" "Tutorial_LMA4_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "Tutorial_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA5_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA5_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "5" "Tutorial_LMA5_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "Tutorial_LMA1_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA3_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_3.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_2.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA4_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_4.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA5_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_5.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA3_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA4_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA4_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA5_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA5_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Tutorial_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA6 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA6.lz4" 2 0 3 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA2.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LM0.lz4" 2 0 0 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA1.lz4" 2 0 1 0
+Running ftraceRTX batchpointlightlegacy "C:\Users\Girali\AppData\Local\Temp\frender" "PointBatch_3_0_3" 4 0 3 batchpointlight_3_0_3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_3" 4 0 3 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_3" 12 0 3 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6" 4 0 3 comp_3.bin
+Running ftraceRTX batchpointlightlegacy "C:\Users\Girali\AppData\Local\Temp\frender" "PointBatch_2_0_3" 4 0 2 batchpointlight_2_0_3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_2" 12 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2" 4 0 2 comp_2.bin
+Running ftraceRTX batchpointlightlegacy "C:\Users\Girali\AppData\Local\Temp\frender" "PointBatch_0_0_3" 4 0 0 batchpointlight_0_0_3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6_diffuse" 4 16 3 "gi_Tutorial_LMA60.bin" "Tutorial_LMA6_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA20.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM00.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA10.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6_diffuse" 4 16 3 "gi_Tutorial_LMA61.bin" "Tutorial_LMA6_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA21.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM01.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA11.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6_diffuse" 4 16 3 "gi_Tutorial_LMA62.bin" "Tutorial_LMA6_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA22.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM02.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA12.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6_diffuse" 4 16 3 "gi_Tutorial_LMA63.bin" "Tutorial_LMA6_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA23.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM03.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA13.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6_final" 20 16 3 "gi_Tutorial_LMA64.bin" "Tutorial_LMA6_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final" 20 16 2 "gi_Tutorial_LMA24.bin" "Tutorial_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final" 20 16 0 "gi_Tutorial_LM04.bin" "Tutorial_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final" 20 16 1 "gi_Tutorial_LMA14.bin" "Tutorial_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6_final_HDR.lz4" 4 0 3 comp_indirect3.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final_HDR.lz4" 4 0 2 comp_indirect2.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA6_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA6_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "3" "Tutorial_LMA6_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "2" "Tutorial_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "Tutorial_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "Tutorial_LMA1_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA6_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_3.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_2.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA6_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA6_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr" 1024
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012396[OVRPlugin][INFO] IAD changed to 68.4mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012396[OVRPlugin][INFO] IAD changed to 68.3mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012396[OVRPlugin][INFO] IAD changed to 68.3mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012396[OVRPlugin][INFO] IAD changed to 68.3mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012396[OVRPlugin][INFO] IAD changed to 68.3mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.Symbol file LoadedFromMemory is not a mono symbol file
+[OVRPlugin][INFO] OVRInterface plugin library location: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64[OVRPlugin][INFO] OVRInterface plugin libraries:
+  Library: C:\Program Files\Oculus\Support\oculus-runtime\client-plugins\x64\XR_EXT_hand_tracking.dll
+    Class Id: 0x62582d091582647c, class Name: XrExtHandTrackingExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0xed07f75800dea55c, class Name: XrFbHandTrackingAimExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class Id: 0x231a449959b76a41, class Name: XrFbHandTrackingCapsulesExtensionAddition
+      Interface Id: 0x4adefbb87b1845cf
+    Class[OVRPlugin][INFO] OVRInterface classes and interfaces:
+    Class Id: 0x192ed17193ef5e74, class Name: OpenXRExtensionRuntime
+      Interface Id: 0x223362abe367d30a
+    Class Id: 0x8468c1e24d25362a, class Name: OpenXRExtensionRuntimeCAPI
+      Interface Id: 0x4ca63103efd5f5ed
+    Class Id: 0x71dee913e4ca6a35, class Name: OpenXRRuntimeHandle
+      Interface Id: 0xba2299b1d57a30c7
+    Class Id: 0xb00b00067332ab1, class Name: OVRExtensionAddition
+      Interface Id: 0xb00b00053345520
+    Class Id: 0x2a70ed34760b552e, class Name:[OVRPlugin][INFO] LibOVR module is located at C:\Program Files\Oculus\Support\oculus-runtime\LibOVRRT64_1.dll[OVRPlugin][INFO] Connected to the server running version (prod = 1).1.85.0(build = 0) feature version = 0. Client runs version (prod = 1).1.85.0(build = 0) feature version = 0[OVRPlugin][INFO] ovr_Initialize success[OVRPlugin][INFO] ovr_Create_Impl called.[OVRPlugin][INFO] HMDState::CreateHMDState VsyncToFirstScanline = 0.012396[OVRPlugin][INFO] IAD changed to 68.3mm[OVRPlugin][INFO] OVRPlugin 1.66.0 ... initialized[OVRPlugin][INFO] CliD3D11CompositorClient initialized[OVRPlugin][INFO] CliD3D11CompositorClient released[OVRPlugin][INFO] ovr_Destroy_Impl called.[OVRPlugin][INFO] ovr_Shutdown_Impl called.2023-6-7
+Rendering UV GBuffer for Tutorial_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA6 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA6.lz4" 2 0 3 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA2.lz4" 2 0 2 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LM0.lz4" 2 0 0 0
+Running ftraceRTX fixpos12 "C:\Users\Girali\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA1.lz4" 2 0 1 0
+Running ftraceRTX batchpointlightlegacy "C:\Users\Girali\AppData\Local\Temp\frender" "PointBatch_3_0_3" 4 0 3 batchpointlight_3_0_3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_3" 4 0 3 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_3" 12 0 3 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6" 4 0 3 comp_3.bin
+Running ftraceRTX batchpointlightlegacy "C:\Users\Girali\AppData\Local\Temp\frender" "PointBatch_2_0_3" 4 0 2 batchpointlight_2_0_3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_2" 4 0 2 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_2" 12 0 2 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2" 4 0 2 comp_2.bin
+Running ftraceRTX batchpointlightlegacy "C:\Users\Girali\AppData\Local\Temp\frender" "PointBatch_0_0_3" 4 0 0 batchpointlight_0_0_3.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_0" 4 0 0 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_0" 12 0 0 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0" 4 0 0 comp_0.bin
+Running ftraceRTX sky "C:\Users\Girali\AppData\Local\Temp\frender" "light_1_1" 4 0 1 sky0.bin
+Running ftraceRTX sun "C:\Users\Girali\AppData\Local\Temp\frender" "light_2_1" 12 0 1 direct0.bin
+Running ftraceRTX addmul "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1" 4 0 1 comp_1.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6_diffuse" 4 16 3 "gi_Tutorial_LMA60.bin" "Tutorial_LMA6_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA20.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM00.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA10.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6_diffuse" 4 16 3 "gi_Tutorial_LMA61.bin" "Tutorial_LMA6_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA21.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM01.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA11.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6_diffuse" 4 16 3 "gi_Tutorial_LMA62.bin" "Tutorial_LMA6_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA22.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM02.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA12.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6_diffuse" 4 16 3 "gi_Tutorial_LMA63.bin" "Tutorial_LMA6_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA23.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM03.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA13.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6_final" 20 16 3 "gi_Tutorial_LMA64.bin" "Tutorial_LMA6_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final" 20 16 2 "gi_Tutorial_LMA24.bin" "Tutorial_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final" 20 16 0 "gi_Tutorial_LM04.bin" "Tutorial_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX texgi "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final" 20 16 1 "gi_Tutorial_LMA14.bin" "Tutorial_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA6_final_HDR.lz4" 4 0 3 comp_indirect3.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA2_final_HDR.lz4" 4 0 2 comp_indirect2.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LM0_final_HDR.lz4" 4 0 0 comp_indirect0.bin
+Running ftraceRTX add "C:\Users\Girali\AppData\Local\Temp\frender" "Tutorial_LMA1_final_HDR.lz4" 4 0 1 comp_indirect1.bin
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA6_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA6_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "3" "Tutorial_LMA6_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "2" "Tutorial_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "0" "Tutorial_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Girali\AppData\Local\Temp\frender" "1" "Tutorial_LMA1_final_HDR.lz4"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA6_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_3.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_2.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_0.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running combineMasks "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_mask.tga" "C:\Users\Girali\AppData\Local\Temp\frender/masks_1.bin" "C:\Users\Girali\AppData\Local\Temp\frender/"
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA6_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA6_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Girali\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:/Users/Girali/Documents/GitHub/Datum/Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr" 1024
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file

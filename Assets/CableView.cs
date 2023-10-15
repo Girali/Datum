@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,18 @@ public class CableView : MonoBehaviour
     [SerializeField]
     private Material off;
 
-    private Material on;
+    [SerializeField]
+    private float offset = 0.01f;
+
     public Material On { get => on; }
+
+    [FoldoutGroup("Optional")]
+    [SerializeField]
+    private Material on;
+
+    [FoldoutGroup("Optional")]
+    [SerializeField]
+    private CableView[] cableViews = null;
 
     public void SetActive(bool active, Material on)
     {
@@ -22,11 +33,17 @@ public class CableView : MonoBehaviour
         {
             lineRenderer.material = off;
         }
+
+        if (cableViews != null)
+        {
+            foreach (CableView item in cableViews)
+            {
+                item.SetActive(active, on);
+            }
+        }
     }
 
-    [SerializeField]
-    private float offset = 0.01f;
-
+    [Button("Gen")]
     public void CalculatePath()
     {
         int i = 0;
@@ -44,6 +61,13 @@ public class CableView : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         RenderView();
+        if (cableViews != null)
+        {
+            foreach (CableView item in cableViews)
+            {
+                item.RenderView();
+            }
+        }
     }
 #endif
 
