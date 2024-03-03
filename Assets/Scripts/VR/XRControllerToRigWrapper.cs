@@ -79,7 +79,7 @@ public class XRControllerToRigWrapper : XRController
                         input += GetDeadzoneAdjustedValue(controllerInput);
                     }
 
-                    rigInputWrapper.UpdateRightHand(ref controllerState.selectInteractionState, ref controllerState.activateInteractionState, ref buttonOneState, ref buttonTwoState, input);
+                    rigInputWrapper.UpdateRightHand(controllerState.selectInteractionState, controllerState.activateInteractionState, buttonOneState, buttonTwoState, input);
                 }
                 break;
             case XRNode.LeftHand:
@@ -88,7 +88,7 @@ public class XRControllerToRigWrapper : XRController
                     {
                         input += GetDeadzoneAdjustedValue(controllerInput);
                     }
-                    rigInputWrapper.UpdateLeftHand(ref controllerState.selectInteractionState, ref controllerState.activateInteractionState, ref buttonOneState, ref buttonTwoState, input);
+                    rigInputWrapper.UpdateLeftHand(controllerState.selectInteractionState, controllerState.activateInteractionState, buttonOneState, buttonTwoState, input);
                 }
                 break;
             default:

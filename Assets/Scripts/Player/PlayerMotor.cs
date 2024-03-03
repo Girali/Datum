@@ -1,33 +1,43 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
 {
-    private Rigidbody body = null;
+    private PlayerPhysicController playerPhysicController;
     private float walkSpeed = 6f * 0.2f;
     private float sprintSpeed = 6f * 0.6f;
-    private float speed = 0;
-    private int layerGround = 0;
-    private bool sprinting = false;
-    private float gravity = 0f;
-    private float frameGravity;
+    
+    private float airControlSpeed = 8f;
 
+    private float speed = 0;
+    private bool sprinting = false;
+
+    private float timeScale;
+    private bool bulletTime;
+    private float bulletTimeValue = 100f;
+    private float bulletTimeSpeed = 15f;
+
+    private bool bulletTimeUI = false;
+    public UI_BulletTime bulletTimeFill;
+    
     public void Init()
     {
-        frameGravity = Physics.gravity.y * Time.fixedDeltaTime;
-        body = GetComponent<Rigidbody>();
-        layerGround = LayerMask.GetMask("Default");
+        playerPhysicController = GetComponent<PlayerPhysicController>();
         speed = walkSpeed;
     }
-
-    private void FixedUpdate()
+    
+    
+    public void AddEnergy(float f)
     {
-        bool grounded = Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, 0.15f, layerGround);
-        gravity = grounded ? 0 : gravity + frameGravity;
+        bulletTimeValue += (7.5f * f);
+
+        if (bulletTimeValue > 100)
+            bulletTimeValue = 100;
     }
 
-    public void Motor(RigInputWrapper inputs)
+    public PlayerController.PlayerState Motor(RigInputWrapper inputs, PlayerController.PlayerState playerState)
     {
         Vector3 move = new Vector3(0, 0, 0);
         Vector3 r = inputs.Cam.transform.right;
@@ -35,7 +45,7 @@ public class PlayerMotor : MonoBehaviour
 
         Vector3 f = inputs.Cam.transform.forward;
         f.y = 0;
-
+        
         if (inputs.RightControllerInputs.button_one.activatedThisFrame)
         {
             if (sprinting) 
@@ -50,12 +60,80 @@ public class PlayerMotor : MonoBehaviour
             }
         }
 
-        move += inputs.RightControllerInputs.joystick.x * r.normalized;
-        move += inputs.RightControllerInputs.joystick.y * f.normalized;
+        if (playerPhysicController.grounded == false)
+        {
+            speed = airControlSpeed;
+        }
 
-        body.velocity = (move * speed) + new Vector3( 0, gravity, 0);
+        float timeScaleTarget = 1f;
 
-        //float timeScale = Mathf.Lerp(0.2f, 1f, inputs.HeadPosTracking.TotalDistance / 0.5f);
-        //Time.timeScale = timeScale;
+        if (bulletTimeFill != null)
+        {
+            if (inputs.RightControllerInputs.select.activatedThisFrame)
+            {
+                bulletTime = true;
+                bulletTimeFill.SetActive(true);
+            }
+
+            if (bulletTime)
+            {
+                bulletTimeValue -= Time.unscaledDeltaTime * bulletTimeSpeed;
+                
+                timeScaleTarget = 0.1f;
+                    
+                if (inputs.RightControllerInputs.select.deactivatedThisFrame)
+                {
+                    bulletTime = false;
+                }
+
+                if (bulletTimeValue < 0)
+                {
+                    bulletTimeValue = 0;
+                    bulletTime = false;
+                }
+            }
+            else
+            {
+                bulletTimeValue += Time.unscaledDeltaTime * bulletTimeSpeed;
+            }
+            
+            if(bulletTimeValue > 100)
+            {
+                bulletTimeUI = false;
+                bulletTimeValue = 100;
+                bulletTimeFill.SetActive(false);
+            }
+            else
+            {
+                bulletTimeFill.UpdateView(bulletTimeValue / 100f);
+            }
+        }
+
+        if (playerState.weaponCarouselOpened == false)
+        {
+            move += inputs.RightControllerInputs.joystick.x * r.normalized;
+            move += inputs.RightControllerInputs.joystick.y * f.normalized;
+        }
+        else
+        {
+            timeScaleTarget = 0.1f;
+        }
+
+
+
+        timeScale = Mathf.Lerp(timeScale, timeScaleTarget, 0.05f);
+
+        Time.timeScale = timeScale;
+
+        if (playerState.grapplingInUse)
+        {
+            playerPhysicController.AddVelocity(move * speed);
+        }
+        else
+        {
+            playerPhysicController.moveVelocity = (move * speed);
+        }
+
+        return playerState;
     }
 }

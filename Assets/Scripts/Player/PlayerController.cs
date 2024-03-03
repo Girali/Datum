@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     RigInputWrapper currentRig;
     bool isSteamVR;
 
+    public GameObject collider;
+    
     public void Init()
     {
         transform.parent = null;
@@ -33,12 +35,30 @@ public class PlayerController : MonoBehaviour
         currentRig.UpdateTracking();
     }
 
+    public void AddEnergy(float f, bool ammo)
+    {
+        if (ammo)
+            currentRig.LeftHand.AddAmmo(f);
+        else
+            playerMotor.AddEnergy(f);
+    }
+    
     private void Update()
     {
         PollKeys();
 
-        playerMotor.Motor(currentRig);
-        currentRig.LeftHand.Motor(currentRig.LeftControllerInputs);
-        currentRig.RightHand.Motor(currentRig.RightControllerInputs);
+        PlayerState playerState = new PlayerState();
+        
+        playerState = currentRig.LeftHand.Motor(currentRig.LeftControllerInputs, playerState);
+        playerState = currentRig.RightHand.Motor(currentRig.RightControllerInputs , playerState);
+        
+        playerState = playerMotor.Motor(currentRig, playerState);
+
+    }
+
+    public class PlayerState
+    {
+        public bool weaponCarouselOpened = false;
+        public bool grapplingInUse = false;
     }
 }

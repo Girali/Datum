@@ -41,7 +41,6 @@ public class RigInputWrapper : MonoBehaviour
         headPosTracking = new FixedSizedV3Queue(60,0,true);
         xrOrigin = GetComponent<XROrigin>();
     }
-
     public void RecenterCam()
     {
         Vector3 v = transform.position - cam.transform.position;
@@ -68,12 +67,12 @@ public class RigInputWrapper : MonoBehaviour
         leftControllerInputs.rot = rot * transform.rotation;
     }
 
-    public void UpdateLeftHand(ref InteractionState select, ref InteractionState active, ref InteractionState one, ref InteractionState two, Vector2 jst)
+    public void UpdateLeftHand(InteractionState select, InteractionState active, InteractionState one, InteractionState two, Vector2 jst)
     {
         leftControllerInputs.active = active;
         leftControllerInputs.select = select;
-        rightControllerInputs.button_one = one;
-        rightControllerInputs.button_two = two;
+        leftControllerInputs.button_one = one;
+        leftControllerInputs.button_two = two;
         leftControllerInputs.joystick = jst;
     }
 
@@ -85,7 +84,7 @@ public class RigInputWrapper : MonoBehaviour
         rightControllerInputs.rot = rot * transform.rotation;
     }
 
-    public void UpdateRightHand(ref InteractionState select, ref InteractionState active, ref InteractionState one, ref InteractionState two, Vector2 jst)
+    public void UpdateRightHand(InteractionState select, InteractionState active, InteractionState one, InteractionState two, Vector2 jst)
     {
         rightControllerInputs.active = active;
         rightControllerInputs.select = select;

@@ -5,12 +5,23 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerController playerController;
+    public PlayerController playerController;
 
     [SerializeField]
     private LevelController levelController;
 
+    private static GameController _instance;
+
+    public static GameController Instance
+    {
+        get
+        {
+            if (_instance == null)
+                _instance = FindObjectOfType<GameController>();
+            return _instance;
+        }
+    }
+    
     private void Awake()
     {
         Time.fixedDeltaTime = 1f / 60f;
@@ -19,6 +30,15 @@ public class GameController : MonoBehaviour
         SoundController.Instance.Init();
         playerController.Init();
         levelController.Init();
+        
+        Debug.Log ("displays connected: " + Display.displays.Length);
+        // Display.displays[0] is the primary, default display and is always ON, so start at index 1.
+        // Check if additional displays are available and activate each.
+
+        for (int i = 1; i < Display.displays.Length; i++)
+        {
+            Display.displays[i].Activate();
+        }
     }
 
     public void QuitApp()

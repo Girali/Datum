@@ -22,6 +22,26 @@ MonoBehaviour:
   required: 0
   cacheSize: 1048576
   perThreadCacheSize: 51200
+--- !u!114 &-7351105925747093561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b862ee14fb479fbfe5fffe655d3ed3, type: 3}
+  m_Name: MetaQuestTouchProControllerProfile Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Meta Quest Touch Pro Controller Profile
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.metaquestpro
+  openxrExtensionStrings: XR_FB_touch_controller_pro
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &-6945210501840047058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +139,7 @@ MonoBehaviour:
   - {fileID: -6945210501840047058}
   - {fileID: -4648100968746858702}
   - {fileID: 6145949549670586182}
+  - {fileID: -7351105925747093561}
   - {fileID: 4387808078156881572}
   - {fileID: 4260589112141434259}
   - {fileID: 6539360711513690173}
@@ -238,6 +259,26 @@ MonoBehaviour:
   - {fileID: 2659121876915607403}
   - {fileID: -4899986959562929756}
   - {fileID: -981599042174408073}
+--- !u!114 &576355972028965679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b862ee14fb479fbfe5fffe655d3ed3, type: 3}
+  m_Name: MetaQuestTouchProControllerProfile Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Meta Quest Touch Pro Controller Profile
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.metaquestpro
+  openxrExtensionStrings: XR_FB_touch_controller_pro
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &2659121876915607403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +296,7 @@ MonoBehaviour:
   - {fileID: 7138571403895572796}
   - {fileID: -930046701689496681}
   - {fileID: 7596275117392440960}
+  - {fileID: 576355972028965679}
   - {fileID: -6406572041037413557}
   - {fileID: -549249076372931761}
   - {fileID: 8275828517384025805}

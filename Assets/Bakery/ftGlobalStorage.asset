@@ -407,7 +407,190 @@ MonoBehaviour:
   - Assets/Models/button.fbx
   - Assets/Models/puzzle_lamp.fbx
   - Assets/Models/level0.fbx
-  uvOverlapAssetList: 00000000ffffffff00000000000000000000000000000000000000000000000001010000
+  - Assets/Models/Weapons_Datum.blend
+  - Assets/Models/Hand.blend
+  - Assets/Models/hand.fbx
+  - Assets/Polygon Arsenal/Models/PolySkullFullGory.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneGory02.FBX
+  - Assets/Polygon Arsenal/Models/PolyHexaRockCluster01.FBX
+  - Assets/Polygon Arsenal/Models/PolySword02.FBX
+  - Assets/Polygon Arsenal/Models/PolyCapsuleCentered.FBX
+  - Assets/Polygon Arsenal/Models/PolyGrenade.FBX
+  - Assets/Polygon Arsenal/Models/PolyBone.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullJaw.FBX
+  - Assets/Polygon Arsenal/Models/PolySword03.FBX
+  - Assets/Polygon Arsenal/Models/PolyJet07.FBX
+  - Assets/Polygon Arsenal/Models/PolyDiamond.FBX
+  - Assets/Polygon Arsenal/Models/PolyLeafHigh.FBX
+  - Assets/Polygon Arsenal/Models/PolyPowerLightning.FBX
+  - Assets/Polygon Arsenal/Models/PolyShield04.FBX
+  - Assets/Polygon Arsenal/Models/PolyWhirlwind01.FBX
+  - Assets/Polygon Arsenal/Models/PolyPowerBullets02.FBX
+  - Assets/Polygon Arsenal/Models/PolyCapsuleOffset.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneRib.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneBroken.FBX
+  - Assets/Polygon Arsenal/Models/PolyMoneybill.FBX
+  - Assets/Polygon Arsenal/Models/PolyPowerBullet.FBX
+  - Assets/Polygon Arsenal/Models/PolyHexaRock02.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullCranium.FBX
+  - Assets/Polygon Arsenal/Models/PolyRoundRock03.FBX
+  - Assets/Polygon Arsenal/Models/PolyMetalBolt.FBX
+  - Assets/Polygon Arsenal/Models/PolygonPowerupLightning.FBX
+  - Assets/Polygon Arsenal/Models/PolyPowerHeart.FBX
+  - Assets/Polygon Arsenal/Models/PolySphereSmall.FBX
+  - Assets/Polygon Arsenal/Models/PolyRibGory01.FBX
+  - Assets/Polygon Arsenal/Models/PolyDagger02.FBX
+  - Assets/Polygon Arsenal/Models/PolySquareRock02High.FBX
+  - Assets/Polygon Arsenal/Models/PolyPebble.FBX
+  - Assets/Polygon Arsenal/Models/PolygonPowerupBullets.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneRibCageGory.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullCheap.FBX
+  - Assets/Polygon Arsenal/Models/PolyJet01.FBX
+  - Assets/Polygon Arsenal/Models/PolySphereMega.FBX
+  - Assets/Polygon Arsenal/Models/PolyRoundRock01.FBX
+  - Assets/Polygon Arsenal/Models/PolyTiltedTube02.FBX
+  - Assets/Polygon Arsenal/Models/PolyRupeeLow.FBX
+  - Assets/Polygon Arsenal/Models/PolygonPowerupSpeed.FBX
+  - Assets/Polygon Arsenal/Models/PolyChainRoundLow.FBX
+  - Assets/Polygon Arsenal/Models/PolyIcicle02.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneGory01.FBX
+  - Assets/Polygon Arsenal/Models/PolyHoneyCombTri.FBX
+  - Assets/Polygon Arsenal/Models/PolyChainVines2.FBX
+  - Assets/Polygon Arsenal/Models/PolyJet02.FBX
+  - Assets/Polygon Arsenal/Models/PolyCoinBig.FBX
+  - Assets/Polygon Arsenal/Demo/Models/PolyCrate01.FBX
+  - Assets/Polygon Arsenal/Models/PolyVine.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullCraniumEvil.FBX
+  - Assets/Polygon Arsenal/Models/PolySphereMegaHalf.FBX
+  - Assets/Polygon Arsenal/Models/PolyJet03.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneEye.FBX
+  - Assets/Polygon Arsenal/Models/PolyGlowTube.FBX
+  - Assets/Polygon Arsenal/Models/PolygonPowerupHeart.FBX
+  - Assets/Polygon Arsenal/Models/PolySquareRock02.FBX
+  - Assets/Polygon Arsenal/Models/PolyMetalNutLow.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullCraniumBrainy.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneSpike2.FBX
+  - Assets/Polygon Arsenal/Models/PolyTiltedTube01.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullCraniumGory.FBX
+  - Assets/Polygon Arsenal/Models/PolyRocket2.FBX
+  - Assets/Polygon Arsenal/Models/PolyPowerRandom.FBX
+  - Assets/Polygon Arsenal/Models/PolyRoundRockCluster04.FBX
+  - Assets/Polygon Arsenal/Models/PolyCoinLow.FBX
+  - Assets/Polygon Arsenal/Models/PolySword.FBX
+  - Assets/Polygon Arsenal/Models/PolyCurvedPlane.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneSpike3.FBX
+  - Assets/Polygon Arsenal/Models/PolyChainMid.FBX
+  - Assets/Polygon Arsenal/Models/PolySpikeSimple.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullJawEvil.FBX
+  - Assets/Polygon Arsenal/Models/PolySquareRockCluster.FBX
+  - Assets/Polygon Arsenal/Models/PolyMetalPipe.FBX
+  - Assets/Polygon Arsenal/Demo/Models/PolyFireBowl.FBX
+  - Assets/Polygon Arsenal/Models/PolySharpRock01.FBX
+  - Assets/Polygon Arsenal/Models/PolyShield02.FBX
+  - Assets/Polygon Arsenal/Models/PolyRocket.FBX
+  - Assets/Polygon Arsenal/Models/PolyPowerHealth.FBX
+  - Assets/Polygon Arsenal/Models/PolyPowerBullets.FBX
+  - Assets/Polygon Arsenal/Demo/Models/PolyDemoJet.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneBrain.FBX
+  - Assets/Polygon Arsenal/Models/PolyTorus.FBX
+  - Assets/Polygon Arsenal/Models/PolyMuzzle01.FBX
+  - Assets/Polygon Arsenal/Models/PolyGearMid.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullFullEvil.FBX
+  - Assets/Polygon Arsenal/Models/PolySphereNormal.FBX
+  - Assets/Polygon Arsenal/Models/PolyBullet.FBX
+  - Assets/Polygon Arsenal/Models/PolyHoneyComb.FBX
+  - Assets/Polygon Arsenal/Models/PolyRoundRock04.FBX
+  - Assets/Polygon Arsenal/Models/PolyConfetti.FBX
+  - Assets/Polygon Arsenal/Models/PolyRoundRockCluster.FBX
+  - Assets/Polygon Arsenal/Models/PolySquareRock03High.FBX
+  - Assets/Polygon Arsenal/Models/PolyMetalNutHigh.FBX
+  - Assets/Polygon Arsenal/Models/PolyIcicle01.FBX
+  - Assets/Polygon Arsenal/Models/PolyChainLow.FBX
+  - Assets/Polygon Arsenal/Models/PolyMuzzle04.FBX
+  - Assets/Polygon Arsenal/Models/PolyCoin.FBX
+  - Assets/Polygon Arsenal/Models/PolySphereMega2.FBX
+  - Assets/Polygon Arsenal/Models/PolyPowerSpeed.FBX
+  - Assets/Polygon Arsenal/Models/PolyShield03.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullFull.FBX
+  - Assets/Polygon Arsenal/Models/PolyPowerShield.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoulder01.FBX
+  - Assets/Polygon Arsenal/Models/PolyJet04.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneSpike4.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneSpike.FBX
+  - Assets/Polygon Arsenal/Models/PolyChainVines.FBX
+  - Assets/Polygon Arsenal/Models/PolyGlassShard.FBX
+  - Assets/Polygon Arsenal/Models/PolyFireTetrahedron.FBX
+  - Assets/Polygon Arsenal/Models/PolyDagger.FBX
+  - Assets/Polygon Arsenal/Models/PolySquareRock01High.FBX
+  - Assets/Polygon Arsenal/Models/PolyMuzzle03.FBX
+  - Assets/Polygon Arsenal/Models/PolyRoundRockCluster02.FBX
+  - Assets/Polygon Arsenal/Models/PolySquareRockDebris.FBX
+  - Assets/Polygon Arsenal/Models/PolyJet06.FBX
+  - Assets/Polygon Arsenal/Models/PolyLeafLow.FBX
+  - Assets/Polygon Arsenal/Models/PolygonPowerupRandom.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullOpenMouth.FBX
+  - Assets/Polygon Arsenal/Models/PolyStar03.FBX
+  - Assets/Polygon Arsenal/Models/PolygonPowerupHealth.FBX
+  - Assets/Polygon Arsenal/Models/PolyVineSpikyAlt.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneSpikeGib.FBX
+  - Assets/Polygon Arsenal/Models/PolyStar01.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneRibCage.FBX
+  - Assets/Polygon Arsenal/Models/PolyLeafMid.FBX
+  - Assets/Polygon Arsenal/Models/PolyDiamondGem.FBX
+  - Assets/Polygon Arsenal/Models/PolyIcicle03.FBX
+  - Assets/Polygon Arsenal/Models/PolyTorus03.FBX
+  - Assets/Polygon Arsenal/Models/PolyGrassStraw.FBX
+  - Assets/Polygon Arsenal/Models/PolyStar02.FBX
+  - Assets/Polygon Arsenal/Models/PolyMetalNutMega.FBX
+  - Assets/Polygon Arsenal/Models/PolySquareRock01.FBX
+  - Assets/Polygon Arsenal/Models/PolySquareRock03.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneSpikeCurved.FBX
+  - Assets/Polygon Arsenal/Models/PolyVineSpiky.FBX
+  - Assets/Polygon Arsenal/Models/PolygonPowerupShield.FBX
+  - Assets/Polygon Arsenal/Models/PolyGlowTubeCentered.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneSpike1.FBX
+  - Assets/Polygon Arsenal/Models/PolyRoundRock02.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullCheapCranium.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneMeat.FBX
+  - Assets/Polygon Arsenal/Models/PolyGearLow.FBX
+  - Assets/Polygon Arsenal/Models/PolyArrow.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullFullSmoothed.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneWall.FBX
+  - Assets/Polygon Arsenal/Models/PolySkullBrainy.FBX
+  - Assets/Polygon Arsenal/Models/PolyHexaRock01.FBX
+  - Assets/Polygon Arsenal/Models/PolyMuzzle02.FBX
+  - Assets/Polygon Arsenal/Models/PolyRibGory02.FBX
+  - Assets/Polygon Arsenal/Models/PolyBoneCluster.FBX
+  - Assets/Polygon Arsenal/Models/PolyShield01.FBX
+  - Assets/Polygon Arsenal/Models/PolyShuriken.FBX
+  - Assets/Polygon Arsenal/Models/PolyRupeeHigh.FBX
+  - Assets/Polygon Arsenal/Models/PolyJet05.FBX
+  - Assets/Polygon Arsenal/Models/PolyTorus02.FBX
+  - Assets/SteamVR/Models/vr_glove_model.fbx
+  - Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Buggy Controller.fbx
+  - Assets/SteamVR/InteractionSystem/SnapTurn/snapTurnFX.fbx
+  - Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Lightcone.fbx
+  - Assets/SteamVR/InteractionSystem/Samples/Models/Flower.FBX
+  - Assets/SteamVR/InteractionSystem/Samples/JoeJeff/JJHat.fbx
+  - Assets/SteamVR/InteractionSystem/Samples/Models/Target.fbx
+  - Assets/SteamVR/Models/vr_glove_right_model_slim.fbx
+  - Assets/SteamVR/Models/vr_alien_hand.fbx
+  - Assets/SteamVR/Models/vr_glove_left_model_slim.fbx
+  - Assets/SteamVR/InteractionSystem/Samples/JoeJeff/JoeJeff.fbx
+  - Assets/SteamVR/InteractionSystem/Longbow/Models/Arrow.fbx
+  - Assets/SteamVR/InteractionSystem/Longbow/Models/Longbow.fbx
+  - Assets/SteamVR/InteractionSystem/Teleport/Models/TeleportDestination.fbx
+  - Assets/SteamVR/InteractionSystem/Samples/JoeJeff/JoeJeffController.fbx
+  - Assets/SteamVR/InteractionSystem/Teleport/Models/TeleportPlayAreaPieces.fbx
+  - Assets/SteamVR/Models/vr_floppyHand.fbx
+  - Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Buggy.fbx
+  - Assets/SteamVR/Models/vr_hand_grabposes.fbx
+  - Assets/SteamVR/InteractionSystem/Samples/Squishy/Squishy.fbx
+  - Assets/SteamVR/InteractionSystem/Teleport/Models/TeleportMarker.fbx
+  - Assets/SteamVR/InteractionSystem/Samples/Models/Furniture.fbx
+  - Assets/SteamVR/InteractionSystem/Teleport/Models/TeleportDestinationInvalid.fbx
+  - Assets/Models/PlayerHead.blend
+  uvOverlapAssetList: 00000000ffffffff00000000000000000000000000000000000000000000000001010000010100000000000000000000010100000101000001010000010100000101000001010000010100000101000001010000010100000000000001010000010100000101000001010000ffffffff01010000010100000101000001010000ffffffff01010000010100000101000001010000ffffffff010100000000000001010000010100000101000001010000ffffffff01010000010100000000000000000000010100000000000001010000ffffffff0101000001010000010100000101000001010000000000000101000001010000ffffffff0101000000000000010100000101000000000000ffffffff01010000000000000101000001010000000000000101000001010000010100000101000001010000010100000000000001010000010100000101000000000000010100000101000001010000ffffffff010100000101000001010000ffffffff0101000001010000000000000101000000000000010100000000000001010000010100000101000001010000010100000101000001010000ffffffff0101000001010000010100000000000001010000010100000101000001010000ffffffff00000000010100000101000000000000010100000101000001010000010100000101000001010000010100000101000001010000ffffffff0101000000000000ffffffff010100000101000000000000010100000101000000000000010100000101000001010000000000000101000001010000010100000101000001010000ffffffff00000000010100000101000001010000010100000000000001010000010100000101000001010000010100000101000001010000010100000101000001010000010100000000000001010000000000000000000000000000ffffffff0101000000000000000000000000000000000000000000000000000001010000000000000000000000000000000000000000000000000000000000000000000001010000000000000101000000000000
   xatlasWarningShown: 0
   foundCompatibleSetup: 1
   gpuName: NVIDIA GeForce RTX 3050

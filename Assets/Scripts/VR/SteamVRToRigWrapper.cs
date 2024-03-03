@@ -51,6 +51,7 @@ public class SteamVRToRigWrapper : SteamXRInputWrapper
     protected override void UpdateInput(XRControllerState controllerState)
     {
         base.UpdateInput(controllerState);
+        
         if(controllerState != null)
         {
             buttonOneState.ResetFrameDependent();
@@ -58,14 +59,16 @@ public class SteamVRToRigWrapper : SteamXRInputWrapper
             SetInputState(ref buttonOneState, buttonOne);
             SetInputState(ref buttonTwoState, buttonTwo);
         }
-
+        
+        Debug.LogError(controllerState.selectInteractionState.active + "   " + source);
+        
         switch (source)
         {
             case Valve.VR.SteamVR_Input_Sources.LeftHand:
-                rigInputWrapper.UpdateRightHand(ref controllerState.selectInteractionState, ref controllerState.activateInteractionState, ref buttonOneState, ref buttonTwoState, GetDeadzoneAdjustedValue(joystick.axis));
+                rigInputWrapper.UpdateLeftHand(controllerState.selectInteractionState, controllerState.activateInteractionState, buttonOneState, buttonTwoState, GetDeadzoneAdjustedValue(joystick.axis));
                 break;
             case Valve.VR.SteamVR_Input_Sources.RightHand:
-                rigInputWrapper.UpdateLeftHand(ref controllerState.selectInteractionState, ref controllerState.activateInteractionState, ref buttonOneState, ref buttonTwoState, GetDeadzoneAdjustedValue(joystick.axis));
+                rigInputWrapper.UpdateRightHand(controllerState.selectInteractionState, controllerState.activateInteractionState, buttonOneState, buttonTwoState, GetDeadzoneAdjustedValue(joystick.axis));
                 break;
             default:
                 break;
