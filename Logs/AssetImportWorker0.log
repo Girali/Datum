@@ -1512,3 +1512,4 @@ Received Import Request.
   path: Assets/Settings/ForwardRenderer.asset
   artifactKey: Guid(4a8e21d5c33334b11b34a596161b9360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Settings/ForwardRenderer.asset using Guid(4a8e21d5c33334b11b34a596161b9360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afc0f4d2f24c79cc9fa5f613255292fa') in 0.003030 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
