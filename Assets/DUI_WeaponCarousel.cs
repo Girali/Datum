@@ -9,10 +9,15 @@ public class DUI_WeaponCarousel : MonoBehaviour
     public float triggerAngle = 0.25f;
     public Image cursor;
     public Image[] points;
-
+    public bool[] empty;
     private Vector2 limits = new Vector2(0, 0.1f);
     private Vector3[] pointsPos;
 
+    public void SetAmmo(int i, bool b)
+    {
+        empty[i] = b;
+    }
+    
     public void SetActive(bool b)
     {
         gameObject.SetActive(b);
@@ -21,6 +26,7 @@ public class DUI_WeaponCarousel : MonoBehaviour
     private void Awake()
     {
         pointsPos = new Vector3 [points.Length];
+        empty = new bool[points.Length];
         for (int i = 0; i < points.Length; i++)
         {
             pointsPos[i] = points[i].rectTransform.localPosition;
@@ -29,9 +35,9 @@ public class DUI_WeaponCarousel : MonoBehaviour
 
     public int UpdateView(float x, float y)
     {
-        foreach (Image p in points)
+        for (int j = 0; j < points.Length; j++)
         {
-            p.color = Color.white;
+            points[j].color = empty[j] ? Color.gray : Color.white;
         }
 
         x = Mathf.LerpUnclamped(limits.x, limits.y, x);

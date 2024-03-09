@@ -50,12 +50,7 @@ MonoBehaviour:
   projectileParticle: {fileID: 1182087181672910, guid: ad6328b57eba62a4d8146e7367d4c9c3, type: 3}
   muzzleParticle: {fileID: 1300233994454398, guid: 80340607733021642bb0bd1fea2f6f82, type: 3}
   trailParticles: []
-  colliderRadius: 1
-  collideOffset: 0.15
-  speed: 10
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 5513
+  speed: 20
   maxDistance: 100
 --- !u!54 &54969070811294218
 Rigidbody:
@@ -81,7 +76,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587250918974726}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.15

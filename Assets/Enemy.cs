@@ -24,13 +24,44 @@ public class Enemy : MonoBehaviour
     public GameObject explosionPrefab;
 
     public GameObject[] drops;
-    
+    private bool dead = false;
+    public Bounds combinedBounds = new Bounds(Vector3.zero, Vector3.zero);
+
     private void Awake()
     {
+        bool hasBounds = false;
+        Renderer[] renderers = gameObject.GetComponentsInChildren<Renderer>();
+        foreach (Renderer r in renderers)
+        {
+            if (!hasBounds)
+            {
+                combinedBounds = r.bounds;
+                hasBounds = true;
+            }
+            else
+            {
+                combinedBounds.Encapsulate(r.bounds);
+            }
+        }
+        
         delay = (1f / RPM) * 60f;
-        player = GameController.Instance.playerController.collider.transform;
+        player = GameController.Instance.playerController.head.transform;
     }
 
+    public float MaxBound
+    {
+        get
+        {
+            if(combinedBounds.size.x > combinedBounds.size.y && combinedBounds.size.x > combinedBounds.size.z)
+                return combinedBounds.size.x;
+            
+            if(combinedBounds.size.y > combinedBounds.size.x && combinedBounds.size.y > combinedBounds.size.x)
+                return combinedBounds.size.y;
+            
+            return combinedBounds.size.z;
+        }
+    }
+    
     protected virtual void Fire()
     {
         nextFire = Time.time + delay;
@@ -50,16 +81,20 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Death()
     {
-        Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
-
-        for (int i = 0; i < drops.Length; i++)
+        if (dead == false)
         {
-            Vector2 r = Random.insideUnitCircle.normalized;
-            Vector3 v = new Vector3(r.x, 0, r.y);
-            Instantiate(drops[i], transform.position + v, transform.rotation);
+            dead = true;
+            Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
+
+            for (int i = 0; i < drops.Length; i++)
+            {
+                Vector2 r = Random.insideUnitCircle.normalized;
+                Vector3 v = new Vector3(r.x, 0, r.y);
+                Instantiate(drops[i], transform.position + v, transform.rotation);
+            }
+            
+            Destroy(gameObject);
         }
-        
-        Destroy(gameObject);
     }
     
     protected virtual void Update()

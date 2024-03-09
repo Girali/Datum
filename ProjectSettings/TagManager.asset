@@ -19,10 +19,10 @@ TagManager:
   - Bullets
   - Ennemies
   - EnnemyBullets
-  - 
-  - 
-  - 
-  - 
+  - PlayerVisuals
+  - Sword
+  - SwordCollider
+  - Passtrough
   - 
   - 
   - 

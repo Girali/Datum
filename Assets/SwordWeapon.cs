@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,9 @@ public class SwordWeapon : Weapon
 
     public HandBody handBody;
     public Transform sphere;
+
+    public ParticleSystem hitParticles;
+    public LayerMask layerMask;
     
     public override PlayerController.PlayerState Fire(ControllerInputs ci,PlayerController.PlayerState playerState)
     {
@@ -19,7 +23,35 @@ public class SwordWeapon : Weapon
         
         return playerState;
     }
+
+    private int countColliderEntered = 0;
+    private Enemy enemy;
+
+    private bool hitting;
     
+    public void OnEnter(Collider other)
+    {
+        countColliderEntered++;
+
+        if (hitting == false)
+        {
+            hitting = countColliderEntered > 0;
+            hitParticles.Play(true);
+        }
+    }
+
+    public void OnExit(Collider other)
+    {
+        countColliderEntered--;
+
+        if (hitting == true)
+        {
+            hitting = countColliderEntered > 0;
+            hitParticles.Stop(true);
+            enemy = other.GetComponent<Enemy>();
+        }
+    }
+
     private void Update()
     {
         if (!playerGrappling.inUse)
@@ -50,6 +82,21 @@ public class SwordWeapon : Weapon
             
             if (lineRenderer.enabled == true)
                 lineRenderer.enabled = false;
+        }
+
+        if (hitting)
+        {
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position, transform.forward, out hit, 1.5f, layerMask))
+            {
+                hitParticles.transform.position = hit.point;
+                hitParticles.transform.rotation = Quaternion.LookRotation(hit.normal);
+            }
+
+            if (enemy)
+            {
+                enemy.Hit(50);
+            }
         }
     }
 }

@@ -11,7 +11,8 @@ public class PlayerPhysicController : MonoBehaviour
     private float frameGravity;
     private int layerGround = 0;
     public bool grounded = false;
-    public Transform collider;
+    public Transform colliderMobile;
+    public Transform headCollider;
 
     public Vector3 forceVelocity;
     public float gravity = 0f;
@@ -19,16 +20,26 @@ public class PlayerPhysicController : MonoBehaviour
 
     public bool useNativePhysics = false;
     
+    public GameObject visual;
+    public float speedVisual;
+    private Vector3 visualVelocity;
+    
+    
     private void Awake()
     {
         layerGround = LayerMask.GetMask("Default");
         frameGravity = Physics.gravity.y * Time.fixedDeltaTime;
         body = GetComponent<Rigidbody>();
     }
-    
+
+    private void GroundedCheck()
+    {
+        grounded = Physics.Raycast(headCollider.position, Vector3.down, 1.6f, layerGround);
+    }
+
     private void FixedUpdate()
     {
-        grounded = Physics.Raycast(collider.position + Vector3.up * 0.1f, Vector3.down, 0.15f, layerGround);
+        GroundedCheck();
         gravity = grounded ? 0 : gravity + frameGravity;
         
         ProcessPhysic();
@@ -41,12 +52,19 @@ public class PlayerPhysicController : MonoBehaviour
         
         if(useNativePhysics == false)
             body.velocity = moveVelocity + new Vector3( 0, gravity, 0) + forceVelocity;
+
+        visualVelocity = Vector3.down;
+        if(!grounded)
+            visualVelocity = Vector3.Lerp(visualVelocity, -body.velocity + (Vector3.down *2f), speedVisual);
+        
+        visual.transform.rotation = Quaternion.LookRotation(visualVelocity);
+        colliderMobile.transform.rotation = Quaternion.LookRotation(visualVelocity);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        grounded = Physics.Raycast(collider.position + Vector3.up * 0.1f, Vector3.down, 0.15f, layerGround);
-
+        GroundedCheck();
+        
         if (body.velocity.magnitude > 5)
         {
             body.velocity *= 0.75f;

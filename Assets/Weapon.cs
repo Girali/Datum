@@ -10,7 +10,10 @@ public class Weapon : MonoBehaviour
     public GameObject render;
     public GameObject pointer;
     public bool isRepulsive;
+    protected WeaponView weaponView;
 
+    public WeaponAudio weaponAudio;
+    
     public int currentAmmo = 0;
     public int totalCurrentAmmo = 0;
     public int totalAmmo = 0;
@@ -41,6 +44,9 @@ public class Weapon : MonoBehaviour
 
         if (currentAmmo == 0)
         {
+            if(weaponView)
+                weaponView.SetEmpty(true);
+            
             if (totalCurrentAmmo == 0 && infinitAmmo == false)
                 emptyAndNeedReload = true;
             
@@ -58,7 +64,9 @@ public class Weapon : MonoBehaviour
     protected void StopReload()
     {
         reloading = false;
-        
+        if(weaponView)
+            weaponView.SetEmpty(false);
+
         if (totalCurrentAmmo >= totalAmmo)
             currentAmmo = totalAmmo;
         else
@@ -93,9 +101,12 @@ public class Weapon : MonoBehaviour
         }
     }
     
-    public void Init(PlayerHandController phc)
+    public void Init(int i, PlayerHandController phc)
     {
         playerHandController = phc;
+        weaponView = GetComponent<WeaponView>();
+        if(weaponView)
+            weaponView.Init(i);
     }
 
     public void Switch(bool b)
@@ -107,6 +118,8 @@ public class Weapon : MonoBehaviour
     {
         playerHandController.Pointer = pointer.transform;
         render.SetActive(true);
+        if(weaponView)
+            weaponView.SetEmpty(0 == currentAmmo);
     }
 
     private void OnDisable()

@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     RigInputWrapper currentRig;
     bool isSteamVR;
 
-    public GameObject collider;
+    public GameObject head;
     
     public void Init()
     {

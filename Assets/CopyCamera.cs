@@ -11,7 +11,6 @@ public class CopyCamera : MonoBehaviour
     private void Update()
     {
         Vector3 v = camera.transform.localPosition;
-        v.y = 0;
         transform.localPosition = v;
     }
 }

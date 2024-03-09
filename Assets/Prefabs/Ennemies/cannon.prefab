@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  RPM: 100
+  RPM: 50
   bullet: {fileID: 1587250918974726, guid: 863a00e915e6d984686eea4a3e82fa2e, type: 3}
   muzzle: {fileID: 7878889679436773253}
   layerMask:

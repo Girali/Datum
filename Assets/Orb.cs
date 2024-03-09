@@ -16,7 +16,7 @@ public class Orb : MonoBehaviour
     private void Awake()
     {
         particleSystem = GetComponent<ParticleSystem>();
-        target = GameController.Instance.playerController.collider.transform;
+        target = GameController.Instance.playerController.head.transform;
         startTime = Time.time;
         startPos = transform.position;
     }

@@ -57,9 +57,9 @@ public class PlayerHandController : MonoBehaviour
         raycastLayer = LayerMask.GetMask("Interactable");
         weaponCarousel.SetActive(false);
 
-        foreach (Weapon weapon in weapons)
+        for (int i = 0; i < weapons.Length; i++)
         {
-            weapon.Init(this);
+            weapons[i].Init(i,this);
         }
         
         weapons[0].Switch(true);

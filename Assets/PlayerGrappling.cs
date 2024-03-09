@@ -19,6 +19,9 @@ public class PlayerGrappling : MonoBehaviour
     
     public PlayerPhysicController playerPhysicController;
     public SwordWeapon swordWeapon;
+    public GameObject swordImpactPrefab;
+    private bool swordImpact;
+    private Vector3 hitNormal;
 
     private SpringJoint joint;
 
@@ -51,19 +54,21 @@ public class PlayerGrappling : MonoBehaviour
     private Vector3 hitPosition;
     private Vector3 hitDirection;
     private float hitDistance;
-
-    private Vector3 offset;
+    private LayerMask layerMaskEnemies;
     private Transform targetToFollow;
     
     private void Start()
     {
+        layerMaskEnemies = LayerMask.NameToLayer("Ennemies");
         spring = new Spring();
         spring.SetTarget(0);
         grapPos = new GameObject("GrapplingPosition").transform;
+        targetToFollow = new GameObject("TargetToFollow").transform;
     }
 
     private void StartGrappling(RaycastHit hit)
     {
+        swordImpact = false;
         swordWeapon.render.SetActive(false);
         swordVisual.gameObject.SetActive(true);
 
@@ -75,10 +80,11 @@ public class PlayerGrappling : MonoBehaviour
         playerPhysicController.useNativePhysics = true;
         
         grapPos.position = hit.point;
-        targetToFollow = hit.collider.gameObject.transform;
-        offset = hit.point - targetToFollow.position;
+        targetToFollow.position = hit.point;
+        targetToFollow.parent = hit.collider.gameObject.transform;
         grapleTarget = grapleStart.position;
-
+        hitNormal = hit.normal;
+        
         joint = playerPhysicController.gameObject.AddComponent<SpringJoint>();
         joint.autoConfigureConnectedAnchor = false;
         joint.connectedAnchor = grapPos.position;
@@ -113,68 +119,74 @@ public class PlayerGrappling : MonoBehaviour
         Destroy(joint);
     }
 
-    public PlayerController.PlayerState Motor(ControllerInputs ci, PlayerController.PlayerState playerState)
+    private void DashOnEnemy()
     {
-        if (swordWeapon.isRepulsive)
+        RaycastHit hit;
+        ray = new Ray(swordWeapon.pointer.transform.position, swordWeapon.pointer.transform.forward);
+        RaycastHit[] hits = Physics.SphereCastAll(ray, 0.25f, maxDistance, layerMask);
+        if (hits.Length > 0)
         {
+            hit = hits.OrderBy((h) => h.distance).First();
+            
+            
+            meshRenderer.transform.position = hit.point;
+            meshRenderer.enabled = true;
+
+            StartAttract(hit);
+
             if (inUse)
             {
-                playerState.grapplingInUse = true;
-                
-                if (ci.active.deactivatedThisFrame)
-                {
-                    StopGrappling();
-                }
-                
-                meshRenderer.enabled = false;
+                if(timeEnd < Time.time)
+                    StopAttract();
             }
-            else
-            {
-                ray = new Ray(swordWeapon.pointer.transform.position, swordWeapon.pointer.transform.forward);
-                RaycastHit[] hits = Physics.SphereCastAll(ray, 0.25f, maxDistance, layerMask);
-                if(hits.Length > 0)
-                {
-                    RaycastHit hit = hits.OrderBy((h) => h.distance).First();
-                    meshRenderer.transform.position = hit.point;
-                    meshRenderer.enabled = true;
+        }
+        else
+        {
+            meshRenderer.transform.position = ray.origin + (ray.direction * maxDistance);
+            meshRenderer.enabled = false;
+        }
+    }
 
+    public PlayerController.PlayerState Motor(ControllerInputs ci, PlayerController.PlayerState playerState)
+    {
+        if (inUse)
+        {
+            playerState.grapplingInUse = true;
+            
+            if (ci.active.deactivatedThisFrame)
+            {
+                StopGrappling();
+            }
+            
+            meshRenderer.enabled = false;
+        }
+        else
+        {
+            ray = new Ray(swordWeapon.pointer.transform.position, swordWeapon.pointer.transform.forward);
+            RaycastHit[] hits = Physics.SphereCastAll(ray, 0.25f, maxDistance, layerMask);
+            if(hits.Length > 0)
+            {
+                RaycastHit hit = hits.OrderBy((h) => h.distance).First();
+
+                meshRenderer.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
+                meshRenderer.transform.position = hit.point;
+
+                if (hit.collider.gameObject.layer == layerMaskEnemies)
+                {
+                    Enemy enemy = hit.transform.GetComponent<Enemy>();
+                    
+                    meshRenderer.transform.position = hit.transform.position;
+                    meshRenderer.transform.localScale = new Vector3(enemy.MaxBound, enemy.MaxBound, enemy.MaxBound);
+                }
+                else
+                {
                     if (ci.active.activatedThisFrame)
                     {
                         StartGrappling(hit);
                     }
                 }
-                else
-                {
-                    meshRenderer.transform.position = ray.origin + (ray.direction * maxDistance);
-                    meshRenderer.enabled = false;
-                }
-            }
-        }
-        else
-        {
-            RaycastHit hit;
-            ray = new Ray(swordWeapon.pointer.transform.position, swordWeapon.pointer.transform.forward);
-            RaycastHit[] hits = Physics.SphereCastAll(ray, 0.25f, maxDistance, layerMask);
-            if (hits.Length > 0)
-            {
-                hit = hits.OrderBy((h) => h.distance).First();
-                meshRenderer.transform.position = hit.point;
+                    
                 meshRenderer.enabled = true;
-
-                if (ci.active.activatedThisFrame)
-                {
-                    StartAttract(hit);
-                }
-                else if (ci.active.deactivatedThisFrame)
-                {
-                    StopAttract();
-                }
-
-                if (inUse)
-                {
-                    if(timeEnd < Time.time)
-                        StopAttract();
-                }
             }
             else
             {
@@ -223,8 +235,7 @@ public class PlayerGrappling : MonoBehaviour
     {
         if (inUse)
         {
-            grapPos.position = targetToFollow.position + offset;
-            grapleTarget = targetToFollow.position + offset;
+            grapPos.position = targetToFollow.position;
             joint.connectedAnchor = grapPos.position;
         }
     }
@@ -260,15 +271,34 @@ public class PlayerGrappling : MonoBehaviour
 
             lineRenderer.SetPosition(i, v);
 
-            if (i == lineRenderer.positionCount - 1)
+            if (swordImpact == false)
             {
-                float t = Vector3.Distance(v, hitPosition);
-                
-                swordVisual.transform.position = v + Vector3.Lerp((-hitDirection.normalized * 0.25f),Vector3.zero , t / hitDistance);
+                if (i == lineRenderer.positionCount - 1)
+                {
+                    float t = Vector3.Distance(v, hitPosition)/ hitDistance;
+                    
+                    if (t < 0.1f)
+                    {
+                        swordImpact = true;
+                        swordVisual.transform.position = joint.connectedAnchor + (-hitDirection.normalized * 0.25f);
+                        swordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
+                        Instantiate(swordImpactPrefab, swordVisual.transform.position, Quaternion.LookRotation(hitNormal));
+                    }
+                    else
+                    {
+                        swordVisual.transform.position = v + Vector3.Lerp((-hitDirection.normalized * 0.25f),Vector3.zero , t);
+                        swordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
+                    }
+                }
+            }
+            else
+            {
+                swordVisual.transform.position = joint.connectedAnchor + (-hitDirection.normalized * 0.25f);
                 swordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
             }
         }
     }
+
 
     public class Spring
     {

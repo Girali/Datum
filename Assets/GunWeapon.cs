@@ -30,6 +30,10 @@ public class GunWeapon : Weapon
             
             SubAmmo();
         }
+        else if(ci.active.activatedThisFrame && playerState.weaponCarouselOpened == false)
+        {
+            weaponAudio.PlayEmptyClip();
+        }
 
         return playerState;
     }

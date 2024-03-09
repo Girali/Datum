@@ -28,8 +28,8 @@ Material:
         m_Scale: {x: 15, y: 15}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Glow: 0.6
-    - _InvFade: 3
+    - _Glow: 0.21
+    - _InvFade: 0.43
     - _RimPower: 1.22
     - _Shininess: 1
     m_Colors:
@@ -37,3 +37,4 @@ Material:
     - _RimColor: {r: 0.2827586, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
