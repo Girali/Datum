@@ -11,56 +11,87 @@ public class PlayerPhysicController : MonoBehaviour
     private float frameGravity;
     private int layerGround = 0;
     public bool grounded = false;
-    public Transform colliderMobile;
+    public bool dashing = false;
     public Transform headCollider;
 
     public Vector3 forceVelocity;
     public float gravity = 0f;
     public Vector3 moveVelocity;
+    public Vector3 dashVelocity;
 
     public bool useNativePhysics = false;
     
     public GameObject visual;
     public float speedVisual;
     private Vector3 visualVelocity;
-    
+    private float goalHight = 1.3f;
+    private float recalibaration = 0f;
+
+    private PlayerAudioController playerAudioController;
     
     private void Awake()
     {
+        playerAudioController = GetComponent<PlayerAudioController>();
         layerGround = LayerMask.GetMask("Default");
         frameGravity = Physics.gravity.y * Time.fixedDeltaTime;
         body = GetComponent<Rigidbody>();
     }
 
-    private void GroundedCheck()
+    private RaycastHit GroundedCheck()
     {
-        grounded = Physics.Raycast(headCollider.position, Vector3.down, 1.6f, layerGround);
+        RaycastHit hit;
+        bool g = Physics.Raycast(headCollider.position, Vector3.down, out hit, 1.6f, layerGround);
+        if (g == true && grounded == false)
+        {
+            grounded = true;
+            playerAudioController.Grounded();
+        }
+        else if (g == false && grounded == true)
+        {
+            grounded = false;
+        }
+
+        return hit;
     }
 
     private void FixedUpdate()
     {
-        GroundedCheck();
+        RaycastHit hit = GroundedCheck();
         gravity = grounded ? 0 : gravity + frameGravity;
+        if (dashing)
+            gravity = 0;
+
+        recalibaration = 0f;
+        
+        if (grounded)
+        {
+            if (hit.distance < goalHight)
+            {
+                recalibaration = Mathf.Lerp(8f, 0.8f, hit.distance / goalHight);
+            }
+        }
         
         ProcessPhysic();
         
         lastVelocity = body.velocity;
 
-        GUI_Controller.Instance.debug1.text = "" + body.velocity.magnitude;
-        GUI_Controller.Instance.debug2.text = "" + forceVelocity.magnitude;
-        GUI_Controller.Instance.debug3.text = "" + grounded;
+        //GUI_Controller.Instance.debug1.text = "" + body.velocity.magnitude;
+        //GUI_Controller.Instance.debug2.text = "" + forceVelocity.magnitude;
+        //GUI_Controller.Instance.debug3.text = "" + grounded;
         
         if(useNativePhysics == false)
-            body.velocity = moveVelocity + new Vector3( 0, gravity, 0) + forceVelocity;
+            body.velocity = moveVelocity + new Vector3( 0, gravity, 0) + forceVelocity + new Vector3( 0, recalibaration, 0);
 
+        if (dashing)
+            body.velocity = dashVelocity;
+        
         visualVelocity = Vector3.down;
         if(!grounded)
             visualVelocity = Vector3.Lerp(visualVelocity, -body.velocity + (Vector3.down *2f), speedVisual);
         
         visual.transform.rotation = Quaternion.LookRotation(visualVelocity);
-        colliderMobile.transform.rotation = Quaternion.LookRotation(visualVelocity);
     }
-
+    
     private void OnCollisionEnter(Collision collision)
     {
         GroundedCheck();

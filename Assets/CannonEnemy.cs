@@ -23,7 +23,7 @@ public class CannonEnemy : Enemy
     {
         base.Update();
 
-        Vector3 dir = (player.position) - muzzle.position;
+        Vector3 dir = (player.position) - head.position;
 
         head.rotation = Quaternion.LookRotation(dir);
         

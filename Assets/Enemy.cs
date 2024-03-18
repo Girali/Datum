@@ -53,12 +53,12 @@ public class Enemy : MonoBehaviour
         get
         {
             if(combinedBounds.size.x > combinedBounds.size.y && combinedBounds.size.x > combinedBounds.size.z)
-                return combinedBounds.size.x;
+                return combinedBounds.size.x * 2f;
             
             if(combinedBounds.size.y > combinedBounds.size.x && combinedBounds.size.y > combinedBounds.size.x)
-                return combinedBounds.size.y;
+                return combinedBounds.size.y * 2f;
             
-            return combinedBounds.size.z;
+            return combinedBounds.size.z * 2f;
         }
     }
     

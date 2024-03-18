@@ -14,6 +14,22 @@ public class SwordWeapon : Weapon
 
     public ParticleSystem hitParticles;
     public LayerMask layerMask;
+
+    public GameObject swordCollider;
+    
+    public void SwordAttackMode(bool b)
+    {
+        if (b)
+        {
+            swordCollider.transform.localScale = new Vector3(2, 2, 2);
+            swordCollider.transform.localPosition = new Vector3(0, 0, -1.3f);
+        }
+        else
+        {
+            swordCollider.transform.localScale = new Vector3(1, 1, 1);
+            swordCollider.transform.localPosition = new Vector3(0, 0, 0);
+        }
+    } 
     
     public override PlayerController.PlayerState Fire(ControllerInputs ci,PlayerController.PlayerState playerState)
     {

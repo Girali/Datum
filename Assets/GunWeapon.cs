@@ -26,13 +26,16 @@ public class GunWeapon : Weapon
             }
 
             playerState = base.Fire(ci , playerState);
+
+            playerHandController.SetFire(recoilPower);
+            weaponView.SetFire();
             Instantiate(bullet, muzzle.transform.position, muzzle.transform.rotation);
             
             SubAmmo();
         }
         else if(ci.active.activatedThisFrame && playerState.weaponCarouselOpened == false)
         {
-            weaponAudio.PlayEmptyClip();
+            weaponView.EmptyClip();
         }
 
         return playerState;

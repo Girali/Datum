@@ -79,6 +79,12 @@ public class PlayerHandController : MonoBehaviour
         offset.localPosition = Vector3.Lerp(offset.localPosition, initialOffset.localPosition, 0.1f);
     }
 
+
+    public void SetFire(float t)
+    {
+        offset.localPosition = Vector3.LerpUnclamped(initialOffset.localPosition, firePosition.localPosition, t);
+    }
+
     public PlayerController.PlayerState Motor(ControllerInputs ci, PlayerController.PlayerState playerState)
     {
         controllerInputs = ci;
@@ -119,7 +125,6 @@ public class PlayerHandController : MonoBehaviour
         if (currentWeaponIndex != -1)
         {
             playerState = weapons[currentWeaponIndex].Fire(ci, playerState);
-            offset.localPosition = firePosition.localPosition;
 
             foreach (Weapon w in weapons)
             {

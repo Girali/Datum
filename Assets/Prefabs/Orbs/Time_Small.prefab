@@ -1370,9 +1370,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.14895463, b: 0.13168386, a: 0.21568628}
-        key1: {r: 1, g: 0.20058584, b: 0, a: 0.43137255}
-        key2: {r: 1, g: 0.141, b: 0.13333334, a: 0.21568628}
+        key0: {r: 1, g: 0.80283576, b: 0.13333333, a: 0.21568628}
+        key1: {r: 1, g: 0.72182995, b: 0, a: 0.43137255}
+        key2: {r: 1, g: 0.8766773, b: 0.13333333, a: 0.21568628}
         key3: {r: 0.08088234, g: 0.09482759, b: 0.16176468, a: 0.21568628}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1380,7 +1380,7 @@ ParticleSystem:
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
         ctime1: 33168
-        ctime2: 65535
+        ctime2: 64764
         ctime3: 65535
         ctime4: 0
         ctime5: 0
@@ -5105,7 +5105,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.12503296, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.88850576, b: 0.4575472, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10038,7 +10038,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0, b: 0, a: 0.2784314}
+      maxColor: {r: 1, g: 0.8002132, b: 0, a: 0.2784314}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14770,8 +14770,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.1372549, b: 0.1429156, a: 1}
-      key1: {r: 1, g: 0.5171814, b: 0.2971698, a: 0}
+      key0: {r: 1, g: 0.7724726, b: 0.1372549, a: 1}
+      key1: {r: 1, g: 0.7391453, b: 0.2783019, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -16190,8 +16190,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.41337618, b: 0.28627455, a: 1}
-        key1: {r: 1, g: 0.277, b: 0.13333334, a: 1}
+        key0: {r: 1, g: 0.81917715, b: 0.28627455, a: 1}
+        key1: {r: 1, g: 0.88434345, b: 0.5801887, a: 1}
         key2: {r: 1, g: 0.141, b: 0.13333334, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}

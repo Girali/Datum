@@ -16,6 +16,10 @@ public class PlayerGrappling : MonoBehaviour
     [SerializeField]
     private LineRenderer lineRenderer;
     public MeshRenderer meshRenderer;
+    public GameObject targetEnemy;
+
+    public ParticleSystem dashParticles;
+    public GameObject dashEndParticles;
     
     public PlayerPhysicController playerPhysicController;
     public SwordWeapon swordWeapon;
@@ -28,6 +32,7 @@ public class PlayerGrappling : MonoBehaviour
     private Ray ray;
 
     public bool inUse;
+    public bool dashing;
 
     [SerializeField]
     private float maxDistance = 15f;
@@ -46,7 +51,6 @@ public class PlayerGrappling : MonoBehaviour
     private float waveHeight;
     [SerializeField, BoxGroup("Anim Params")]
     private AnimationCurve affectCurve;
-    public bool InUse { get => inUse; }
 
     public LayerMask layerMask;
     
@@ -56,6 +60,11 @@ public class PlayerGrappling : MonoBehaviour
     private float hitDistance;
     private LayerMask layerMaskEnemies;
     private Transform targetToFollow;
+
+    private AudioManager audioManager;
+
+    public AudioClip dashSound;
+    public AudioClip grapplingSound;
     
     private void Start()
     {
@@ -64,10 +73,13 @@ public class PlayerGrappling : MonoBehaviour
         spring.SetTarget(0);
         grapPos = new GameObject("GrapplingPosition").transform;
         targetToFollow = new GameObject("TargetToFollow").transform;
+        audioManager = new AudioManager(gameObject, SoundController.Instance.sfxAudioMixerGroup,
+            SoundController.Instance.bypassAudioMixerGroup);
     }
 
     private void StartGrappling(RaycastHit hit)
     {
+        audioManager.PlaySound(grapplingSound, new Vector2(0.2f,0.3f) , new Vector2(0.9f, 1f));
         swordImpact = false;
         swordWeapon.render.SetActive(false);
         swordVisual.gameObject.SetActive(true);
@@ -119,34 +131,6 @@ public class PlayerGrappling : MonoBehaviour
         Destroy(joint);
     }
 
-    private void DashOnEnemy()
-    {
-        RaycastHit hit;
-        ray = new Ray(swordWeapon.pointer.transform.position, swordWeapon.pointer.transform.forward);
-        RaycastHit[] hits = Physics.SphereCastAll(ray, 0.25f, maxDistance, layerMask);
-        if (hits.Length > 0)
-        {
-            hit = hits.OrderBy((h) => h.distance).First();
-            
-            
-            meshRenderer.transform.position = hit.point;
-            meshRenderer.enabled = true;
-
-            StartAttract(hit);
-
-            if (inUse)
-            {
-                if(timeEnd < Time.time)
-                    StopAttract();
-            }
-        }
-        else
-        {
-            meshRenderer.transform.position = ray.origin + (ray.direction * maxDistance);
-            meshRenderer.enabled = false;
-        }
-    }
-
     public PlayerController.PlayerState Motor(ControllerInputs ci, PlayerController.PlayerState playerState)
     {
         if (inUse)
@@ -160,38 +144,55 @@ public class PlayerGrappling : MonoBehaviour
             
             meshRenderer.enabled = false;
         }
+        else if(dashing)
+        {
+            playerState.dashing = true;
+
+            if (Time.time > timeEnd)
+            {
+                StopAttract();
+            }
+        }
         else
         {
             ray = new Ray(swordWeapon.pointer.transform.position, swordWeapon.pointer.transform.forward);
-            RaycastHit[] hits = Physics.SphereCastAll(ray, 0.25f, maxDistance, layerMask);
+            RaycastHit[] hits = Physics.SphereCastAll(ray, 0.5f, maxDistance, layerMask);
             if(hits.Length > 0)
             {
                 RaycastHit hit = hits.OrderBy((h) => h.distance).First();
 
-                meshRenderer.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
-                meshRenderer.transform.position = hit.point;
-
                 if (hit.collider.gameObject.layer == layerMaskEnemies)
                 {
                     Enemy enemy = hit.transform.GetComponent<Enemy>();
+
+                    targetEnemy.transform.position = hit.transform.position;
+                    targetEnemy.transform.rotation = Quaternion.LookRotation(hit.transform.position - transform.position);
+                    targetEnemy.transform.localScale = new Vector3(enemy.MaxBound,enemy.MaxBound,enemy.MaxBound);
+                    targetEnemy.SetActive(true);
+                    meshRenderer.enabled = false;
                     
-                    meshRenderer.transform.position = hit.transform.position;
-                    meshRenderer.transform.localScale = new Vector3(enemy.MaxBound, enemy.MaxBound, enemy.MaxBound);
+                    if (ci.active.activatedThisFrame)
+                    {
+                        StartAttract(enemy);
+                    }
                 }
                 else
                 {
+                    meshRenderer.transform.position = hit.point;
+                    meshRenderer.enabled = true;
+                    targetEnemy.SetActive(false);
+
                     if (ci.active.activatedThisFrame)
                     {
                         StartGrappling(hit);
                     }
                 }
-                    
-                meshRenderer.enabled = true;
             }
             else
             {
                 meshRenderer.transform.position = ray.origin + (ray.direction * maxDistance);
                 meshRenderer.enabled = false;
+                targetEnemy.SetActive(false);
             }
         }
 
@@ -199,40 +200,56 @@ public class PlayerGrappling : MonoBehaviour
     }
 
     private float timeEnd = 0;
-    
-    private void StartAttract(RaycastHit hit)
+    private Enemy enemyToKill;
+    private Vector3 enemyPos;
+    private void StartAttract(Enemy hit)
     {
-        inUse = true;
-        swordWeapon.render.SetActive(false);
-        
-        grapPos.position = hit.point;
-        
-        grapleTarget = grapleStart.position;
+        audioManager.PlaySound(dashSound, new Vector2(0.2f,0.3f) , new Vector2(0.9f, 1f));
 
-        spring.SetVelocity(velocity);
-        lineRenderer.positionCount = quality + 1;
-        
-        Vector3 v = grapPos.position - playerPhysicController.transform.position;
+        dashing = true;
+        dashParticles.Play(true);
 
-        v += hit.normal * (v.magnitude * 0.3f);
-        
-        timeEnd = Time.time + 0.5f;
-        
+        swordWeapon.SwordAttackMode(true);
+        enemyToKill = hit;
+        enemyPos = enemyToKill.transform.position;
         playerPhysicController.ResetGravity();
-        playerPhysicController.AddVelocity(v.normalized * 30f);
+        playerPhysicController.dashing = true;
+
+        float speedDash = 50f;
+        Vector3 dir = (enemyPos - playerPhysicController.headCollider.position);
+        float timeOfDash = dir.magnitude / speedDash;
+        timeEnd = timeOfDash + Time.time;
+        playerPhysicController.dashVelocity = dir.normalized * speedDash;
     }
     
     private void StopAttract()
     {
-        inUse = false;
-        swordWeapon.render.SetActive(true);
+        Vector3 dir = (enemyPos - playerPhysicController.headCollider.position);
+        
+        dashParticles.Stop(true);
+        dashing = false;
 
-        spring.Reset();
-        lineRenderer.positionCount = 0;
+        Instantiate(dashEndParticles, enemyPos, Quaternion.LookRotation(dir));
+        
+        enemyToKill.Hit(50);
+        playerPhysicController.ResetGravity();
+        playerPhysicController.dashing = false;
+        playerPhysicController.AddVelocity(playerPhysicController.Velocity * 0.8f);
+        swordWeapon.SwordAttackMode(false);
+        enemyToKill = null;
     }
 
     private void Update()
     {
+        if (dashing)
+        {
+            Vector3 dir = (enemyPos - playerPhysicController.headCollider.position);
+            dashParticles.transform.rotation = Quaternion.LookRotation(dir);
+            meshRenderer.transform.position = enemyPos;
+            meshRenderer.enabled = false;
+            targetEnemy.transform.position = enemyPos;
+        }
+        
         if (inUse)
         {
             grapPos.position = targetToFollow.position;

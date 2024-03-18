@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PolySolidIntense
-  m_Shader: {fileID: 4800000, guid: 94a9aa8a94e5b1b4d8c777819f86eb44, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 73ee7737f5488f84c8f0f635ec9b5d0d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -27,7 +27,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 15, y: 15}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Intensity: 7.65
+    - SoftParticleToggle_: 1
+    - SoftParticle_: 1
     - _Glow: 0.21
     - _InvFade: 0.43
     - _RimPower: 1.22

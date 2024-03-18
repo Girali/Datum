@@ -25,10 +25,10 @@ public class HandBody : MonoBehaviour
         lerpTarget.position = Vector3.Lerp(lerpTarget.position, target.position, 0.8f);
         lerpTarget.rotation = Quaternion.Lerp(lerpTarget.rotation, target.rotation, 0.8f);
             
-        if (playerPhysicController.Velocity.magnitude > 10f)
+        if (playerPhysicController.grounded == false || playerPhysicController.Velocity.magnitude > 4f)
         {
-            transform.position = lerpTarget.position;
-            transform.rotation = lerpTarget.rotation;
+            transform.position = target.position;
+            transform.rotation = target.rotation;
         }
 
         float dist = Vector3.Distance(transform.position, target.position);

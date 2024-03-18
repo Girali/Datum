@@ -12,6 +12,8 @@ public class SoundController : MonoBehaviour
     [SerializeField]
     private MusicController musicController;
 
+    public AudioMixer audioMixer;
+    
     private static SoundController _instance;
     public static SoundController Instance
     {
@@ -31,6 +33,14 @@ public class SoundController : MonoBehaviour
     }
 
     #region Utility
+
+    public void SetBulletTimeAudioEffect(float t)
+    {
+        audioMixer.SetFloat("Lowpass", Mathf.Lerp(900, 22000, t));
+        audioMixer.SetFloat("Pitch", Mathf.Lerp(0.7f, 1f, t));
+        audioMixer.SetFloat("MusicLowpass", Mathf.Lerp(1000f, 22000f, t));
+    }
+    
     public static IEnumerator CRT_FadeIn(AudioSource audioSource, float time)
     {
         float targetVolume = audioSource.volume;
@@ -68,6 +78,7 @@ public class SoundController : MonoBehaviour
     public AudioMixerGroup musicAudioMixerGroup;
     public AudioMixerGroup sfxAudioMixerGroup;
     public AudioMixerGroup dialogueAudioMixerGroup;
+    public AudioMixerGroup bypassAudioMixerGroup;
 #endregion
 
     public void PlayDialogue(AudioClip clip)

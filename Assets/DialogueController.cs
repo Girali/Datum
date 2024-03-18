@@ -29,7 +29,7 @@ public class DialogueController : MonoBehaviour
         }
 
         AudioSource audioSource = source.AddComponent<AudioSource>();
-        audioSource.outputAudioMixerGroup = SoundController.Instance.sfxAudioMixerGroup;
+        audioSource.outputAudioMixerGroup = SoundController.Instance.dialogueAudioMixerGroup;
         audioSources.Add(audioSource);
         audioSource.volume = 1f;
         audioSource.spatialBlend = 1f;

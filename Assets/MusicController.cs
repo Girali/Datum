@@ -25,7 +25,7 @@ public class MusicController : MonoBehaviour
         }
 
         AudioSource audioSource = source.AddComponent<AudioSource>();
-        audioSource.outputAudioMixerGroup = SoundController.Instance.sfxAudioMixerGroup;
+        audioSource.outputAudioMixerGroup = SoundController.Instance.musicAudioMixerGroup;
         audioSources.Add(audioSource);
         audioSource.volume = 0.1f;
 

@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    private PlayerHandController playerHandController;
+    protected PlayerHandController playerHandController;
     public PlayerPhysicController playerPhysicController;
     public GameObject render;
     public GameObject pointer;
     public bool isRepulsive;
     protected WeaponView weaponView;
-
-    public WeaponAudio weaponAudio;
     
     public int currentAmmo = 0;
     public int totalCurrentAmmo = 0;
@@ -27,7 +25,9 @@ public class Weapon : MonoBehaviour
     protected bool emptyAndNeedReload = false;
     
     public UI_Ammo uiAmmo;
-
+    public float recoilPower = 1f;
+    
+    
     public void AddAmmo(float i)
     {
         totalCurrentAmmo += (int)(totalAmmo * (i * 0.5f));
@@ -64,8 +64,11 @@ public class Weapon : MonoBehaviour
     protected void StopReload()
     {
         reloading = false;
-        if(weaponView)
+        if (weaponView)
+        {
+            weaponView.Reloaded();
             weaponView.SetEmpty(false);
+        }
 
         if (totalCurrentAmmo >= totalAmmo)
             currentAmmo = totalAmmo;
@@ -116,10 +119,14 @@ public class Weapon : MonoBehaviour
     
     protected virtual void OnEnable()
     {
+        
         playerHandController.Pointer = pointer.transform;
         render.SetActive(true);
-        if(weaponView)
+        if (weaponView)
+        {
             weaponView.SetEmpty(0 == currentAmmo);
+            weaponView.EnableWeapon();
+        }
     }
 
     private void OnDisable()

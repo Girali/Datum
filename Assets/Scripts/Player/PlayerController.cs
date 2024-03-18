@@ -60,5 +60,6 @@ public class PlayerController : MonoBehaviour
     {
         public bool weaponCarouselOpened = false;
         public bool grapplingInUse = false;
+        public bool dashing = false;
     }
 }
