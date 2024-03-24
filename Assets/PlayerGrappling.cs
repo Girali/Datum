@@ -9,29 +9,25 @@ using UnityEngine.Serialization;
 
 public class PlayerGrappling : MonoBehaviour
 {
-    [SerializeField]
-    private Transform grapleStart;
-    private Transform grapPos;
-    private Vector3 grapleTarget;
-    [SerializeField]
-    private LineRenderer lineRenderer;
-    public MeshRenderer meshRenderer;
+    public Transform grapleStart;
+    private Transform grapleEnd;
+    public LineRenderer lineRenderer;
+    public MeshRenderer sphereRenderer;
     public GameObject targetEnemy;
 
     public ParticleSystem dashParticles;
-    public GameObject dashEndParticles;
+    public GameObject dashEndParticlesPrefab;
     
     public PlayerPhysicController playerPhysicController;
     public SwordWeapon swordWeapon;
     public GameObject swordImpactPrefab;
-    private bool swordImpact;
-    private Vector3 hitNormal;
 
     private SpringJoint joint;
 
     private Ray ray;
 
     public bool inUse;
+    public bool grappling;
     public bool dashing;
 
     [SerializeField]
@@ -52,88 +48,102 @@ public class PlayerGrappling : MonoBehaviour
     [SerializeField, BoxGroup("Anim Params")]
     private AnimationCurve affectCurve;
 
-    public LayerMask layerMask;
-    
-    public GameObject swordVisual;
-    private Vector3 hitPosition;
-    private Vector3 hitDirection;
-    private float hitDistance;
+    public LayerMask hitLayerMask;
     private LayerMask layerMaskEnemies;
-    private Transform targetToFollow;
+
+    public GameObject hookSwordVisual;
+    private Vector3 hitDirection;
+    private Vector3 hitNormal;
+    private Vector3 grapleTargetLerp;
+    private bool swordImpact;
+
+    private Enemy enemyToKill;
+    private Vector3 enemyPos;
+    private float speedDash = 50f;
+    private float dashDistance;
 
     private AudioManager audioManager;
-
     public AudioClip dashSound;
     public AudioClip grapplingSound;
-    
-    private void Start()
+
+    private void Awake()
     {
         layerMaskEnemies = LayerMask.NameToLayer("Ennemies");
         spring = new Spring();
         spring.SetTarget(0);
-        grapPos = new GameObject("GrapplingPosition").transform;
-        targetToFollow = new GameObject("TargetToFollow").transform;
+        grapleEnd = new GameObject("TargetToFollow").transform;
         audioManager = new AudioManager(gameObject, SoundController.Instance.sfxAudioMixerGroup,
             SoundController.Instance.bypassAudioMixerGroup);
     }
 
-    private void StartGrappling(RaycastHit hit)
+    private void StartVisualGrapple(RaycastHit hit)
     {
-        audioManager.PlaySound(grapplingSound, new Vector2(0.2f,0.3f) , new Vector2(0.9f, 1f));
-        swordImpact = false;
-        swordWeapon.render.SetActive(false);
-        swordVisual.gameObject.SetActive(true);
-
-        hitPosition = hit.point;
-        hitDirection = hitPosition - grapleStart.position;
-        hitDistance = Vector3.Distance(grapleStart.position, hitPosition);
-
         inUse = true;
-        playerPhysicController.useNativePhysics = true;
+
+        audioManager.PlaySound(grapplingSound, new Vector2(0.2f,0.3f) , new Vector2(0.9f, 1f));
+
+        swordWeapon.render.SetActive(false);
+        hookSwordVisual.gameObject.SetActive(true);
+        swordImpact = false;
         
-        grapPos.position = hit.point;
-        targetToFollow.position = hit.point;
-        targetToFollow.parent = hit.collider.gameObject.transform;
-        grapleTarget = grapleStart.position;
+        grapleEnd.position = hit.point;
+        grapleEnd.parent = hit.collider.gameObject.transform;
+        hitDirection = grapleEnd.position - transform.position;
         hitNormal = hit.normal;
+        grapleTargetLerp = grapleStart.position;
         
-        joint = playerPhysicController.gameObject.AddComponent<SpringJoint>();
-        joint.autoConfigureConnectedAnchor = false;
-        joint.connectedAnchor = grapPos.position;
-
-        float distanceFromPoint = Vector3.Distance(transform.position, grapPos.position);
-
-        joint.maxDistance = distanceFromPoint * 0.9f;
-        joint.minDistance = joint.maxDistance * 0.9f;
-
-        joint.spring = 1f;
-        joint.damper = 0.5f;
-        joint.massScale = 4.5f;
-
         spring.SetVelocity(velocity);
         lineRenderer.positionCount = quality + 1;
     }
 
-    private void StopGrappling()
+    private void StopVisual()
     {
         swordWeapon.render.SetActive(true);
-        swordVisual.gameObject.SetActive(false);
-        
+        hookSwordVisual.gameObject.SetActive(false);
         inUse = false;
-        playerPhysicController.useNativePhysics = false;
+        grapleEnd.parent = null;
+        spring.Reset();
+        lineRenderer.positionCount = 0;
+    }
+
+    private void StartGrappling(RaycastHit hit)
+    {
+        grappling = true;
+        
+        playerPhysicController.UseNativePhysics = true;
+        
+        float distanceFromPoint = Vector3.Distance(playerPhysicController.transform.position, hit.point);
+
+        joint = playerPhysicController.gameObject.AddComponent<SpringJoint>();
+        joint.autoConfigureConnectedAnchor = false;
+        joint.connectedAnchor = hit.point;
+        joint.maxDistance = distanceFromPoint * 1.1f;
+        joint.minDistance = joint.maxDistance * 0.05f;
+        joint.spring = 800f;
+        joint.damper = 0f;
+        joint.massScale = 4.5f;
+
+        StartVisualGrapple(hit);
+    }
+
+    private void StopGrappling()
+    {
+        grappling = false;
+
+        playerPhysicController.UseNativePhysics = false;
 
         Vector3 v = playerPhysicController.Velocity;
         playerPhysicController.ResetVelocity();
-        playerPhysicController.AddVelocity(v);
+        playerPhysicController.SetVelocity(v);
 
-        spring.Reset();
-        lineRenderer.positionCount = 0;
         Destroy(joint);
+        
+        StopVisual();
     }
 
     public PlayerController.PlayerState Motor(ControllerInputs ci, PlayerController.PlayerState playerState)
     {
-        if (inUse)
+        if (grappling)
         {
             playerState.grapplingInUse = true;
             
@@ -142,13 +152,13 @@ public class PlayerGrappling : MonoBehaviour
                 StopGrappling();
             }
             
-            meshRenderer.enabled = false;
+            sphereRenderer.enabled = false;
         }
         else if(dashing)
         {
             playerState.dashing = true;
 
-            if (Time.time > timeEnd)
+            if (dashDistance < 1f)
             {
                 StopAttract();
             }
@@ -156,7 +166,7 @@ public class PlayerGrappling : MonoBehaviour
         else
         {
             ray = new Ray(swordWeapon.pointer.transform.position, swordWeapon.pointer.transform.forward);
-            RaycastHit[] hits = Physics.SphereCastAll(ray, 0.5f, maxDistance, layerMask);
+            RaycastHit[] hits = Physics.SphereCastAll(ray, 0.5f, maxDistance, hitLayerMask);
             if(hits.Length > 0)
             {
                 RaycastHit hit = hits.OrderBy((h) => h.distance).First();
@@ -166,20 +176,19 @@ public class PlayerGrappling : MonoBehaviour
                     Enemy enemy = hit.transform.GetComponent<Enemy>();
 
                     targetEnemy.transform.position = hit.transform.position;
-                    targetEnemy.transform.rotation = Quaternion.LookRotation(hit.transform.position - transform.position);
                     targetEnemy.transform.localScale = new Vector3(enemy.MaxBound,enemy.MaxBound,enemy.MaxBound);
                     targetEnemy.SetActive(true);
-                    meshRenderer.enabled = false;
+                    sphereRenderer.enabled = false;
                     
                     if (ci.active.activatedThisFrame)
                     {
-                        StartAttract(enemy);
+                        StartAttract(enemy,hit);
                     }
                 }
                 else
                 {
-                    meshRenderer.transform.position = hit.point;
-                    meshRenderer.enabled = true;
+                    sphereRenderer.transform.position = hit.point;
+                    sphereRenderer.enabled = true;
                     targetEnemy.SetActive(false);
 
                     if (ci.active.activatedThisFrame)
@@ -190,8 +199,8 @@ public class PlayerGrappling : MonoBehaviour
             }
             else
             {
-                meshRenderer.transform.position = ray.origin + (ray.direction * maxDistance);
-                meshRenderer.enabled = false;
+                sphereRenderer.transform.position = ray.origin + (ray.direction * maxDistance);
+                sphereRenderer.enabled = false;
                 targetEnemy.SetActive(false);
             }
         }
@@ -199,43 +208,53 @@ public class PlayerGrappling : MonoBehaviour
         return playerState;
     }
 
-    private float timeEnd = 0;
-    private Enemy enemyToKill;
-    private Vector3 enemyPos;
-    private void StartAttract(Enemy hit)
+
+    private void StartAttract(Enemy hit, RaycastHit h)
     {
+        dashing = true;
+        
         audioManager.PlaySound(dashSound, new Vector2(0.2f,0.3f) , new Vector2(0.9f, 1f));
 
-        dashing = true;
         dashParticles.Play(true);
-
-        swordWeapon.SwordAttackMode(true);
+        
         enemyToKill = hit;
-        enemyPos = enemyToKill.transform.position;
         playerPhysicController.ResetGravity();
         playerPhysicController.dashing = true;
 
-        float speedDash = 50f;
+        CalculateDash();
+        
+        StartVisualGrapple(h);
+    }
+
+    
+    void CalculateDash()
+    {
+        if(enemyToKill)
+            enemyPos = enemyToKill.transform.position;
+        
         Vector3 dir = (enemyPos - playerPhysicController.headCollider.position);
-        float timeOfDash = dir.magnitude / speedDash;
-        timeEnd = timeOfDash + Time.time;
+        dashDistance = dir.magnitude;
+        GUI_Controller.Instance.debug3.text = "" + dashDistance;
         playerPhysicController.dashVelocity = dir.normalized * speedDash;
     }
     
     private void StopAttract()
     {
+        dashing = false;
+
+        StopVisual();
+
         Vector3 dir = (enemyPos - playerPhysicController.headCollider.position);
         
         dashParticles.Stop(true);
-        dashing = false;
-
-        Instantiate(dashEndParticles, enemyPos, Quaternion.LookRotation(dir));
         
-        enemyToKill.Hit(50);
+        Instantiate(dashEndParticlesPrefab, enemyPos, Quaternion.LookRotation(dir));
+        
         playerPhysicController.ResetGravity();
         playerPhysicController.dashing = false;
-        playerPhysicController.AddVelocity(playerPhysicController.Velocity * 0.8f);
-        swordWeapon.SwordAttackMode(false);
+        playerPhysicController.SetVelocity((enemyToKill.transform.up - playerPhysicController.Velocity.normalized).normalized * (speedDash / 3f));
+
+        enemyToKill.Hit(50);
         enemyToKill = null;
     }
 
@@ -243,17 +262,18 @@ public class PlayerGrappling : MonoBehaviour
     {
         if (dashing)
         {
+            CalculateDash();
+
             Vector3 dir = (enemyPos - playerPhysicController.headCollider.position);
             dashParticles.transform.rotation = Quaternion.LookRotation(dir);
-            meshRenderer.transform.position = enemyPos;
-            meshRenderer.enabled = false;
+            sphereRenderer.transform.position = enemyPos;
+            sphereRenderer.enabled = false;
             targetEnemy.transform.position = enemyPos;
         }
         
-        if (inUse)
+        if (grappling)
         {
-            grapPos.position = targetToFollow.position;
-            joint.connectedAnchor = grapPos.position;
+            joint.connectedAnchor = grapleEnd.position;
         }
     }
 
@@ -272,11 +292,11 @@ public class PlayerGrappling : MonoBehaviour
         spring.SetStrength(strength);
         spring.Update(Time.deltaTime);
 
-        Vector3 grapplePoint = grapPos.position;
+        Vector3 grapplePoint = grapleEnd.position;
         Vector3 gunTipPosition = grapleStart.position;
         Vector3 up = grapleStart.right;
 
-        grapleTarget = Vector3.Lerp(grapleTarget, grapplePoint, Time.deltaTime * 12f);
+        grapleTargetLerp = Vector3.Lerp(grapleTargetLerp, grapplePoint, 0.2f);
 
         for (var i = 0; i < quality + 1; i++)
         {
@@ -284,7 +304,7 @@ public class PlayerGrappling : MonoBehaviour
             var offset = up * waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI) * spring.Value *
                          affectCurve.Evaluate(delta);
 
-            Vector3 v = Vector3.Lerp(gunTipPosition, grapleTarget, delta) + offset;
+            Vector3 v = Vector3.Lerp(gunTipPosition, grapleTargetLerp, delta) + offset;
 
             lineRenderer.SetPosition(i, v);
 
@@ -292,26 +312,26 @@ public class PlayerGrappling : MonoBehaviour
             {
                 if (i == lineRenderer.positionCount - 1)
                 {
-                    float t = Vector3.Distance(v, hitPosition)/ hitDistance;
+                    float t = Vector3.Distance(v, grapplePoint);
                     
-                    if (t < 0.1f)
+                    if (t < 1f)
                     {
                         swordImpact = true;
-                        swordVisual.transform.position = joint.connectedAnchor + (-hitDirection.normalized * 0.25f);
-                        swordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
-                        Instantiate(swordImpactPrefab, swordVisual.transform.position, Quaternion.LookRotation(hitNormal));
+                        hookSwordVisual.transform.position = grapleEnd.position + (-hitDirection.normalized * 0.25f);
+                        hookSwordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
+                        Instantiate(swordImpactPrefab, hookSwordVisual.transform.position, Quaternion.LookRotation(hitNormal));
                     }
                     else
                     {
-                        swordVisual.transform.position = v + Vector3.Lerp((-hitDirection.normalized * 0.25f),Vector3.zero , t);
-                        swordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
+                        hookSwordVisual.transform.position = v + Vector3.Lerp((-hitDirection.normalized * 0.25f),Vector3.zero , t);
+                        hookSwordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
                     }
                 }
             }
             else
             {
-                swordVisual.transform.position = joint.connectedAnchor + (-hitDirection.normalized * 0.25f);
-                swordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
+                hookSwordVisual.transform.position = grapleEnd.position + (-hitDirection.normalized * 0.25f);
+                hookSwordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
             }
         }
     }

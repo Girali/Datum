@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerPhysicController : MonoBehaviour
 {
@@ -19,7 +20,16 @@ public class PlayerPhysicController : MonoBehaviour
     public Vector3 moveVelocity;
     public Vector3 dashVelocity;
 
-    public bool useNativePhysics = false;
+    private bool useNativePhysics = false;
+
+    public bool UseNativePhysics
+    {
+        set
+        {
+            useNativePhysics = value;
+            body.useGravity = value;
+        }
+    }
     
     public GameObject visual;
     public float speedVisual;
@@ -75,9 +85,8 @@ public class PlayerPhysicController : MonoBehaviour
         
         lastVelocity = body.velocity;
 
-        //GUI_Controller.Instance.debug1.text = "" + body.velocity.magnitude;
-        //GUI_Controller.Instance.debug2.text = "" + forceVelocity.magnitude;
-        //GUI_Controller.Instance.debug3.text = "" + grounded;
+        GUI_Controller.Instance.debug1.text = "" + body.velocity.magnitude;
+        GUI_Controller.Instance.debug2.text = "" + forceVelocity.magnitude;
         
         if(useNativePhysics == false)
             body.velocity = moveVelocity + new Vector3( 0, gravity, 0) + forceVelocity + new Vector3( 0, recalibaration, 0);
@@ -140,6 +149,21 @@ public class PlayerPhysicController : MonoBehaviour
     public Vector3 Velocity
     {
         get => body.velocity;
+    }
+    
+    public void SetVelocity(Vector3 v)
+    {
+        StartCoroutine(CRT_SetVelocity(v));
+    }
+
+    IEnumerator CRT_SetVelocity(Vector3 v)
+    {
+        yield return null;
+        
+        if(useNativePhysics)
+            body.velocity = v;
+        else 
+            forceVelocity = v;
     }
     
     public void AddVelocity(Vector3 v)

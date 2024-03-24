@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Intensity: 7.65
+    - Intensity: 2.44
     - SoftParticleToggle_: 1
     - SoftParticle_: 1
     - _Glow: 0.21

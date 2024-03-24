@@ -12,9 +12,6 @@ public class SwordWeapon : Weapon
     public HandBody handBody;
     public Transform sphere;
 
-    public ParticleSystem hitParticles;
-    public LayerMask layerMask;
-
     public GameObject swordCollider;
     
     public void SwordAttackMode(bool b)
@@ -52,7 +49,6 @@ public class SwordWeapon : Weapon
         if (hitting == false)
         {
             hitting = countColliderEntered > 0;
-            hitParticles.Play(true);
         }
     }
 
@@ -63,7 +59,6 @@ public class SwordWeapon : Weapon
         if (hitting == true)
         {
             hitting = countColliderEntered > 0;
-            hitParticles.Stop(true);
             enemy = other.GetComponent<Enemy>();
         }
     }
@@ -102,13 +97,6 @@ public class SwordWeapon : Weapon
 
         if (hitting)
         {
-            RaycastHit hit;
-            if(Physics.Raycast(transform.position, transform.forward, out hit, 1.5f, layerMask))
-            {
-                hitParticles.transform.position = hit.point;
-                hitParticles.transform.rotation = Quaternion.LookRotation(hit.normal);
-            }
-
             if (enemy)
             {
                 enemy.Hit(50);

@@ -124,14 +124,14 @@ public class PlayerMotor : MonoBehaviour
         timeScale = Mathf.Lerp(timeScale, timeScaleTarget, 0.05f);
         Time.timeScale = timeScale;
         SoundController.Instance.SetBulletTimeAudioEffect(timeScale);
-        
+         
         if (playerState.grapplingInUse)
         {
             playerPhysicController.AddVelocity(move * speed);
         }
         else if(playerState.dashing == false)
         {
-            playerPhysicController.moveVelocity = (move * speed);
+            playerPhysicController.moveVelocity = Vector3.Lerp(playerPhysicController.moveVelocity, (move * speed), 0.1f);
         }
 
         return playerState;
