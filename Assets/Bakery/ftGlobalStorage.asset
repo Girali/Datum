@@ -592,7 +592,85 @@ MonoBehaviour:
   - Assets/Models/PlayerHead.blend
   - Assets/Models/OrbEnemy.blend
   - Assets/Models/Map.blend
-  uvOverlapAssetList: 00000000ffffffff00000000000000000000000000000000000000000000000001010000010100000000000000000000010100000101000001010000010100000101000001010000010100000101000001010000010100000000000001010000010100000101000001010000ffffffff01010000010100000101000001010000ffffffff01010000010100000101000001010000ffffffff010100000000000001010000010100000101000001010000ffffffff01010000010100000000000000000000010100000000000001010000ffffffff0101000001010000010100000101000001010000000000000101000001010000ffffffff0101000000000000010100000101000000000000ffffffff01010000000000000101000001010000000000000101000001010000010100000101000001010000010100000000000001010000010100000101000000000000010100000101000001010000ffffffff010100000101000001010000ffffffff0101000001010000000000000101000000000000010100000000000001010000010100000101000001010000010100000101000001010000ffffffff0101000001010000010100000000000001010000010100000101000001010000ffffffff00000000010100000101000000000000010100000101000001010000010100000101000001010000010100000101000001010000ffffffff0101000000000000ffffffff010100000101000000000000010100000101000000000000010100000101000001010000000000000101000001010000010100000101000001010000ffffffff00000000010100000101000001010000010100000000000001010000010100000101000001010000010100000101000001010000010100000101000001010000010100000000000001010000000000000000000000000000ffffffff01010000000000000000000000000000000000000000000000000000010100000000000000000000000000000000000000000000000000000000000000000000010100000000000001010000000000000000000001010000
+  - Assets/Models/MapBig.blend
+  - Assets/Models/Map_2.blend
+  - Assets/Models/human.fbx
+  - Assets/Models/ybot.fbx
+  - Packages/com.occasoftware.altos/Meshes/Altos_Sphere.fbx
+  - Assets/Models/drone.fbx
+  - Assets/PureMountain/Models/Trees/Fir/Fir6/Fir6.fbx
+  - Assets/PureMountain/Models/Rocks/Stone5.fbx
+  - Assets/PureMountain/Models/Plants/Berries.fbx
+  - Assets/PureMountain/Models/Rocks/Boulder3.fbx
+  - Assets/PureMountain/Models/Trees/Pine/Pine1/Pine1.fbx
+  - Assets/PureMountain/Models/Rocks/Boulder1.fbx
+  - Assets/PureMountain/Models/Plants/Sorrel.fbx
+  - Assets/PureMountain/Models/Rocks/Stone4.fbx
+  - Assets/PureMountain/Models/Trees/Pine/Pine5/Pine5.fbx
+  - Assets/PureMountain/Models/Trees/Pine/Pine3/Pine3.fbx
+  - Assets/PureMountain/Models/Rocks/Cliff3.fbx
+  - Assets/PureMountain/Models/Rocks/Pebble1.fbx
+  - Assets/PureMountain/Models/Trees/Fir/Fir3/Fir3.fbx
+  - Assets/PureMountain/Models/Plants/Grass3.fbx
+  - Assets/PureMountain/Models/Mountains/Mountain2.fbx
+  - Assets/PureMountain/Models/Plants/GrassMountain2.fbx
+  - Assets/PureMountain/Models/Plants/Grass1.fbx
+  - Assets/PureMountain/Models/Trees/Fir/Fir1/Fir1.fbx
+  - Assets/PureMountain/Models/Trees/Pine/Pine2/Pine2.fbx
+  - Assets/PureMountain/Models/Plants/Carot2.fbx
+  - Assets/PureMountain/Models/Rocks/Cliff6.fbx
+  - Assets/PureMountain/Models/Rocks/Cliff2.fbx
+  - Assets/PureMountain/Models/Plants/GrassMountain3.fbx
+  - Assets/PureMountain/Models/Plants/GrassMountain1.fbx
+  - Assets/PureMountain/Models/Rocks/Boulder2.fbx
+  - Assets/PureMountain/Models/Plants/Gorse2.fbx
+  - Assets/PureMountain/Models/Trees/Spruce/Spruce5/Spruce5.fbx
+  - Assets/PureMountain/Models/Rocks/Cliff8.fbx
+  - Assets/PureMountain/Models/Plants/Carot1.fbx
+  - Assets/PureMountain/Models/Trees/Spruce/Spruce3/Spruce3.fbx
+  - Assets/PureMountain/Models/Plants/GrassMountain4.fbx
+  - Assets/PureMountain/Models/Trees/Fir/Fir4/Fir4.fbx
+  - Assets/PureMountain/Models/Plants/Fern2.fbx
+  - Assets/PureMountain/Models/Rocks/Stone2.fbx
+  - Assets/PureMountain/Models/Water/WaterFall01.fbx
+  - Assets/PureMountain/Models/Plants/Lupin1.fbx
+  - Assets/PureMountain/Models/Water/Stream.fbx
+  - Assets/PureMountain/Models/Trees/Spruce/Spruce2/Spruce2.fbx
+  - Assets/PureMountain/Models/Trees/Spruce/Spruce4/Spruce4.fbx
+  - Assets/PureMountain/Models/Trees/Pine/Pine4/Pine4.fbx
+  - Assets/PureMountain/Models/Trees/Bush/Bush3/Bush3.fbx
+  - Assets/PureMountain/Models/Trees/Bush/Bush2/Bush2.fbx
+  - Assets/PureMountain/Models/Trees/Fir/Fir5/Fir5.fbx
+  - Assets/PureMountain/Models/Rocks/Stone3.fbx
+  - Assets/PureMountain/Models/Trees/Spruce/Spruce1/Spruce1.fbx
+  - Assets/PureMountain/Models/Rocks/Stone1.fbx
+  - Assets/PureMountain/Models/Trees/Bush/Bush1/Bush1.fbx
+  - Assets/PureMountain/Models/Rocks/Cliff7.fbx
+  - Assets/PureMountain/Models/Rocks/Pebble2.fbx
+  - Assets/PureMountain/Models/Rocks/Pebble3.fbx
+  - Assets/PureMountain/Models/Plants/Lupin2.fbx
+  - Assets/PureMountain/Models/Plants/Gorse1.fbx
+  - Assets/PureMountain/Models/Plants/Grass2.fbx
+  - Assets/PureMountain/Models/Trees/Fir/Fir2/Fir2.fbx
+  - Assets/PureMountain/Models/Plants/Grass4.fbx
+  - Assets/PureMountain/Models/Trees/Spruce/Spruce6/Spruce6.fbx
+  - Assets/PureMountain/Models/Rocks/Cliff4.fbx
+  - Assets/PureMountain/Models/Trees/Pine/Pine6/Pine6.fbx
+  - Assets/PureMountain/Models/Plants/Fern1.fbx
+  - Assets/PureMountain/Models/Plants/Reeds.fbx
+  - Assets/PureMountain/Models/Rocks/Cliff1.fbx
+  - Assets/PureMountain/Models/Plants/Daisy.fbx
+  - Assets/PureMountain/Models/Mountains/Mountain1.fbx
+  - Assets/PureMountain/Models/Rocks/Cliff5.fbx
+  - Assets/NatureManufacture Assets/Dynamic Nature - Mountain Tree Pack/Models/Fir_05_Standalone_cross.FBX
+  - Assets/NatureManufacture Assets/Dynamic Nature - Mountain Tree Pack/Models/Fir_06_Forest_cross.FBX
+  - Assets/NatureManufacture Assets/Dynamic Nature - Mountain Tree Pack/Models/Fir_03_Medium_cross.FBX
+  - Assets/NatureManufacture Assets/Dynamic Nature - Mountain Tree Pack/Models/Fir_08_Dead_cross.FBX
+  - Assets/NatureManufacture Assets/Dynamic Nature - Mountain Tree Pack/Models/Fir_04_Standalone_cross.FBX
+  - Assets/NatureManufacture Assets/Dynamic Nature - Mountain Tree Pack/Models/Fir_02_Small_cross.FBX
+  - Assets/NatureManufacture Assets/Dynamic Nature - Mountain Tree Pack/Models/Fir_07_Forest_cross.FBX
+  - Assets/NatureManufacture Assets/Dynamic Nature - Mountain Tree Pack/Models/Fir_01_Plant_cross.FBX
+  uvOverlapAssetList: 00000000ffffffff00000000000000000000000000000000000000000000000001010000010100000000000000000000010100000101000001010000010100000101000001010000010100000101000001010000010100000000000001010000010100000101000001010000ffffffff01010000010100000101000001010000ffffffff01010000010100000101000001010000ffffffff010100000000000001010000010100000101000001010000ffffffff01010000010100000000000000000000010100000000000001010000ffffffff0101000001010000010100000101000001010000000000000101000001010000ffffffff0101000000000000010100000101000000000000ffffffff01010000000000000101000001010000000000000101000001010000010100000101000001010000010100000000000001010000010100000101000000000000010100000101000001010000ffffffff010100000101000001010000ffffffff0101000001010000000000000101000000000000010100000000000001010000010100000101000001010000010100000101000001010000ffffffff0101000001010000010100000000000001010000010100000101000001010000ffffffff00000000010100000101000000000000010100000101000001010000010100000101000001010000010100000101000001010000ffffffff0101000000000000ffffffff010100000101000000000000010100000101000000000000010100000101000001010000000000000101000001010000010100000101000001010000ffffffff00000000010100000101000001010000010100000000000001010000010100000101000001010000010100000101000001010000010100000101000001010000010100000000000001010000000000000000000000000000ffffffff01010000000000000000000000000000000000000000000000000000010100000000000000000000000000000000000000000000000000000000000000000000010100000000000001010000000000000000000001010000000000000101000001010000000000000000000000000000010100000101000000000000010100000101000001010000000000000101000001010000010100000101000000000000010100000000000000000000000000000000000001010000010100000000000001010000010100000000000000000000010100000000000001010000010100000000000001010000000000000101000000000000010100000101000000000000000000000101000001010000010100000101000001010000010100000101000001010000010100000101000001010000010100000000000000000000000000000000000001010000000000000101000001010000010100000000000000000000010100000000000000000000010100000000000000000000000000000000000000000000000000000000000000000000
   xatlasWarningShown: 0
   foundCompatibleSetup: 1
   gpuName: NVIDIA GeForce RTX 3050
