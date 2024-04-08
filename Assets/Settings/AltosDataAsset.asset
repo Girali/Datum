@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d17a909bb65af14f8dfc74f34f7b903, type: 3}
+  m_Name: AltosDataAsset
+  m_EditorClassIdentifier: 
+  shaders:
+    atmosphereShader: {fileID: 0}
+    backgroundShader: {fileID: 0}
+    skyObjectShader: {fileID: 0}
+    starShader: {fileID: 0}
+    ditherDepth: {fileID: 0}
+    mergeClouds: {fileID: 0}
+    renderClouds: {fileID: 0}
+    temporalIntegration: {fileID: 0}
+    upscaleClouds: {fileID: 0}
+    integrateCloudShadows: {fileID: 0}
+    renderShadowsToScreen: {fileID: 0}
+    screenShadows: {fileID: 0}
+    atmosphereBlending: {fileID: 0}
+  textures:
+    halton: {fileID: 0}
+    blue: []
+  meshes:
+    skyboxMesh: {fileID: 0}

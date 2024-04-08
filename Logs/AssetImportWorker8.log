@@ -1,0 +1,487 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.21f1 (bf09ca542b87) revision 12519882'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 31895 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.21f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker8
+-projectPath
+C:/Users/Girali/Documents/Datum
+-logFile
+Logs/AssetImportWorker8.log
+-srvPort
+50292
+Successfully changed project path to: C:/Users/Girali/Documents/Datum
+C:/Users/Girali/Documents/Datum
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [20216] Host "[IP] 192.168.1.1 [Port] 0 [Flags] 2 [Guid] 981957507 [EditorId] 981957507 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-RI9E7BD) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [20216] Host "[IP] 192.168.1.1 [Port] 0 [Flags] 2 [Guid] 981957507 [EditorId] 981957507 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-RI9E7BD) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 23 workers.
+Refreshing native plugins compatible for Editor in 33.43 ms, found 33 plugins.
+Preloading 1 native plugins for Editor in 0.50 ms.
+Initialize engine version: 2022.3.21f1 (bf09ca542b87)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Girali/Documents/Datum/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3050 (ID=0x2507)
+    Vendor:   NVIDIA
+    VRAM:     8056 MB
+    Driver:   31.0.15.3758
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56564
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.010825 seconds.
+- Loaded All Assemblies, in  0.251 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 242 ms
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.472 seconds
+Domain Reload Profiling: 721ms
+	BeginReloadAssembly (73ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (0ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (99ms)
+		LoadAssemblies (72ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (97ms)
+			TypeCache.Refresh (96ms)
+				TypeCache.ScanAssembly (87ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (472ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (433ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (321ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (1ms)
+			ProcessInitializeOnLoadAttributes (76ms)
+			ProcessInitializeOnLoadMethodAttributes (32ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.527 seconds
+Refreshing native plugins compatible for Editor in 16.02 ms, found 33 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00044] in .\Library\PackageCache\com.unity.xr.oculus@4.2.0\Runtime\OculusLoader.cs:298 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x000dd] in .\Library\PackageCache\com.unity.xr.oculus@4.2.0\Runtime\OculusLoader.cs:283 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <4b234520e36749be9cf6b053d911690f>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <4b234520e36749be9cf6b053d911690f>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <4b234520e36749be9cf6b053d911690f>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <24e1ed8728684ea3ae446f80787d18de>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.914 seconds
+Domain Reload Profiling: 1439ms
+	BeginReloadAssembly (98ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (21ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (379ms)
+		LoadAssemblies (278ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (159ms)
+			TypeCache.Refresh (128ms)
+				TypeCache.ScanAssembly (109ms)
+			ScanForSourceGeneratedMonoScriptInfo (21ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (915ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (791ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (90ms)
+			ProcessInitializeOnLoadAttributes (343ms)
+			ProcessInitializeOnLoadMethodAttributes (330ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 26.68 ms, found 33 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
+Unloading 5516 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 147 unused Assets / (0.6 MB). Loaded Objects now: 6037.
+Memory consumption went from 325.3 MB to 324.8 MB.
+Total: 20.701400 ms (FindLiveObjects: 0.715400 ms CreateObjectMapping: 0.167300 ms MarkObjects: 19.237600 ms  DeleteObjects: 0.579500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1945.702855 seconds.
+  path: Assets/Models/button.fbx
+  artifactKey: Guid(b70a407bf3fa66343b1d8bc16c142a88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/button.fbx using Guid(b70a407bf3fa66343b1d8bc16c142a88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f77eb60f35a52fcd2453b4ec9c1ba14') in 0.262318 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Models/ybot@Standing Idle.fbx
+  artifactKey: Guid(b1cd9d389f6f81745821b0b6e1cc8e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ybot@Standing Idle.fbx using Guid(b1cd9d389f6f81745821b0b6e1cc8e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2623fbf96e954f89834d1fb9092368df') in 0.005481 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 139
+========================================================================
+Received Import Request.
+  Time since last request: 15.062184 seconds.
+  path: Assets/Materials/Pillar/Pillar_Material_AlbedoTransparency.png
+  artifactKey: Guid(59df7901bbc4ab843ac79b9df06abeae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Pillar/Pillar_Material_AlbedoTransparency.png using Guid(59df7901bbc4ab843ac79b9df06abeae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0695281f60c7bac7632e183f35e9a3e') in 0.024826 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 150.496986 seconds.
+  path: Assets/Materials/Ennemies/Drone.mat
+  artifactKey: Guid(cd45f152ed1c46f45a5bc44a7b34bdd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Ennemies/Drone.mat using Guid(cd45f152ed1c46f45a5bc44a7b34bdd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1022445408ba0463d07b043049df98d4') in 0.010272 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 1.915028 seconds.
+  path: Assets/Materials/Particles/Circle 1.mat
+  artifactKey: Guid(cf67dd9280501c04d9580e5f935321d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Particles/Circle 1.mat using Guid(cf67dd9280501c04d9580e5f935321d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb99a7013153025a21e7098f9a450cc2') in 0.009555 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 1.061514 seconds.
+  path: Assets/Materials/Misc/Prototype_mobil.mat
+  artifactKey: Guid(35ba1b10afc3b6641b3c914b14e55ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Misc/Prototype_mobil.mat using Guid(35ba1b10afc3b6641b3c914b14e55ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '075bf56d2c0d3f744b989c5e017afc87') in 0.029985 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Materials/Misc/Prototype_Red_Transparent.mat
+  artifactKey: Guid(6ff0dbfb00d880b4e8de3a2325f436fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Misc/Prototype_Red_Transparent.mat using Guid(6ff0dbfb00d880b4e8de3a2325f436fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9410e4e8d3c918d582961a3898c4ece') in 0.061495 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 1.131941 seconds.
+  path: Assets/Materials/Portal/PortalMask.mat
+  artifactKey: Guid(ca6002ebb8c4c484999a748c43490146) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Portal/PortalMask.mat using Guid(ca6002ebb8c4c484999a748c43490146) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de2530fc041a97d6655b79d21550eea9') in 0.592694 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 96.257795 seconds.
+  path: Assets/Textures/Ground/forest_ground_04_rough_8k.png
+  artifactKey: Guid(7189a09a8a8582a469bad4134071a249) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Ground/forest_ground_04_rough_8k.png using Guid(7189a09a8a8582a469bad4134071a249) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '667fae23cc9e555b65aa635ed065644f') in 0.026159 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Textures/Ground/forest_ground_04_disp_8k.png
+  artifactKey: Guid(9f514ebb545de1941b011c99f76a6ccc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Ground/forest_ground_04_disp_8k.png using Guid(9f514ebb545de1941b011c99f76a6ccc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39923578cb4988315b2b939d388a276f') in 0.025226 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 163.924239 seconds.
+  path: Assets/Bakery/BakeryRuntimeAssembly.asmdef
+  artifactKey: Guid(a1653399f63795746b1857281d1e400d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bakery/BakeryRuntimeAssembly.asmdef using Guid(a1653399f63795746b1857281d1e400d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90effd64aabb75a4306cdd0050f9177a') in 0.000823 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Bakery/emptyLightingData.asset
+  artifactKey: Guid(8b4edc58204bf354c9dd12ceacc42350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bakery/emptyLightingData.asset using Guid(8b4edc58204bf354c9dd12ceacc42350) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Lighting data asset ‘emptyLightingData’ is incompatible with the current Unity version. Please use Generate Lighting to rebuild the lighting data. Realtime Global Illumination cannot be used until the lighting data is rebuilt.
+Lighting data asset ‘emptyLightingData’ is incompatible with the current Unity version because the scene it was baked for was not serialized. Please use Generate Lighting to rebuild the lighting data, or assign the target scene to the Lighting Data Asset in the inspector.
+ -> (artifact id: 'e609bddc794b44a7604f5aa7109d448d') in 0.002566 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Bakery/ftLocalStorage.asset
+  artifactKey: Guid(6d8d07196af600f439ee10487d768b64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bakery/ftLocalStorage.asset using Guid(6d8d07196af600f439ee10487d768b64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed222aa0d55404efda53c19fa5dd6cfe') in 0.001379 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Bakery/ftGlobalStorage.asset
+  artifactKey: Guid(0bad6e1501525114e83eb26d22b59bf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bakery/ftGlobalStorage.asset using Guid(0bad6e1501525114e83eb26d22b59bf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '274addf5039f6f46dac7b02866f05ab2') in 0.003522 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Bakery/ftUnitySpotTexture.bmp
+  artifactKey: Guid(3a66602b8cc7fdd4ab57d07b4176432b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bakery/ftUnitySpotTexture.bmp using Guid(3a66602b8cc7fdd4ab57d07b4176432b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b21f3e9544610e5d976d454da69ce7fb') in 0.006957 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.616468 seconds.
+  path: Assets/BakeryLightmaps/Level_1.0_LMA1_final.hdr
+  artifactKey: Guid(141ce389a59ef9747a90be4bb5c80041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Level_1.0_LMA1_final.hdr using Guid(141ce389a59ef9747a90be4bb5c80041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02c687d67d20d7bd06e01141b22b662c') in 0.025195 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/BakeryLightmaps/Playground_LM0_mask.tga
+  artifactKey: Guid(3e0e64e955860a649ae4582227339b22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Playground_LM0_mask.tga using Guid(3e0e64e955860a649ae4582227339b22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cffe117e51c662218d7ff58aaeebf38') in 0.010698 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/BakeryLightmaps/Playground_LMA1_final.hdr
+  artifactKey: Guid(e9c0c8671b760cf4d92035554fa6a43c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Playground_LMA1_final.hdr using Guid(e9c0c8671b760cf4d92035554fa6a43c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6cbe8ed95915d3927009ac16801d646') in 0.031844 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/BakeryLightmaps/Tutorial_parkour_LM0_mask.tga
+  artifactKey: Guid(f524bb3952a34794ba9c4ac76746023e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Tutorial_parkour_LM0_mask.tga using Guid(f524bb3952a34794ba9c4ac76746023e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6141459c884c9337b4d480fb6257bbd2') in 0.006805 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/BakeryLightmaps/Tutorial_parkour_LM0_final.hdr
+  artifactKey: Guid(060a74415583fcd4692b5c96e1b6b9e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Tutorial_parkour_LM0_final.hdr using Guid(060a74415583fcd4692b5c96e1b6b9e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02fb91254d1d0983cba972b2bd7e647b') in 0.041523 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/BakeryLightmaps/Tutorial_LMA5_final.hdr
+  artifactKey: Guid(88619634e6c20b14791c868343c5a2af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Tutorial_LMA5_final.hdr using Guid(88619634e6c20b14791c868343c5a2af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c8f661df3374bb9b0f06531c8006e41') in 0.016472 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/BakeryLightmaps/Tutorial_LM0_mask.tga
+  artifactKey: Guid(5ede2ae9b1b154e4d889c22499e100ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Tutorial_LM0_mask.tga using Guid(5ede2ae9b1b154e4d889c22499e100ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b367026f553defae4a4b3a6a4d71b4f5') in 0.027030 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/BakeryLightmaps/SampleScene_LMA1_mask.tga
+  artifactKey: Guid(460f0b18a9a5f0140b5d36f812f6f17f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/SampleScene_LMA1_mask.tga using Guid(460f0b18a9a5f0140b5d36f812f6f17f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1be4e40137b6818fa2a46b5b89304dda') in 0.006705 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/BakeryLightmaps/Tutorial_LMA4_mask.tga
+  artifactKey: Guid(ef0e247393918d74a94608072ffb5f68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Tutorial_LMA4_mask.tga using Guid(ef0e247393918d74a94608072ffb5f68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '227fcea775c618169a61087972641094') in 0.017868 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/BakeryLightmaps/SampleScene_LM0_final.hdr
+  artifactKey: Guid(bf5d0d705510f5c4cadb7eff3f5e3309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/SampleScene_LM0_final.hdr using Guid(bf5d0d705510f5c4cadb7eff3f5e3309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45768bcdb040ee9aaa5450827052e348') in 0.018545 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr
+  artifactKey: Guid(e08eeeb3b54407642b81c4d44e46bfd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr using Guid(e08eeeb3b54407642b81c4d44e46bfd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd350645674c1181546621467dd08132e') in 0.059416 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/BakeryLightmaps/Level_1.0_LMA3_final.hdr
+  artifactKey: Guid(1ec6fc1bf328bd247ba6b4698193e78a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Level_1.0_LMA3_final.hdr using Guid(1ec6fc1bf328bd247ba6b4698193e78a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5ec3ac10d43da545cbf40a4e1308709') in 0.014575 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/BakeryLightmaps/Playground_LMA1_mask.tga
+  artifactKey: Guid(5ec94c1a4bd827140b74a4b155ba91fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Playground_LMA1_mask.tga using Guid(5ec94c1a4bd827140b74a4b155ba91fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b29e1b11db181a4501d177d194768fe8') in 0.006624 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/BakeryLightmaps/Playground_LMA2_mask.tga
+  artifactKey: Guid(f4cd5856924c2c54dabc13b990e8403c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Playground_LMA2_mask.tga using Guid(f4cd5856924c2c54dabc13b990e8403c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ef27d2765a4d10b3bd7c42cdd6ecf10') in 0.025248 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/BakeryLightmaps/Playground_LMA4_mask.tga
+  artifactKey: Guid(ea324a663923ebc4897c15d457a7c0d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Playground_LMA4_mask.tga using Guid(ea324a663923ebc4897c15d457a7c0d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfba2efb05838feea759607c495bfc91') in 0.006397 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/BakeryLightmaps/SampleScene_LMA2_final.hdr
+  artifactKey: Guid(36366417be9c0ca4abca4618763e089e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/SampleScene_LMA2_final.hdr using Guid(36366417be9c0ca4abca4618763e089e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc327fae410e905e91644f11bf74fd5b') in 0.005069 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/BakeryLightmaps/Tutorial_LMA1_mask.tga
+  artifactKey: Guid(eea0ed87fd6ec0b4aacbd692657951f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Tutorial_LMA1_mask.tga using Guid(eea0ed87fd6ec0b4aacbd692657951f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0221fe661981b75c8d97ede70e6db7c5') in 0.023054 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/BakeryLightmaps/Tutorial_LMA6_final.hdr
+  artifactKey: Guid(ee744cea2d356054b86874c1a405cbdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Tutorial_LMA6_final.hdr using Guid(ee744cea2d356054b86874c1a405cbdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b066557a86306bbb6c2ea159e3932e6') in 0.047607 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/BakeryLightmaps/Playground_LMA3_final.hdr
+  artifactKey: Guid(2674cc4e7f421b74a913372b11fdcd87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BakeryLightmaps/Playground_LMA3_final.hdr using Guid(2674cc4e7f421b74a913372b11fdcd87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f9ae46501d682d1281a4a6801c13fa9') in 0.020129 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

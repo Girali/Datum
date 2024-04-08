@@ -55,7 +55,7 @@ Shader "BK/Grass"
 
 		Tags { "RenderPipeline"="UniversalPipeline" "RenderType"="Opaque" "Queue"="Geometry" "UniversalMaterialType"="Lit" }
 
-		Cull Back
+		Cull Off
 		ZWrite On
 		ZTest LEqual
 		Offset 0 , 0
@@ -253,8 +253,8 @@ Shader "BK/Grass"
 			#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
 			#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
 			#define ASE_NEEDS_FRAG_WORLD_POSITION
-			#define ASE_NEEDS_FRAG_SCREEN_POSITION
 			#define ASE_NEEDS_VERT_POSITION
+			#define ASE_NEEDS_FRAG_SCREEN_POSITION
 			#pragma shader_feature_local _NOISEWORLDSPACEUVS_ON
 			#pragma shader_feature_local _NORMALWORLDSPACEUVS_ON
 
@@ -408,9 +408,9 @@ Shader "BK/Grass"
 				float2 texCoord116 = v.texcoord.xy * float2( 1,1 ) + float2( 0,0 );
 				float4 MicroWind125 = ( ( ( float4( ( ( ( sin( ( ( appendResult109 + simplePerlin2D112 ) * ( MicroFrequency * 2.0 ) ) ) * texCoord116.y ) * MicroPower ) * v.ase_color.r ) , 0.0 ) * float4(12,3.6,1,1) ) * 0.05 ) * _WindMultiplier );
 				
-				float3 objectToViewPos = TransformWorldToView(TransformObjectToWorld(v.vertex.xyz));
-				float eyeDepth = -objectToViewPos.z;
-				o.ase_texcoord8.z = eyeDepth;
+				float3 customSurfaceDepth233 = v.vertex.xyz;
+				float customEye233 = -TransformWorldToView(TransformObjectToWorld(customSurfaceDepth233)).z;
+				o.ase_texcoord8.z = customEye233;
 				
 				o.ase_texcoord8.xy = v.texcoord.xy;
 				o.ase_color = v.ase_color;
@@ -641,14 +641,11 @@ Shader "BK/Grass"
 				unpack181.z = lerp( 1, unpack181.z, saturate(_NormalPower) );
 				
 				float _Alpha202 = tex2DNode2.a;
+				float customEye233 = IN.ase_texcoord8.z;
+				float cameraDepthFade233 = (( customEye233 -_ProjectionParams.y - ( GrassRenderDist / 10.0 ) ) / max( GrassRenderDist , 100.0 ));
+				float DistanceFade150 = ( 1.0 - cameraDepthFade233 );
 				float4 ase_screenPosNorm = ScreenPos / ScreenPos.w;
 				ase_screenPosNorm.z = ( UNITY_NEAR_CLIP_VALUE >= 0 ) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
-				float2 clipScreen148 = ase_screenPosNorm.xy * _ScreenParams.xy;
-				float dither148 = Dither8x8Bayer( fmod(clipScreen148.x, 8), fmod(clipScreen148.y, 8) );
-				float eyeDepth = IN.ase_texcoord8.z;
-				float cameraDepthFade145 = (( eyeDepth -_ProjectionParams.y - GrassRenderDist ) / GrassRenderDist);
-				dither148 = step( dither148, ( 1.0 - cameraDepthFade145 ) );
-				float DistanceFade150 = dither148;
 				float2 clipScreen151 = ase_screenPosNorm.xy * _ScreenParams.xy;
 				float dither151 = Dither8x8Bayer( fmod(clipScreen151.x, 8), fmod(clipScreen151.y, 8) );
 				float2 texCoord143 = IN.ase_texcoord8.xy * float2( 1,1 ) + float2( 0,0 );
@@ -944,8 +941,8 @@ Shader "BK/Grass"
 
 			#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
 			#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
-			#define ASE_NEEDS_FRAG_SCREEN_POSITION
 			#define ASE_NEEDS_VERT_POSITION
+			#define ASE_NEEDS_FRAG_SCREEN_POSITION
 
 
 			#if defined(ASE_EARLY_Z_DEPTH_OPTIMIZE) && (SHADER_TARGET >= 45)
@@ -1089,9 +1086,9 @@ Shader "BK/Grass"
 				float2 texCoord116 = v.ase_texcoord.xy * float2( 1,1 ) + float2( 0,0 );
 				float4 MicroWind125 = ( ( ( float4( ( ( ( sin( ( ( appendResult109 + simplePerlin2D112 ) * ( MicroFrequency * 2.0 ) ) ) * texCoord116.y ) * MicroPower ) * v.ase_color.r ) , 0.0 ) * float4(12,3.6,1,1) ) * 0.05 ) * _WindMultiplier );
 				
-				float3 objectToViewPos = TransformWorldToView(TransformObjectToWorld(v.vertex.xyz));
-				float eyeDepth = -objectToViewPos.z;
-				o.ase_texcoord3.z = eyeDepth;
+				float3 customSurfaceDepth233 = v.vertex.xyz;
+				float customEye233 = -TransformWorldToView(TransformObjectToWorld(customSurfaceDepth233)).z;
+				o.ase_texcoord3.z = customEye233;
 				
 				o.ase_texcoord3.xy = v.ase_texcoord.xy;
 				
@@ -1258,14 +1255,11 @@ Shader "BK/Grass"
 				float2 uv_MainTex = IN.ase_texcoord3.xy * _MainTex_ST.xy + _MainTex_ST.zw;
 				float4 tex2DNode2 = tex2D( _MainTex, uv_MainTex );
 				float _Alpha202 = tex2DNode2.a;
+				float customEye233 = IN.ase_texcoord3.z;
+				float cameraDepthFade233 = (( customEye233 -_ProjectionParams.y - ( GrassRenderDist / 10.0 ) ) / max( GrassRenderDist , 100.0 ));
+				float DistanceFade150 = ( 1.0 - cameraDepthFade233 );
 				float4 ase_screenPosNorm = ScreenPos / ScreenPos.w;
 				ase_screenPosNorm.z = ( UNITY_NEAR_CLIP_VALUE >= 0 ) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
-				float2 clipScreen148 = ase_screenPosNorm.xy * _ScreenParams.xy;
-				float dither148 = Dither8x8Bayer( fmod(clipScreen148.x, 8), fmod(clipScreen148.y, 8) );
-				float eyeDepth = IN.ase_texcoord3.z;
-				float cameraDepthFade145 = (( eyeDepth -_ProjectionParams.y - GrassRenderDist ) / GrassRenderDist);
-				dither148 = step( dither148, ( 1.0 - cameraDepthFade145 ) );
-				float DistanceFade150 = dither148;
 				float2 clipScreen151 = ase_screenPosNorm.xy * _ScreenParams.xy;
 				float dither151 = Dither8x8Bayer( fmod(clipScreen151.x, 8), fmod(clipScreen151.y, 8) );
 				float2 texCoord143 = IN.ase_texcoord3.xy * float2( 1,1 ) + float2( 0,0 );
@@ -1348,8 +1342,8 @@ Shader "BK/Grass"
 
 			#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
 			#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
-			#define ASE_NEEDS_FRAG_SCREEN_POSITION
 			#define ASE_NEEDS_VERT_POSITION
+			#define ASE_NEEDS_FRAG_SCREEN_POSITION
 
 
 			#if defined(ASE_EARLY_Z_DEPTH_OPTIMIZE) && (SHADER_TARGET >= 45)
@@ -1490,9 +1484,9 @@ Shader "BK/Grass"
 				float2 texCoord116 = v.ase_texcoord.xy * float2( 1,1 ) + float2( 0,0 );
 				float4 MicroWind125 = ( ( ( float4( ( ( ( sin( ( ( appendResult109 + simplePerlin2D112 ) * ( MicroFrequency * 2.0 ) ) ) * texCoord116.y ) * MicroPower ) * v.ase_color.r ) , 0.0 ) * float4(12,3.6,1,1) ) * 0.05 ) * _WindMultiplier );
 				
-				float3 objectToViewPos = TransformWorldToView(TransformObjectToWorld(v.vertex.xyz));
-				float eyeDepth = -objectToViewPos.z;
-				o.ase_texcoord3.z = eyeDepth;
+				float3 customSurfaceDepth233 = v.vertex.xyz;
+				float customEye233 = -TransformWorldToView(TransformObjectToWorld(customSurfaceDepth233)).z;
+				o.ase_texcoord3.z = customEye233;
 				
 				o.ase_texcoord3.xy = v.ase_texcoord.xy;
 				
@@ -1644,14 +1638,11 @@ Shader "BK/Grass"
 				float2 uv_MainTex = IN.ase_texcoord3.xy * _MainTex_ST.xy + _MainTex_ST.zw;
 				float4 tex2DNode2 = tex2D( _MainTex, uv_MainTex );
 				float _Alpha202 = tex2DNode2.a;
+				float customEye233 = IN.ase_texcoord3.z;
+				float cameraDepthFade233 = (( customEye233 -_ProjectionParams.y - ( GrassRenderDist / 10.0 ) ) / max( GrassRenderDist , 100.0 ));
+				float DistanceFade150 = ( 1.0 - cameraDepthFade233 );
 				float4 ase_screenPosNorm = ScreenPos / ScreenPos.w;
 				ase_screenPosNorm.z = ( UNITY_NEAR_CLIP_VALUE >= 0 ) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
-				float2 clipScreen148 = ase_screenPosNorm.xy * _ScreenParams.xy;
-				float dither148 = Dither8x8Bayer( fmod(clipScreen148.x, 8), fmod(clipScreen148.y, 8) );
-				float eyeDepth = IN.ase_texcoord3.z;
-				float cameraDepthFade145 = (( eyeDepth -_ProjectionParams.y - GrassRenderDist ) / GrassRenderDist);
-				dither148 = step( dither148, ( 1.0 - cameraDepthFade145 ) );
-				float DistanceFade150 = dither148;
 				float2 clipScreen151 = ase_screenPosNorm.xy * _ScreenParams.xy;
 				float dither151 = Dither8x8Bayer( fmod(clipScreen151.x, 8), fmod(clipScreen151.y, 8) );
 				float2 texCoord143 = IN.ase_texcoord3.xy * float2( 1,1 ) + float2( 0,0 );
@@ -1865,12 +1856,12 @@ Shader "BK/Grass"
 				float2 texCoord116 = v.texcoord0.xy * float2( 1,1 ) + float2( 0,0 );
 				float4 MicroWind125 = ( ( ( float4( ( ( ( sin( ( ( appendResult109 + simplePerlin2D112 ) * ( MicroFrequency * 2.0 ) ) ) * texCoord116.y ) * MicroPower ) * v.ase_color.r ) , 0.0 ) * float4(12,3.6,1,1) ) * 0.05 ) * _WindMultiplier );
 				
+				float3 customSurfaceDepth233 = v.vertex.xyz;
+				float customEye233 = -TransformWorldToView(TransformObjectToWorld(customSurfaceDepth233)).z;
+				o.ase_texcoord4.z = customEye233;
 				float4 ase_clipPos = TransformObjectToHClip((v.vertex).xyz);
 				float4 screenPos = ComputeScreenPos(ase_clipPos);
 				o.ase_texcoord5 = screenPos;
-				float3 objectToViewPos = TransformWorldToView(TransformObjectToWorld(v.vertex.xyz));
-				float eyeDepth = -objectToViewPos.z;
-				o.ase_texcoord4.z = eyeDepth;
 				
 				o.ase_texcoord4.xy = v.texcoord0.xy;
 				
@@ -2041,15 +2032,12 @@ Shader "BK/Grass"
 				float4 _Albedo194 = ( lerpResult48 * tex2DNode2 );
 				
 				float _Alpha202 = tex2DNode2.a;
+				float customEye233 = IN.ase_texcoord4.z;
+				float cameraDepthFade233 = (( customEye233 -_ProjectionParams.y - ( GrassRenderDist / 10.0 ) ) / max( GrassRenderDist , 100.0 ));
+				float DistanceFade150 = ( 1.0 - cameraDepthFade233 );
 				float4 screenPos = IN.ase_texcoord5;
 				float4 ase_screenPosNorm = screenPos / screenPos.w;
 				ase_screenPosNorm.z = ( UNITY_NEAR_CLIP_VALUE >= 0 ) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
-				float2 clipScreen148 = ase_screenPosNorm.xy * _ScreenParams.xy;
-				float dither148 = Dither8x8Bayer( fmod(clipScreen148.x, 8), fmod(clipScreen148.y, 8) );
-				float eyeDepth = IN.ase_texcoord4.z;
-				float cameraDepthFade145 = (( eyeDepth -_ProjectionParams.y - GrassRenderDist ) / GrassRenderDist);
-				dither148 = step( dither148, ( 1.0 - cameraDepthFade145 ) );
-				float DistanceFade150 = dither148;
 				float2 clipScreen151 = ase_screenPosNorm.xy * _ScreenParams.xy;
 				float dither151 = Dither8x8Bayer( fmod(clipScreen151.x, 8), fmod(clipScreen151.y, 8) );
 				float2 texCoord143 = IN.ase_texcoord4.xy * float2( 1,1 ) + float2( 0,0 );
@@ -2257,12 +2245,12 @@ Shader "BK/Grass"
 				float2 texCoord116 = v.ase_texcoord.xy * float2( 1,1 ) + float2( 0,0 );
 				float4 MicroWind125 = ( ( ( float4( ( ( ( sin( ( ( appendResult109 + simplePerlin2D112 ) * ( MicroFrequency * 2.0 ) ) ) * texCoord116.y ) * MicroPower ) * v.ase_color.r ) , 0.0 ) * float4(12,3.6,1,1) ) * 0.05 ) * _WindMultiplier );
 				
+				float3 customSurfaceDepth233 = v.vertex.xyz;
+				float customEye233 = -TransformWorldToView(TransformObjectToWorld(customSurfaceDepth233)).z;
+				o.ase_texcoord2.z = customEye233;
 				float4 ase_clipPos = TransformObjectToHClip((v.vertex).xyz);
 				float4 screenPos = ComputeScreenPos(ase_clipPos);
 				o.ase_texcoord3 = screenPos;
-				float3 objectToViewPos = TransformWorldToView(TransformObjectToWorld(v.vertex.xyz));
-				float eyeDepth = -objectToViewPos.z;
-				o.ase_texcoord2.z = eyeDepth;
 				
 				o.ase_texcoord2.xy = v.ase_texcoord.xy;
 				
@@ -2420,15 +2408,12 @@ Shader "BK/Grass"
 				float4 _Albedo194 = ( lerpResult48 * tex2DNode2 );
 				
 				float _Alpha202 = tex2DNode2.a;
+				float customEye233 = IN.ase_texcoord2.z;
+				float cameraDepthFade233 = (( customEye233 -_ProjectionParams.y - ( GrassRenderDist / 10.0 ) ) / max( GrassRenderDist , 100.0 ));
+				float DistanceFade150 = ( 1.0 - cameraDepthFade233 );
 				float4 screenPos = IN.ase_texcoord3;
 				float4 ase_screenPosNorm = screenPos / screenPos.w;
 				ase_screenPosNorm.z = ( UNITY_NEAR_CLIP_VALUE >= 0 ) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
-				float2 clipScreen148 = ase_screenPosNorm.xy * _ScreenParams.xy;
-				float dither148 = Dither8x8Bayer( fmod(clipScreen148.x, 8), fmod(clipScreen148.y, 8) );
-				float eyeDepth = IN.ase_texcoord2.z;
-				float cameraDepthFade145 = (( eyeDepth -_ProjectionParams.y - GrassRenderDist ) / GrassRenderDist);
-				dither148 = step( dither148, ( 1.0 - cameraDepthFade145 ) );
-				float DistanceFade150 = dither148;
 				float2 clipScreen151 = ase_screenPosNorm.xy * _ScreenParams.xy;
 				float dither151 = Dither8x8Bayer( fmod(clipScreen151.x, 8), fmod(clipScreen151.y, 8) );
 				float2 texCoord143 = IN.ase_texcoord2.xy * float2( 1,1 ) + float2( 0,0 );
@@ -2501,8 +2486,8 @@ Shader "BK/Grass"
 			#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
 			#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
 			#define ASE_NEEDS_FRAG_WORLD_POSITION
-			#define ASE_NEEDS_FRAG_SCREEN_POSITION
 			#define ASE_NEEDS_VERT_POSITION
+			#define ASE_NEEDS_FRAG_SCREEN_POSITION
 			#pragma shader_feature_local _NORMALWORLDSPACEUVS_ON
 
 
@@ -2648,9 +2633,9 @@ Shader "BK/Grass"
 				float2 texCoord116 = v.ase_texcoord.xy * float2( 1,1 ) + float2( 0,0 );
 				float4 MicroWind125 = ( ( ( float4( ( ( ( sin( ( ( appendResult109 + simplePerlin2D112 ) * ( MicroFrequency * 2.0 ) ) ) * texCoord116.y ) * MicroPower ) * v.ase_color.r ) , 0.0 ) * float4(12,3.6,1,1) ) * 0.05 ) * _WindMultiplier );
 				
-				float3 objectToViewPos = TransformWorldToView(TransformObjectToWorld(v.vertex.xyz));
-				float eyeDepth = -objectToViewPos.z;
-				o.ase_texcoord5.z = eyeDepth;
+				float3 customSurfaceDepth233 = v.vertex.xyz;
+				float customEye233 = -TransformWorldToView(TransformObjectToWorld(customSurfaceDepth233)).z;
+				o.ase_texcoord5.z = customEye233;
 				
 				o.ase_texcoord5.xy = v.ase_texcoord.xy;
 				
@@ -2827,14 +2812,11 @@ Shader "BK/Grass"
 				float2 uv_MainTex = IN.ase_texcoord5.xy * _MainTex_ST.xy + _MainTex_ST.zw;
 				float4 tex2DNode2 = tex2D( _MainTex, uv_MainTex );
 				float _Alpha202 = tex2DNode2.a;
+				float customEye233 = IN.ase_texcoord5.z;
+				float cameraDepthFade233 = (( customEye233 -_ProjectionParams.y - ( GrassRenderDist / 10.0 ) ) / max( GrassRenderDist , 100.0 ));
+				float DistanceFade150 = ( 1.0 - cameraDepthFade233 );
 				float4 ase_screenPosNorm = ScreenPos / ScreenPos.w;
 				ase_screenPosNorm.z = ( UNITY_NEAR_CLIP_VALUE >= 0 ) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
-				float2 clipScreen148 = ase_screenPosNorm.xy * _ScreenParams.xy;
-				float dither148 = Dither8x8Bayer( fmod(clipScreen148.x, 8), fmod(clipScreen148.y, 8) );
-				float eyeDepth = IN.ase_texcoord5.z;
-				float cameraDepthFade145 = (( eyeDepth -_ProjectionParams.y - GrassRenderDist ) / GrassRenderDist);
-				dither148 = step( dither148, ( 1.0 - cameraDepthFade145 ) );
-				float DistanceFade150 = dither148;
 				float2 clipScreen151 = ase_screenPosNorm.xy * _ScreenParams.xy;
 				float dither151 = Dither8x8Bayer( fmod(clipScreen151.x, 8), fmod(clipScreen151.y, 8) );
 				float2 texCoord143 = IN.ase_texcoord5.xy * float2( 1,1 ) + float2( 0,0 );
@@ -2968,8 +2950,8 @@ Shader "BK/Grass"
 			#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
 			#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
 			#define ASE_NEEDS_FRAG_WORLD_POSITION
-			#define ASE_NEEDS_FRAG_SCREEN_POSITION
 			#define ASE_NEEDS_VERT_POSITION
+			#define ASE_NEEDS_FRAG_SCREEN_POSITION
 			#pragma shader_feature_local _NOISEWORLDSPACEUVS_ON
 			#pragma shader_feature_local _NORMALWORLDSPACEUVS_ON
 
@@ -3125,9 +3107,9 @@ Shader "BK/Grass"
 				float2 texCoord116 = v.texcoord.xy * float2( 1,1 ) + float2( 0,0 );
 				float4 MicroWind125 = ( ( ( float4( ( ( ( sin( ( ( appendResult109 + simplePerlin2D112 ) * ( MicroFrequency * 2.0 ) ) ) * texCoord116.y ) * MicroPower ) * v.ase_color.r ) , 0.0 ) * float4(12,3.6,1,1) ) * 0.05 ) * _WindMultiplier );
 				
-				float3 objectToViewPos = TransformWorldToView(TransformObjectToWorld(v.vertex.xyz));
-				float eyeDepth = -objectToViewPos.z;
-				o.ase_texcoord8.z = eyeDepth;
+				float3 customSurfaceDepth233 = v.vertex.xyz;
+				float customEye233 = -TransformWorldToView(TransformObjectToWorld(customSurfaceDepth233)).z;
+				o.ase_texcoord8.z = customEye233;
 				
 				o.ase_texcoord8.xy = v.texcoord.xy;
 				o.ase_color = v.ase_color;
@@ -3351,14 +3333,11 @@ Shader "BK/Grass"
 				unpack181.z = lerp( 1, unpack181.z, saturate(_NormalPower) );
 				
 				float _Alpha202 = tex2DNode2.a;
+				float customEye233 = IN.ase_texcoord8.z;
+				float cameraDepthFade233 = (( customEye233 -_ProjectionParams.y - ( GrassRenderDist / 10.0 ) ) / max( GrassRenderDist , 100.0 ));
+				float DistanceFade150 = ( 1.0 - cameraDepthFade233 );
 				float4 ase_screenPosNorm = ScreenPos / ScreenPos.w;
 				ase_screenPosNorm.z = ( UNITY_NEAR_CLIP_VALUE >= 0 ) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
-				float2 clipScreen148 = ase_screenPosNorm.xy * _ScreenParams.xy;
-				float dither148 = Dither8x8Bayer( fmod(clipScreen148.x, 8), fmod(clipScreen148.y, 8) );
-				float eyeDepth = IN.ase_texcoord8.z;
-				float cameraDepthFade145 = (( eyeDepth -_ProjectionParams.y - GrassRenderDist ) / GrassRenderDist);
-				dither148 = step( dither148, ( 1.0 - cameraDepthFade145 ) );
-				float DistanceFade150 = dither148;
 				float2 clipScreen151 = ase_screenPosNorm.xy * _ScreenParams.xy;
 				float dither151 = Dither8x8Bayer( fmod(clipScreen151.x, 8), fmod(clipScreen151.y, 8) );
 				float2 texCoord143 = IN.ase_texcoord8.xy * float2( 1,1 ) + float2( 0,0 );
@@ -3654,12 +3633,12 @@ Shader "BK/Grass"
 				float2 texCoord116 = v.ase_texcoord.xy * float2( 1,1 ) + float2( 0,0 );
 				float4 MicroWind125 = ( ( ( float4( ( ( ( sin( ( ( appendResult109 + simplePerlin2D112 ) * ( MicroFrequency * 2.0 ) ) ) * texCoord116.y ) * MicroPower ) * v.ase_color.r ) , 0.0 ) * float4(12,3.6,1,1) ) * 0.05 ) * _WindMultiplier );
 				
+				float3 customSurfaceDepth233 = v.vertex.xyz;
+				float customEye233 = -TransformWorldToView(TransformObjectToWorld(customSurfaceDepth233)).z;
+				o.ase_texcoord.z = customEye233;
 				float4 ase_clipPos = TransformObjectToHClip((v.vertex).xyz);
 				float4 screenPos = ComputeScreenPos(ase_clipPos);
 				o.ase_texcoord1 = screenPos;
-				float3 objectToViewPos = TransformWorldToView(TransformObjectToWorld(v.vertex.xyz));
-				float eyeDepth = -objectToViewPos.z;
-				o.ase_texcoord.z = eyeDepth;
 				
 				o.ase_texcoord.xy = v.ase_texcoord.xy;
 				
@@ -3779,15 +3758,12 @@ Shader "BK/Grass"
 				float2 uv_MainTex = IN.ase_texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
 				float4 tex2DNode2 = tex2D( _MainTex, uv_MainTex );
 				float _Alpha202 = tex2DNode2.a;
+				float customEye233 = IN.ase_texcoord.z;
+				float cameraDepthFade233 = (( customEye233 -_ProjectionParams.y - ( GrassRenderDist / 10.0 ) ) / max( GrassRenderDist , 100.0 ));
+				float DistanceFade150 = ( 1.0 - cameraDepthFade233 );
 				float4 screenPos = IN.ase_texcoord1;
 				float4 ase_screenPosNorm = screenPos / screenPos.w;
 				ase_screenPosNorm.z = ( UNITY_NEAR_CLIP_VALUE >= 0 ) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
-				float2 clipScreen148 = ase_screenPosNorm.xy * _ScreenParams.xy;
-				float dither148 = Dither8x8Bayer( fmod(clipScreen148.x, 8), fmod(clipScreen148.y, 8) );
-				float eyeDepth = IN.ase_texcoord.z;
-				float cameraDepthFade145 = (( eyeDepth -_ProjectionParams.y - GrassRenderDist ) / GrassRenderDist);
-				dither148 = step( dither148, ( 1.0 - cameraDepthFade145 ) );
-				float DistanceFade150 = dither148;
 				float2 clipScreen151 = ase_screenPosNorm.xy * _ScreenParams.xy;
 				float dither151 = Dither8x8Bayer( fmod(clipScreen151.x, 8), fmod(clipScreen151.y, 8) );
 				float2 texCoord143 = IN.ase_texcoord.xy * float2( 1,1 ) + float2( 0,0 );
@@ -3997,12 +3973,12 @@ Shader "BK/Grass"
 				float2 texCoord116 = v.ase_texcoord.xy * float2( 1,1 ) + float2( 0,0 );
 				float4 MicroWind125 = ( ( ( float4( ( ( ( sin( ( ( appendResult109 + simplePerlin2D112 ) * ( MicroFrequency * 2.0 ) ) ) * texCoord116.y ) * MicroPower ) * v.ase_color.r ) , 0.0 ) * float4(12,3.6,1,1) ) * 0.05 ) * _WindMultiplier );
 				
+				float3 customSurfaceDepth233 = v.vertex.xyz;
+				float customEye233 = -TransformWorldToView(TransformObjectToWorld(customSurfaceDepth233)).z;
+				o.ase_texcoord.z = customEye233;
 				float4 ase_clipPos = TransformObjectToHClip((v.vertex).xyz);
 				float4 screenPos = ComputeScreenPos(ase_clipPos);
 				o.ase_texcoord1 = screenPos;
-				float3 objectToViewPos = TransformWorldToView(TransformObjectToWorld(v.vertex.xyz));
-				float eyeDepth = -objectToViewPos.z;
-				o.ase_texcoord.z = eyeDepth;
 				
 				o.ase_texcoord.xy = v.ase_texcoord.xy;
 				
@@ -4121,15 +4097,12 @@ Shader "BK/Grass"
 				float2 uv_MainTex = IN.ase_texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
 				float4 tex2DNode2 = tex2D( _MainTex, uv_MainTex );
 				float _Alpha202 = tex2DNode2.a;
+				float customEye233 = IN.ase_texcoord.z;
+				float cameraDepthFade233 = (( customEye233 -_ProjectionParams.y - ( GrassRenderDist / 10.0 ) ) / max( GrassRenderDist , 100.0 ));
+				float DistanceFade150 = ( 1.0 - cameraDepthFade233 );
 				float4 screenPos = IN.ase_texcoord1;
 				float4 ase_screenPosNorm = screenPos / screenPos.w;
 				ase_screenPosNorm.z = ( UNITY_NEAR_CLIP_VALUE >= 0 ) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
-				float2 clipScreen148 = ase_screenPosNorm.xy * _ScreenParams.xy;
-				float dither148 = Dither8x8Bayer( fmod(clipScreen148.x, 8), fmod(clipScreen148.y, 8) );
-				float eyeDepth = IN.ase_texcoord.z;
-				float cameraDepthFade145 = (( eyeDepth -_ProjectionParams.y - GrassRenderDist ) / GrassRenderDist);
-				dither148 = step( dither148, ( 1.0 - cameraDepthFade145 ) );
-				float DistanceFade150 = dither148;
 				float2 clipScreen151 = ase_screenPosNorm.xy * _ScreenParams.xy;
 				float dither151 = Dither8x8Bayer( fmod(clipScreen151.x, 8), fmod(clipScreen151.y, 8) );
 				float2 texCoord143 = IN.ase_texcoord.xy * float2( 1,1 ) + float2( 0,0 );
@@ -4187,15 +4160,15 @@ Node;AmplifyShaderEditor.CommentaryNode;163;-3840,-2816;Inherit;False;1153.912;3
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;114;-2944,-64;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;2;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleAddOpNode;113;-2944,-304;Inherit;False;2;2;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;115;-2752,-320;Inherit;True;2;2;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;1;FLOAT3;0
-Node;AmplifyShaderEditor.CommentaryNode;139;-3840,-2304;Inherit;False;1085.633;188.7;;0;Distance Fade;1,1,1,1;0;0
+Node;AmplifyShaderEditor.CommentaryNode;139;-3840,-2432;Inherit;False;1088.633;419.7;;7;150;142;230;233;234;231;232;Distance Fade;1,1,1,1;0;0
 Node;AmplifyShaderEditor.CommentaryNode;140;-3841.647,-1916.839;Inherit;False;1312.323;289;;0;Base Opacity;1,1,1,1;0;0
 Node;AmplifyShaderEditor.SinOpNode;117;-2528,-320;Inherit;True;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.TextureCoordinatesNode;116;-2560,-96;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.TextureCoordinatesNode;143;-3809.647,-1852.839;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;119;-2304,-320;Inherit;True;2;2;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;1;FLOAT3;0
-Node;AmplifyShaderEditor.RangedFloatNode;118;-2304,-96;Float;False;Global;MicroPower;MicroPower;20;0;Create;False;0;0;0;False;0;False;0.05;0.15;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;118;-2304,-96;Float;False;Global;MicroPower;MicroPower;20;0;Create;False;0;0;0;False;0;False;0.05;0.1;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.CommentaryNode;134;-3840,-1408;Inherit;False;2180.593;765.4294;;13;191;176;192;165;47;46;48;1;107;3;194;2;202;Diffuse / Colors;1,1,1,1;0;0
-Node;AmplifyShaderEditor.RangedFloatNode;142;-3808,-2240;Inherit;False;Global;GrassRenderDist;GrassRenderDist;9;0;Create;True;0;0;0;False;0;False;50;30;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;142;-3808,-2368;Inherit;False;Global;GrassRenderDist;GrassRenderDist;9;0;Create;True;0;0;0;False;0;False;50;220;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.VertexColorNode;120;-2048,-96;Inherit;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.TFHCRemapNode;144;-3585.647,-1852.839;Inherit;True;5;0;FLOAT;0;False;1;FLOAT;0.11;False;2;FLOAT;0.52;False;3;FLOAT;1.5;False;4;FLOAT;8;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;121;-2048,-320;Inherit;True;2;2;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;1;FLOAT3;0
@@ -4205,19 +4178,16 @@ Node;AmplifyShaderEditor.Vector4Node;122;-1792,-96;Inherit;False;Constant;_WaveA
 Node;AmplifyShaderEditor.ClampOpNode;149;-3105.647,-1852.839;Inherit;False;3;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;1,1,1;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;124;-1536,-224;Inherit;False;2;2;0;FLOAT3;0,0,0;False;1;FLOAT4;0,0,0,0;False;1;FLOAT4;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;152;-2753.647,-1852.839;Inherit;False;BaseOpacity;-1;True;1;0;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.CameraDepthFade;145;-3584,-2240;Inherit;False;3;2;FLOAT3;0,0,0;False;0;FLOAT;1;False;1;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.OneMinusNode;147;-3328,-2240;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.RegisterLocalVarNode;150;-2976,-2240;Inherit;False;DistanceFade;-1;True;1;0;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.DitheringNode;148;-3168,-2240;Inherit;False;1;False;4;0;FLOAT;0;False;1;SAMPLER2D;;False;2;FLOAT4;0,0,0,0;False;3;SAMPLERSTATE;;False;1;FLOAT;0
+Node;AmplifyShaderEditor.RegisterLocalVarNode;150;-2976,-2368;Inherit;False;DistanceFade;-1;True;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.DitheringNode;151;-2945.647,-1852.839;Inherit;False;1;False;4;0;FLOAT;0;False;1;SAMPLER2D;;False;2;FLOAT4;0,0,0,0;False;3;SAMPLERSTATE;;False;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;133;-1536,-96;Inherit;False;Constant;_Float0;Float 0;8;0;Create;True;0;0;0;False;0;False;0.05;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.WorldPosInputsNode;39;-3808,-2752;Inherit;False;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
 Node;AmplifyShaderEditor.DynamicAppendNode;40;-3616,-2720;Inherit;False;FLOAT2;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0
-Node;AmplifyShaderEditor.RangedFloatNode;179;-3616,-2608;Inherit;False;Property;_NoiseTiling;Noise Tiling;11;0;Create;True;0;0;0;False;0;False;1.09;0.05;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;179;-3616,-2608;Inherit;False;Property;_NoiseTiling;Noise Tiling;10;0;Create;True;0;0;0;False;0;False;1.09;0.05;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;178;-3424,-2688;Inherit;False;2;2;0;FLOAT2;0,0;False;1;FLOAT;0;False;1;FLOAT2;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;160;-3040,-2688;Inherit;False;WorldSpaceUVs;-1;True;1;0;FLOAT2;0,0;False;1;FLOAT2;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;217;-1067.918,-2289.233;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.RangedFloatNode;157;-1408,-2304;Inherit;False;Property;_Smoothness;Smoothness;5;0;Create;True;0;0;0;False;0;False;0.1;0.1;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;157;-1408,-2304;Inherit;False;Property;_Smoothness;Smoothness;4;0;Create;True;0;0;0;False;0;False;0.1;0.1;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;155;-976,-1920;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.GetLocalVarNode;154;-1184,-1792;Inherit;False;152;BaseOpacity;1;0;OBJECT;;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;156;-1168,-1920;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
@@ -4225,24 +4195,24 @@ Node;AmplifyShaderEditor.GetLocalVarNode;153;-1408,-1792;Inherit;False;150;Dista
 Node;AmplifyShaderEditor.GetLocalVarNode;203;-1408,-1920;Inherit;False;202;_Alpha;1;0;OBJECT;;False;1;FLOAT;0
 Node;AmplifyShaderEditor.TextureCoordinatesNode;186;-1792,-2688;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.GetLocalVarNode;184;-1792,-2496;Inherit;False;160;WorldSpaceUVs;1;0;OBJECT;;False;1;FLOAT2;0
-Node;AmplifyShaderEditor.StaticSwitch;185;-1536,-2608;Inherit;False;Property;_NormalWorldSpaceUVs;Normal WorldSpace UVs;9;0;Create;True;0;0;0;False;0;False;0;0;0;True;;Toggle;2;Key0;Key1;Create;True;True;All;9;1;FLOAT2;0,0;False;0;FLOAT2;0,0;False;2;FLOAT2;0,0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT2;0,0;False;6;FLOAT2;0,0;False;7;FLOAT2;0,0;False;8;FLOAT2;0,0;False;1;FLOAT2;0
-Node;AmplifyShaderEditor.RangedFloatNode;182;-1504,-2496;Inherit;False;Property;_NormalPower;Normal Power;8;0;Create;True;0;0;0;False;0;False;1;0;0;1;0;1;FLOAT;0
-Node;AmplifyShaderEditor.SamplerNode;181;-1216,-2624;Inherit;True;Property;_Normal;Normal;7;0;Create;True;0;0;0;False;0;False;-1;None;None;True;0;False;bump;Auto;True;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.StaticSwitch;185;-1536,-2608;Inherit;False;Property;_NormalWorldSpaceUVs;Normal WorldSpace UVs;8;0;Create;True;0;0;0;False;0;False;0;0;0;True;;Toggle;2;Key0;Key1;Create;True;True;All;9;1;FLOAT2;0,0;False;0;FLOAT2;0,0;False;2;FLOAT2;0,0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT2;0,0;False;6;FLOAT2;0,0;False;7;FLOAT2;0,0;False;8;FLOAT2;0,0;False;1;FLOAT2;0
+Node;AmplifyShaderEditor.RangedFloatNode;182;-1504,-2496;Inherit;False;Property;_NormalPower;Normal Power;7;0;Create;True;0;0;0;False;0;False;1;0;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.SamplerNode;181;-1216,-2624;Inherit;True;Property;_Normal;Normal;6;0;Create;True;0;0;0;False;0;False;-1;None;None;True;0;False;bump;Auto;True;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.GetLocalVarNode;195;-1152,-2816;Inherit;False;194;_Albedo;1;0;OBJECT;;False;1;COLOR;0
 Node;AmplifyShaderEditor.TextureCoordinatesNode;191;-3808,-1344;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.GetLocalVarNode;176;-3808,-1216;Inherit;False;160;WorldSpaceUVs;1;0;OBJECT;;False;1;FLOAT2;0
-Node;AmplifyShaderEditor.StaticSwitch;192;-3584,-1296;Inherit;False;Property;_NoiseWorldSpaceUVs;Noise WorldSpace UVs;12;0;Create;True;0;0;0;False;0;False;0;0;0;True;;Toggle;2;Key0;Key1;Create;True;True;All;9;1;FLOAT2;0,0;False;0;FLOAT2;0,0;False;2;FLOAT2;0,0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT2;0,0;False;6;FLOAT2;0,0;False;7;FLOAT2;0,0;False;8;FLOAT2;0,0;False;1;FLOAT2;0
-Node;AmplifyShaderEditor.SamplerNode;165;-3264,-1312;Inherit;True;Property;_Noise;Noise;10;0;Create;True;0;0;0;False;1;Space(10);False;-1;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.RangedFloatNode;46;-3248,-1072;Inherit;False;Property;_ColorVariationPower;Color Variation Power;6;0;Create;True;0;0;0;False;0;False;1;1;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.StaticSwitch;192;-3584,-1296;Inherit;False;Property;_NoiseWorldSpaceUVs;Noise WorldSpace UVs;11;0;Create;True;0;0;0;False;0;False;0;0;0;True;;Toggle;2;Key0;Key1;Create;True;True;All;9;1;FLOAT2;0,0;False;0;FLOAT2;0,0;False;2;FLOAT2;0,0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT2;0,0;False;6;FLOAT2;0,0;False;7;FLOAT2;0,0;False;8;FLOAT2;0,0;False;1;FLOAT2;0
+Node;AmplifyShaderEditor.SamplerNode;165;-3264,-1312;Inherit;True;Property;_Noise;Noise;9;0;Create;True;0;0;0;False;1;Space(10);False;-1;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.RangedFloatNode;46;-3248,-1072;Inherit;False;Property;_ColorVariationPower;Color Variation Power;5;0;Create;True;0;0;0;False;0;False;1;1;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;47;-2928,-1200;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.LerpOp;48;-2400,-1248;Inherit;True;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
-Node;AmplifyShaderEditor.ColorNode;1;-2656,-1152;Inherit;False;Property;_Color02;Color 02;3;0;Create;True;0;0;0;False;0;False;1,0.3215686,0,1;1,1,1,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ColorNode;107;-2656,-1344;Inherit;False;Property;_Color01;Color 01;2;0;Create;True;0;0;0;False;1;Space(10);False;1,0.3215686,0,1;0.5613207,0.8245283,1,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;1;-2656,-1152;Inherit;False;Property;_Color02;Color 02;2;0;Create;True;0;0;0;False;0;False;1,0.3215686,0,1;1,1,1,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;107;-2656,-1344;Inherit;False;Property;_Color01;Color 01;1;0;Create;True;0;0;0;False;1;Space(10);False;1,0.3215686,0,1;0.5613207,0.8245283,1,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;130;-1280,-224;Inherit;False;2;2;0;FLOAT4;0,0,0,0;False;1;FLOAT;0.05;False;1;FLOAT4;0
-Node;AmplifyShaderEditor.RangedFloatNode;214;-1280,-96;Inherit;False;Property;_WindMultiplier;Wind Multiplier;1;0;Create;True;0;0;0;False;0;False;1;0;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;214;-1280,-96;Inherit;False;Property;_WindMultiplier;Wind Multiplier;0;0;Create;True;0;0;0;False;0;False;1;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;213;-1056,-224;Inherit;False;2;2;0;FLOAT4;0,0,0,0;False;1;FLOAT;0;False;1;FLOAT4;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;125;-864,-224;Inherit;False;MicroWind;-1;True;1;0;FLOAT4;0,0,0,0;False;1;FLOAT4;0
-Node;AmplifyShaderEditor.SamplerNode;2;-2432,-896;Inherit;True;Property;_MainTex;Texture;4;0;Create;False;0;0;0;False;1;Space(10);False;-1;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.SamplerNode;2;-2432,-896;Inherit;True;Property;_MainTex;Texture;3;0;Create;False;0;0;0;False;1;Space(10);False;-1;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;3;-2080,-1024;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;194;-1920,-1024;Inherit;False;_Albedo;-1;True;1;0;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;202;-1920,-800;Inherit;False;_Alpha;-1;True;1;0;FLOAT;0;False;1;FLOAT;0
@@ -4257,8 +4227,13 @@ Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;225;-640,-2432;Float;False;
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;226;-640,-2432;Float;False;False;-1;2;UnityEditor.ShaderGraphLitGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;GBuffer;0;7;GBuffer;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;True;1;1;False;;0;False;;1;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;1;LightMode=UniversalGBuffer;False;False;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;227;-640,-2432;Float;False;False;-1;2;UnityEditor.ShaderGraphLitGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;SceneSelectionPass;0;8;SceneSelectionPass;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;2;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;LightMode=SceneSelectionPass;False;False;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;228;-640,-2432;Float;False;False;-1;2;UnityEditor.ShaderGraphLitGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ScenePickingPass;0;9;ScenePickingPass;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;LightMode=Picking;False;False;0;;0;0;Standard;0;False;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;220;-640,-2432;Float;False;True;-1;2;UnityEditor.ShaderGraphLitGUI;0;12;BK/Grass;94348b07e5e8bab40bd6c8a1e3df54cd;True;Forward;0;1;Forward;20;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;True;1;1;False;;0;False;;1;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;1;LightMode=UniversalForward;False;False;0;;0;0;Standard;41;Workflow;1;0;Surface;0;0;  Refraction Model;0;0;  Blend;0;0;Two Sided;1;0;Fragment Normal Space,InvertActionOnDeselection;0;0;Forward Only;0;0;Transmission;0;0;  Transmission Shadow;0.5,False,;0;Translucency;0;0;  Translucency Strength;1,False,;0;  Normal Distortion;0.5,False,;0;  Scattering;2,False,;0;  Direct;0.9,False,;0;  Ambient;0.1,False,;0;  Shadow;0.5,False,;0;Cast Shadows;1;0;  Use Shadow Threshold;0;0;Receive Shadows;1;0;GPU Instancing;1;0;LOD CrossFade;1;0;Built-in Fog;1;0;_FinalColorxAlpha;0;0;Meta Pass;1;0;Override Baked GI;0;0;Extra Pre Pass;0;0;DOTS Instancing;0;0;Tessellation;0;0;  Phong;0;0;  Strength;0.5,False,;0;  Type;0;0;  Tess;16,False,;0;  Min;10,False,;0;  Max;25,False,;0;  Edge Length;16,False,;0;  Max Displacement;25,False,;0;Write Depth;0;0;  Early Z;0;0;Vertex Position,InvertActionOnDeselection;1;0;Debug Display;0;0;Clear Coat;0;0;0;10;False;True;True;True;True;True;True;True;True;True;False;;False;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;220;-640,-2432;Float;False;True;-1;2;UnityEditor.ShaderGraphLitGUI;0;12;BK/Grass;94348b07e5e8bab40bd6c8a1e3df54cd;True;Forward;0;1;Forward;20;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;2;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;True;1;1;False;;0;False;;1;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;1;LightMode=UniversalForward;False;False;0;;0;0;Standard;41;Workflow;1;0;Surface;0;0;  Refraction Model;0;0;  Blend;0;0;Two Sided;0;638470917402442053;Fragment Normal Space,InvertActionOnDeselection;0;0;Forward Only;0;0;Transmission;0;0;  Transmission Shadow;0.5,False,;0;Translucency;0;0;  Translucency Strength;1,False,;0;  Normal Distortion;0.5,False,;0;  Scattering;2,False,;0;  Direct;0.9,False,;0;  Ambient;0.1,False,;0;  Shadow;0.5,False,;0;Cast Shadows;1;0;  Use Shadow Threshold;0;0;Receive Shadows;1;0;GPU Instancing;1;0;LOD CrossFade;1;0;Built-in Fog;1;0;_FinalColorxAlpha;0;0;Meta Pass;1;0;Override Baked GI;0;0;Extra Pre Pass;0;0;DOTS Instancing;0;0;Tessellation;0;0;  Phong;0;0;  Strength;0.5,False,;0;  Type;0;0;  Tess;16,False,;0;  Min;10,False,;0;  Max;25,False,;0;  Edge Length;16,False,;0;  Max Displacement;25,False,;0;Write Depth;0;0;  Early Z;0;0;Vertex Position,InvertActionOnDeselection;1;0;Debug Display;0;0;Clear Coat;0;0;0;10;False;True;True;True;True;True;True;True;True;True;False;;False;0
 Node;AmplifyShaderEditor.RangedFloatNode;229;-921.6718,-2208.607;Inherit;False;Constant;_Float1;Float 1;13;0;Create;True;0;0;0;False;0;False;0.5;0.5;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.PosVertexDataNode;230;-3552.04,-2369.802;Inherit;False;0;0;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.SimpleMaxOpNode;231;-3552.04,-2225.802;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;100;False;1;FLOAT;0
+Node;AmplifyShaderEditor.CameraDepthFade;233;-3360.04,-2257.802;Inherit;False;3;2;FLOAT3;0,0,0;False;0;FLOAT;1;False;1;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.OneMinusNode;234;-3104.04,-2257.802;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleDivideOpNode;232;-3555.04,-2115.802;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;10;False;1;FLOAT;0
 WireConnection;126;0;127;0
 WireConnection;109;0;108;3
 WireConnection;109;1;108;2
@@ -4284,11 +4259,7 @@ WireConnection;149;0;146;0
 WireConnection;124;0;123;0
 WireConnection;124;1;122;0
 WireConnection;152;0;151;0
-WireConnection;145;0;142;0
-WireConnection;145;1;142;0
-WireConnection;147;0;145;0
-WireConnection;150;0;148;0
-WireConnection;148;0;147;0
+WireConnection;150;0;234;0
 WireConnection;151;0;149;0
 WireConnection;40;0;39;1
 WireConnection;40;1;39;3
@@ -4328,5 +4299,11 @@ WireConnection;220;4;217;0
 WireConnection;220;6;155;0
 WireConnection;220;7;229;0
 WireConnection;220;8;38;0
+WireConnection;231;0;142;0
+WireConnection;233;2;230;0
+WireConnection;233;0;231;0
+WireConnection;233;1;232;0
+WireConnection;234;0;233;0
+WireConnection;232;0;142;0
 ASEEND*/
-//CHKSM=B963AD5920A9BAFDE29A137A7B7494D0E346E0A1
+//CHKSM=93A37696FE4DEC7EAB1A00AC33C08FC51420739F

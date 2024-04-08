@@ -88,9 +88,18 @@ public class BK_EnvironmentManager : MonoBehaviour
 
     private void UpdateCloudsVolume()
     {
+        volumeSamples = Mathf.Max(1, volumeSamples);
+        volumeSize = Mathf.Max(0, volumeSize);
+
         if (cloudsMaterial == null)
         {
             return;
+        }
+
+        // Dynamically adjust the size of the matrices array to match volumeSamples
+        if (matrices.Length != volumeSamples)
+        {
+            matrices = new Matrix4x4[volumeSamples];
         }
 
         if (!cloudsMaterial.HasProperty("_ScatteringColor"))
