@@ -55,7 +55,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _FoamMask:
         m_Texture: {fileID: 2800000, guid: be39b323f7728084495a4ea86b2003b0, type: 3}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamNormal:
         m_Texture: {fileID: 2800000, guid: 97b1583a6e748ce4daa5ddbfaf98515c, type: 3}
@@ -135,15 +135,15 @@ Material:
     - _BumpScale: 1
     - _CausticOffset: 100
     - _CausticsOffset: 1
-    - _CausticsScale: 0.2
+    - _CausticsScale: 0.4
     - _CausticsSpeed: 1
     - _ChromaticAberration: 0.1
     - _CousticOffset: 0
     - _Cutoff: 0.5
-    - _Depth: 11.27
+    - _Depth: 113.49
     - _DetailNormalMapScale: 1
-    - _DistanceFade: 200
-    - _DistanceFadeOffset: 4000
+    - _DistanceFade: 100
+    - _DistanceFadeOffset: 500
     - _DistanceMax: 200
     - _DistanceMin: 20
     - _DistortionPower1: 0.82
@@ -152,18 +152,18 @@ Material:
     - _EdgeDistance: 0.941
     - _EdgeLength: 50
     - _EdgePower: 1
-    - _EdgesFade: 0.08
+    - _EdgesFade: 0.1
     - _EnvironmentReflections: 1
     - _Float2: 1000
     - _Float3: 0.744
     - _FoamContrast: 10
     - _FoamDepth: 0
-    - _FoamDistance: 8
+    - _FoamDistance: 16.6
     - _FoamFalloff: 0
-    - _FoamPower: 0.048
-    - _FoamScale: 5
+    - _FoamPower: 0.011
+    - _FoamScale: 0.43
     - _FoamSmoothness: 0
-    - _FoamSpeed: 2
+    - _FoamSpeed: 1
     - _GlobalNoiseScale: 5
     - _GlobalNoiseScale1: 1
     - _GlobalNoiseSpeed: 5
@@ -177,7 +177,7 @@ Material:
     - _Min: 0
     - _Mode: 0
     - _MultiplyOpacity: 1
-    - _NormalPower: 0.213
+    - _NormalPower: 0.128
     - _NormalPower1: 1
     - _NormalScale: 0.06
     - _NormalSpeed: 0.1
@@ -187,7 +187,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RefractionPower: 0.38
+    - _RefractionPower: 0.12
     - _SmoothnessPower: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -215,11 +215,11 @@ Material:
     - _hhdjt: 500
     - _kykyk: 1000
     m_Colors:
-    - _CausticsColor: {r: 1, g: 1, b: 1, a: 0}
+    - _CausticsColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 0, g: 0.5987654, b: 1, a: 0}
     - _Color1: {r: 1, g: 0.76618373, b: 0, a: 1}
-    - _DepthColor: {r: 0.33908868, g: 0.53483224, b: 0.5660378, a: 0.40392157}
+    - _DepthColor: {r: 0.50809896, g: 0.59973294, b: 0.6226415, a: 0.22745098}
     - _DepthColor1: {r: 0, g: 0.60118407, b: 0.6132076, a: 1}
     - _Direction: {r: 1, g: 0, b: -1, a: 0.2}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
@@ -227,7 +227,7 @@ Material:
     - _MainColor: {r: 0, g: 0.6810271, b: 0.6886792, a: 1}
     - _NormalDirection: {r: -20, g: 10, b: -10, a: 10}
     - _SecondColor: {r: 0.5404058, g: 0.8679245, b: 0.8414827, a: 0}
-    - _ShallowColor: {r: 0.31759524, g: 0.5459154, b: 0.5754717, a: 1}
+    - _ShallowColor: {r: 0.80740476, g: 0.9056604, b: 0.9056604, a: 1}
     - _WaterDeepColor: {r: 1, g: 1, b: 1, a: 0}
     - _WaterShallowColor: {r: 0, g: 0, b: 0, a: 0}
     - _WavesColor: {r: 0.27874687, g: 0.646538, b: 0.8207547, a: 0}

@@ -85,8 +85,7 @@ public class PlayerPhysicController : MonoBehaviour
         
         lastVelocity = body.velocity;
 
-        GUI_Controller.Instance.debug1.text = "" + body.velocity.magnitude;
-        GUI_Controller.Instance.debug2.text = "" + forceVelocity.magnitude;
+        GUI_Controller.Instance.AddTrackedValue("Velocity : " + body.velocity.magnitude);
         
         if(useNativePhysics == false)
             body.velocity = moveVelocity + new Vector3( 0, gravity, 0) + forceVelocity + new Vector3( 0, recalibaration, 0);

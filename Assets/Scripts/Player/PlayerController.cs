@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
         playerState = currentRig.RightHand.Motor(currentRig.RightControllerInputs , playerState);
         
         playerState = playerMotor.Motor(currentRig, playerState);
-
     }
 
     public class PlayerState

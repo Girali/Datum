@@ -22,8 +22,6 @@ public class PlayerGrappling : MonoBehaviour
     public SwordWeapon swordWeapon;
     public GameObject swordImpactPrefab;
 
-    private SpringJoint joint;
-
     private Ray ray;
 
     public bool inUse;
@@ -62,6 +60,8 @@ public class PlayerGrappling : MonoBehaviour
     private float speedDash = 50f;
     private float dashDistance;
 
+    [SerializeField] private GrapplingPhysic grapplingPhysic;
+    
     private AudioManager audioManager;
     public AudioClip dashSound;
     public AudioClip grapplingSound;
@@ -76,10 +76,15 @@ public class PlayerGrappling : MonoBehaviour
             SoundController.Instance.bypassAudioMixerGroup);
     }
 
+    private float grapplingVisualStart;
+    private float grapplingVisualTime = 1f;
+    
     private void StartVisualGrapple(RaycastHit hit)
     {
         inUse = true;
 
+        grapplingVisualStart = Time.time;
+        
         audioManager.PlaySound(grapplingSound, new Vector2(0.2f,0.3f) , new Vector2(0.9f, 1f));
 
         swordWeapon.render.SetActive(false);
@@ -114,14 +119,8 @@ public class PlayerGrappling : MonoBehaviour
         
         float distanceFromPoint = Vector3.Distance(playerPhysicController.transform.position, hit.point);
 
-        joint = playerPhysicController.gameObject.AddComponent<SpringJoint>();
-        joint.autoConfigureConnectedAnchor = false;
-        joint.connectedAnchor = hit.point;
-        joint.maxDistance = distanceFromPoint * 1.1f;
-        joint.minDistance = joint.maxDistance * 0.05f;
-        joint.spring = 800f;
-        joint.damper = 0f;
-        joint.massScale = 4.5f;
+        grapplingPhysic.ChangeMaxDistance(distanceFromPoint);
+        grapplingPhysic.SetActive(true, hit.point);
 
         StartVisualGrapple(hit);
     }
@@ -136,7 +135,7 @@ public class PlayerGrappling : MonoBehaviour
         playerPhysicController.ResetVelocity();
         playerPhysicController.SetVelocity(v);
 
-        Destroy(joint);
+        grapplingPhysic.SetActive(false,Vector3.zero);
         
         StopVisual();
     }
@@ -234,7 +233,7 @@ public class PlayerGrappling : MonoBehaviour
         
         Vector3 dir = (enemyPos - playerPhysicController.headCollider.position);
         dashDistance = dir.magnitude;
-        GUI_Controller.Instance.debug3.text = "" + dashDistance;
+        GUI_Controller.Instance.AddTrackedValue("Dash Distance : " + dashDistance);
         playerPhysicController.dashVelocity = dir.normalized * speedDash;
     }
     
@@ -273,7 +272,7 @@ public class PlayerGrappling : MonoBehaviour
         
         if (grappling)
         {
-            joint.connectedAnchor = grapleEnd.position;
+            grapplingPhysic.UpdateAnchor(grapleEnd.position);
         }
     }
 
@@ -282,56 +281,73 @@ public class PlayerGrappling : MonoBehaviour
         DrawRope();
     }
 
+    private Vector3 hyperSpherePosition;
+    public AnimationCurve grappleScaleByDistance;
+    
     void DrawRope()
     {
         //If not grappling, don't draw rope
         if (!inUse)
             return;
 
-        spring.SetDamper(damper);
-        spring.SetStrength(strength);
-        spring.Update(Time.deltaTime);
-
         Vector3 grapplePoint = grapleEnd.position;
         Vector3 gunTipPosition = grapleStart.position;
         Vector3 up = grapleStart.right;
-
-        grapleTargetLerp = Vector3.Lerp(grapleTargetLerp, grapplePoint, 0.2f);
-
-        for (var i = 0; i < quality + 1; i++)
+        Vector3 mid = grapleEnd.position + ((grapleStart.position - grapleEnd.position) / 2f);
+        
+        if (swordImpact)
         {
-            var delta = i / (float)quality;
-            var offset = up * waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI) * spring.Value *
-                         affectCurve.Evaluate(delta);
-
-            Vector3 v = Vector3.Lerp(gunTipPosition, grapleTargetLerp, delta) + offset;
-
-            lineRenderer.SetPosition(i, v);
-
-            if (swordImpact == false)
+            float distance = Vector3.Distance(grapplePoint, gunTipPosition);
+            Vector3 dir = playerPhysicController.Velocity.normalized;
+            float t = grappleScaleByDistance.Evaluate(distance / grapplingPhysic.GetDistance()) * 100f;
+            
+            for (var i = 0; i < quality + 1; i++)
             {
-                if (i == lineRenderer.positionCount - 1)
+                Vector3 v = Orb.EvaluateSlerpPoints(grapplePoint, gunTipPosition, mid + (dir * t), i / (float)quality);
+                lineRenderer.SetPosition(i, v);
+            }
+            
+            hookSwordVisual.transform.position = grapleEnd.position + (-hitDirection.normalized * 0.25f);
+            hookSwordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
+        }
+        else
+        {
+            spring.SetDamper(damper);
+            spring.SetStrength(strength);
+            spring.Update(Time.deltaTime);
+
+            grapleTargetLerp = Vector3.Lerp(grapleTargetLerp, grapplePoint, 0.2f);
+
+            for (var i = 0; i < quality + 1; i++)
+            {
+                var delta = i / (float)quality;
+                var offset = up * waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI) * spring.Value *
+                             affectCurve.Evaluate(delta);
+                
+                Vector3 v = Vector3.Lerp(gunTipPosition, grapleTargetLerp, delta) + offset;
+
+                lineRenderer.SetPosition(i, v);
+
+                if (swordImpact == false)
                 {
-                    float t = Vector3.Distance(v, grapplePoint);
-                    
-                    if (t < 1f)
+                    if (i == lineRenderer.positionCount - 1)
                     {
-                        swordImpact = true;
-                        hookSwordVisual.transform.position = grapleEnd.position + (-hitDirection.normalized * 0.25f);
-                        hookSwordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
-                        Instantiate(swordImpactPrefab, hookSwordVisual.transform.position, Quaternion.LookRotation(hitNormal));
-                    }
-                    else
-                    {
-                        hookSwordVisual.transform.position = v + Vector3.Lerp((-hitDirection.normalized * 0.25f),Vector3.zero , t);
-                        hookSwordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
+                        float t = Vector3.Distance(v, grapplePoint);
+                        
+                        if (t < 1f)
+                        {
+                            swordImpact = true;
+                            hookSwordVisual.transform.position = grapleEnd.position + (-hitDirection.normalized * 0.25f);
+                            hookSwordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
+                            Instantiate(swordImpactPrefab, hookSwordVisual.transform.position, Quaternion.LookRotation(hitNormal));
+                        }
+                        else
+                        {
+                            hookSwordVisual.transform.position = v + Vector3.Lerp((-hitDirection.normalized * 0.25f),Vector3.zero , t);
+                            hookSwordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
+                        }
                     }
                 }
-            }
-            else
-            {
-                hookSwordVisual.transform.position = grapleEnd.position + (-hitDirection.normalized * 0.25f);
-                hookSwordVisual.transform.rotation = Quaternion.LookRotation(hitDirection);
             }
         }
     }
@@ -351,6 +367,11 @@ public class PlayerGrappling : MonoBehaviour
             var force = Mathf.Abs(target - value) * strength;
             velocity += (force * direction - velocity * damper) * deltaTime;
             value += velocity * deltaTime;
+            
+            GUI_Controller.Instance.AddTrackedValue("direction : " + direction);
+            GUI_Controller.Instance.AddTrackedValue("force : " + force);
+            GUI_Controller.Instance.AddTrackedValue("velocity : " + velocity);
+            GUI_Controller.Instance.AddTrackedValue("value : " + value);
         }
 
         public void Reset()

@@ -49,7 +49,7 @@ public class Orb : MonoBehaviour
         GameController.Instance.playerController.AddEnergy(value, ammo);
     }
     
-    private Vector3 EvaluateSlerpPoints(Vector3 start, Vector3 end, Vector3 center, float t) {
+    public static Vector3 EvaluateSlerpPoints(Vector3 start, Vector3 end, Vector3 center, float t) {
         Vector3 startRelativeCenter = start - center;
         Vector3 endRelativeCenter = end - center;
 
